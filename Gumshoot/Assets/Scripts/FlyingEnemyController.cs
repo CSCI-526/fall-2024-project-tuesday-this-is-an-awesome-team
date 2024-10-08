@@ -13,13 +13,14 @@ public class FlyingEnemyController : MonoBehaviour
     [SerializeField] private float cooldownDuration = 12f;
     public Text countdownText;
 
-    
+    private PlayerController playerController;
 
 
     // Start is called before the first frame update
     void Start()
     {
         countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+        playerController = GetComponent<PlayerController>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
         FlyingEnemyMovement.player = transform;
@@ -33,6 +34,10 @@ public class FlyingEnemyController : MonoBehaviour
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
+            if (horizontalInput != 0 || verticalInput != 0)
+            {
+                playerController.Jump(Vector3.zero);
+            }
 
             Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0f);
             transform.position += moveDirection * moveSpeed * Time.deltaTime;

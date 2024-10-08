@@ -65,24 +65,7 @@ public class PlayerController : MonoBehaviour
             // If extending towards the latched surface, then launch off the surface
             if (SurfaceContactInstance && Vector3.Angle(-direction, transform.position - SurfaceContactInstance.transform.position) < 70f)
             {
-                stuckToSurface = false;
-                if (GetComponent<FlyingEnemyController>() == null)
-                {
-                    GetComponent<Rigidbody2D>().gravityScale = 1.6f;
-                    GetComponent<Rigidbody2D>().AddForce(-direction * jumpForce);
-                }
-                if (PulledObject != null)
-                {
-                    PulledObject.GetComponent<Rigidbody2D>().gravityScale = 1.6f;
-                    PulledObject.GetComponent<Rigidbody2D>().AddForce(-direction * jumpForce);
-                }
-
-                if (SurfaceContactInstance)
-                {
-                    Destroy(SurfaceContactInstance);
-                    SurfaceContactInstance = null;
-                }
-
+                Jump(direction);
             }
             else if (PulledObject != null)
             {
@@ -107,6 +90,30 @@ public class PlayerController : MonoBehaviour
                 PulledObject.GetComponent<Rigidbody2D>().AddForce(direction * throwForce);
 
                 PulledObject = null;
+            }
+        }
+    }
+
+    public void Jump(Vector3 direction)
+    {
+        if (stuckToSurface)
+        {
+            stuckToSurface = false;
+            if (GetComponent<FlyingEnemyController>() == null)
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 1.6f;
+                GetComponent<Rigidbody2D>().AddForce(-direction * jumpForce);
+            }
+            if (PulledObject != null)
+            {
+                PulledObject.GetComponent<Rigidbody2D>().gravityScale = 1.6f;
+                PulledObject.GetComponent<Rigidbody2D>().AddForce(-direction * jumpForce);
+            }
+
+            if (SurfaceContactInstance)
+            {
+                Destroy(SurfaceContactInstance);
+                SurfaceContactInstance = null;
             }
         }
     }
