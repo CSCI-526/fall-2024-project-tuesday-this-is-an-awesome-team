@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Gum
   - Block
+  - VisionCollider
+  - FirePoint
   layers:
   - Default
   - TransparentFX

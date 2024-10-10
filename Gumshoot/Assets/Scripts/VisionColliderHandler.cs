@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class VisionColliderHandler : MonoBehaviour
@@ -16,6 +14,8 @@ public class VisionColliderHandler : MonoBehaviour
     [Header("Line Renderer Settings")]
     public int segments = 50;
     public Color lineColor = Color.red;
+
+    public bool playerIsVisible = false;
 
     void Start()
     {
@@ -50,7 +50,7 @@ public class VisionColliderHandler : MonoBehaviour
         }
     }
 
-    public bool IsPlayerVisible()
+    public bool HasOverlap()
     {
         if (flyingEnemy == null || FlyingEnemyMovement.player == null)
             return false;
@@ -61,7 +61,6 @@ public class VisionColliderHandler : MonoBehaviour
 
         if (hit.collider == null && Physics2D.OverlapCircle(transform.position, visionCollider.radius, playerLayer) != null)
         {
-            Debug.Log("Player is visible!");
             return true;
         }
 
@@ -70,9 +69,10 @@ public class VisionColliderHandler : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && IsPlayerVisible())
+        if (other.CompareTag("Player") && HasOverlap())
         {
-            flyingEnemy.StartChasing();
+            //flyingEnemy.StartChasing();
+            playerIsVisible = true;
         }
     }
 
@@ -80,7 +80,8 @@ public class VisionColliderHandler : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            flyingEnemy.StopChasing();
+            playerIsVisible = false;
+            //flyingEnemy.StopChasing();
         }
     }
 

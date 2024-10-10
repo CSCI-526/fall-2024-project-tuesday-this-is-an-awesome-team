@@ -53,7 +53,7 @@ public class FlyingEnemyMovement : MonoBehaviour
             sprite.color = Color.yellow;
             return;
         }
-
+        isChasing = visionHandler.playerIsVisible;
         if (isChasing)
         {
             ChasePlayer();
@@ -64,7 +64,7 @@ public class FlyingEnemyMovement : MonoBehaviour
         }
     }
 
-    public void StartChasing()
+    /*public void StartChasing()
     {
         isChasing = true;
     }
@@ -72,7 +72,7 @@ public class FlyingEnemyMovement : MonoBehaviour
     public void StopChasing()
     {
         isChasing = false;
-    }
+    }*/
 
     void Patrol()
     {
