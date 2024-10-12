@@ -18,7 +18,7 @@ public class ShootingEnemyController : EnemyControllerBase
     {
         base.Update();
         shootingControl.UpdateCooldown();
-        if (Input.GetKeyDown(KeyCode.Return) && shootingControl.CanShoot())
+        if (Input.GetKeyDown(KeyCode.Space) && shootingControl.CanShoot())
             HandleShooting();
     }
 
