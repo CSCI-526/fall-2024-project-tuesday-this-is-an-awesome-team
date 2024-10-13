@@ -3,7 +3,8 @@ using UnityEngine;
 public class VisionColliderHandler : MonoBehaviour
 {
     private CircleCollider2D visionCollider;
-    public FlyingEnemyMovement flyingEnemy;
+    //public FlyingEnemyMovement flyingEnemy;
+    private IEnemy enemy;
 
     private LineRenderer lineRenderer;
 
@@ -17,10 +18,15 @@ public class VisionColliderHandler : MonoBehaviour
 
     public bool playerIsVisible = false;
 
+    private Transform playerTransform;
+
     void Start()
     {
         visionCollider = GetComponent<CircleCollider2D>();
-        flyingEnemy = GetComponentInParent<FlyingEnemyMovement>();
+        //flyingEnemy = GetComponentInParent<FlyingEnemyMovement>();
+        enemy = GetComponentInParent<IEnemy>();
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.positionCount = segments + 1;
@@ -52,19 +58,15 @@ public class VisionColliderHandler : MonoBehaviour
 
     public bool HasOverlap()
     {
-        if (flyingEnemy == null || FlyingEnemyMovement.player == null)
+
+        if (enemy == null || playerTransform == null)
             return false;
 
-        Vector2 directionToPlayer = (FlyingEnemyMovement.player.position - transform.position).normalized;
-        float distanceToPlayer = Vector2.Distance(transform.position, FlyingEnemyMovement.player.position);
+        Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
 
-        if (hit.collider == null && Physics2D.OverlapCircle(transform.position, visionCollider.radius, playerLayer) != null)
-        {
-            return true;
-        }
-
-        return false;
+        return hit.collider == null && Physics2D.OverlapCircle(transform.position, visionCollider.radius, playerLayer) != null;
     }
 
     private void OnTriggerStay2D(Collider2D other)
