@@ -616,6 +616,18 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4239182048248042017, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390297713582915174, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999411786767814348, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -673,8 +685,16 @@ PrefabInstance:
       value: FlyingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8121366884523129137, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121366884523129137, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
       propertyPath: chaseSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121366884523129137, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
+      propertyPath: patrolRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8657356234408578119, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
       propertyPath: m_TagString
@@ -683,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 8992701682191526904, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
       propertyPath: segments
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992701682191526904, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2414,7 +2438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4239182048248042017, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4999411786767814348, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Radius
@@ -2430,15 +2454,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_LocalPosition.x
