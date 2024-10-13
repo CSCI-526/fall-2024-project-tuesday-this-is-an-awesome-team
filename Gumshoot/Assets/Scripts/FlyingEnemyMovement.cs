@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemyMovement : MonoBehaviour
+public interface IEnemy
+{
+    GameObject ControllerPrefab { get; }
+}
+
+public class FlyingEnemyMovement : MonoBehaviour, IEnemy
 {
     [Header("Movement Settings")]
     public float patrolSpeed = 1f;
@@ -18,6 +23,8 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     public static Transform player;
     public GameObject controllerPrefab;
+
+    public GameObject ControllerPrefab => controllerPrefab;
 
     private Vector2 patrolStartPos;
     private bool isFacingRight = true;
