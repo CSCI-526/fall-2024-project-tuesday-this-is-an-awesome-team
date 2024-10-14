@@ -212,7 +212,8 @@ MonoBehaviour:
   countdownText: {fileID: 0}
   projectilePrefab: {fileID: 6343764166583026667}
   firePoint: {fileID: 4946048000663345995}
-  fireRate: 1
+  muzzle: {fileID: 7636305601396548182}
+  fireRate: 60
 --- !u!1 &8810403615861943467
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +326,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1295035977789287961, guid: c72e88e3f25d77c488177d5d34729048, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.521
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1295035977789287961, guid: c72e88e3f25d77c488177d5d34729048, type: 3}
       propertyPath: m_LocalPosition.y
