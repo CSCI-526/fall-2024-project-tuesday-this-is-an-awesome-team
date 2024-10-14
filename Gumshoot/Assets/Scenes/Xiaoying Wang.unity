@@ -2327,6 +2327,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2512646910886731678, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
+      propertyPath: firePointDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3041860225869626044, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Layer
       value: 0

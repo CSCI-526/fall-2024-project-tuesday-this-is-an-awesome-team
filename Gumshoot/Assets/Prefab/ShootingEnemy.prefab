@@ -253,7 +253,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4066126614479464365}
   firePoint: {fileID: 4685268646063162365}
   fireRate: 0.2
-  firePointDistance: 1
+  firePointDistance: 2
 --- !u!1 &8657356234408578119
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82a9a4e99a844f188757a2a1d99408f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingEnemy: {fileID: 7245306060468806666}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 128
