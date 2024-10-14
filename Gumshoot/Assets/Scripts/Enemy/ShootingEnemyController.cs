@@ -1,4 +1,7 @@
+using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 /*This class contorls shooting enemy. It uses flying movement method and has the ability to shoot. Fire point and muzzle can rotate around the shooting enemy based on the mouse position to shoot in different directions and shoot a projectile by pressing the "space" key*/
 public class ShootingEnemyController : MonoBehaviour
 {
@@ -8,9 +11,43 @@ public class ShootingEnemyController : MonoBehaviour
     public float fireRate = 50f; 
     private ShootingControl shootingControl;
 
+    public float moveSpeed = 5f;
+
+    public GameObject playerPrefab;
+    private bool isCooldown = false;
+    [SerializeField] private float cooldownDuration = 12f;
+    public Text countdownText;
+
     private void Start()
     {
-        shootingControl = new ShootingControl(projectilePrefab, firePoint, fireRate, false);
+        shootingControl = gameObject.AddComponent<ShootingControl>();
+        shootingControl.init(projectilePrefab, firePoint, fireRate, false);
+
+        countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+
+        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        FlyingEnemyMovement.player = transform;
+        StartCoroutine(CooldownCoroutine());
+    }
+
+    IEnumerator CooldownCoroutine()
+    {
+        float remainingTime = cooldownDuration;
+
+        while (remainingTime > 0)
+        {
+            countdownText.text = remainingTime.ToString("F1") + "s";
+            yield return new WaitForSeconds(1f);
+            remainingTime -= 1f;
+        }
+
+        countdownText.text = "";
+
+        isCooldown = true;
+        GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
+        FlyingEnemyMovement.player = newPlayer.transform;
+        Destroy(gameObject);
     }
 
     private void Update()
@@ -23,7 +60,7 @@ public class ShootingEnemyController : MonoBehaviour
     private void HandleShooting()
     {
         Vector2 shootDirection = firePoint.right; 
-        shootingControl.Shoot(shootDirection);
+        shootingControl.Shoot(shootDirection, gameObject);
     }
 
     private void RotateTowardsMouse()

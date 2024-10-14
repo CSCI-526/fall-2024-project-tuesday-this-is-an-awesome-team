@@ -82,7 +82,7 @@ public class GumMovement : MonoBehaviour
                 goto case GumState.Retracting;
             case GumState.Retracting:
                 // Moves the gum string toward the player
-                if (dist > 0.5f)
+                if (dist > 0.8f)
                 {
                     dist -= Time.deltaTime * owner.retractSpeed;
                     //transform.localPosition -= (owner.retractSpeed * Time.deltaTime * direction);
@@ -220,7 +220,7 @@ public class GumMovement : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             // Handles pulling the player toward a surface
-            if (collision.collider.gameObject.CompareTag("Surface"))
+            if (collision.collider.gameObject.CompareTag("Surface") || collision.collider.gameObject.CompareTag("Destructible"))
             {
                 GetComponent<SpriteRenderer>().enabled = false;
                 owner.stuckToSurface = false;
@@ -253,6 +253,9 @@ public class GumMovement : MonoBehaviour
             // Handles pulling an object toward the player
             else if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Pullable") || collision.gameObject.CompareTag("Enemy"))
             {
+                collision.gameObject.GetComponent<Pullable>().Move(Vector2.zero);
+                collision.gameObject.GetComponent<Pullable>().Rotate(0f);
+
                 // Do not grab objects if the player is already holding something
                 if (owner.PulledObject != null)
                 {
@@ -286,17 +289,24 @@ public class GumMovement : MonoBehaviour
                 {
                     state = GumState.PullingEnemy;
                 }
-                if (collision.gameObject.GetComponent<DamageObject>())
+                DamageObject damager = collision.gameObject.GetComponent<DamageObject>();
+                if (damager)
                 {
-                    collision.gameObject.GetComponent<DamageObject>().canHurtPlayer = false;
+                    damager.instigator = owner.gameObject;
+                    damager.canHurtInstigator = false;
+                    damager.destroysWalls = false;
                 }
-                
+                Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+                if (projectile)
+                {
+                    projectile.enabled = false;
+                }
+
                 // Attach the object onto the gum
                 collision.gameObject.transform.parent = transform;
                 owner.PulledObject = collision.gameObject.GetComponent<Pullable>();
+                owner.PulledObject.col.enabled = false;
                 owner.PulledObject.rb.gravityScale = 0f;
-                owner.PulledObject.Move(Vector2.zero);
-                owner.PulledObject.Rotate(0f);
             }
         }
     }

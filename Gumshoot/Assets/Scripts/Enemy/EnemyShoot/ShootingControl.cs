@@ -1,48 +1,60 @@
+using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 /*This class provides a basic shooting control. It deals with instantiating the projectile at the fire point, setting the projectile's moving direction, applying the cooldown mechanism to restrict shooting.*/
-public class ShootingControl
+public class ShootingControl : MonoBehaviour
 {
     private GameObject projectilePrefab;
     private Transform firePoint;
-    private float fireRate; 
     private float fireCooldown;
-    private bool coolDown;
+    private bool hasCoolDown;
+    private bool canShoot = true;
     
     
-    public ShootingControl(GameObject projectilePrefab, Transform firePoint, float fireRate, bool coolDown)
+    public void init(GameObject projectilePrefab, Transform firePoint, float fireCooldown, bool coolDown)
     {
         this.projectilePrefab = projectilePrefab;
         this.firePoint = firePoint;
-        this.fireRate = fireRate;
-        this.fireCooldown = 0f; 
-        this.coolDown = coolDown;
-    }
-
-    public void UpdateCooldown()
-    {
-        if (fireCooldown > 0f)
-        {
-            fireCooldown -= Time.deltaTime;
-        }
+        this.fireCooldown = fireCooldown;
+        this.hasCoolDown = coolDown;
     }
 
     public bool CanShoot()
     {
-        return fireCooldown <= 0f;
+        return canShoot;
     }
 
-    public void Shoot(Vector2 shootDirection)
+    public void Shoot(Vector2 shootDirection, GameObject instigator)
     {
+        Debug.Log("Shooting");
         if (projectilePrefab != null && firePoint != null)
         {
-            if (coolDown && CanShoot() || ! coolDown) {
+            if (CanShoot()) {
                 GameObject m_projectile = Object.Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                 Projectile projectile = m_projectile.GetComponent<Projectile>();
                 if (projectile != null)
+                {
                     projectile.SetDirection(shootDirection);
+                }
+                DamageObject damager = m_projectile.GetComponent<DamageObject>();
+                if (damager != null)
+                {
+                    StartCoroutine(damager.Launch(instigator, 1.0f));
+                }
+
+                if (hasCoolDown)
+                {
+                    Debug.Log("Starting cooldown");
+                    StartCoroutine(StartCooldown());
+                }
             }
-            if (coolDown) 
-                fireCooldown = 1f / fireRate;
         }
+    }
+
+    IEnumerator StartCooldown()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(fireCooldown);
+        canShoot = true;
     }
 }

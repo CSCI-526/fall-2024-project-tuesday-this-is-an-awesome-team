@@ -133,12 +133,12 @@ GameObject:
   - component: {fileID: 50764817}
   - component: {fileID: 50764819}
   - component: {fileID: 50764818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &50764817
 Transform:
@@ -263,12 +263,12 @@ GameObject:
   - component: {fileID: 71349779}
   - component: {fileID: 71349781}
   - component: {fileID: 71349780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (23)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &71349779
 Transform:
@@ -393,12 +393,12 @@ GameObject:
   - component: {fileID: 98017397}
   - component: {fileID: 98017399}
   - component: {fileID: 98017398}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (20)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &98017397
 Transform:
@@ -523,12 +523,12 @@ GameObject:
   - component: {fileID: 99722158}
   - component: {fileID: 99722160}
   - component: {fileID: 99722159}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (5)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &99722158
 Transform:
@@ -718,7 +718,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &165274216
 Transform:
@@ -849,7 +849,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &165637824
 BoxCollider2D:
@@ -1015,7 +1015,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &169320482
 Transform:
@@ -1415,12 +1415,12 @@ GameObject:
   - component: {fileID: 179723658}
   - component: {fileID: 179723660}
   - component: {fileID: 179723659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (21)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &179723658
 Transform:
@@ -1605,12 +1605,12 @@ GameObject:
   - component: {fileID: 197506494}
   - component: {fileID: 197506496}
   - component: {fileID: 197506495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (19)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &197506494
 Transform:
@@ -1735,12 +1735,12 @@ GameObject:
   - component: {fileID: 198467740}
   - component: {fileID: 198467742}
   - component: {fileID: 198467741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (9)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &198467740
 Transform:
@@ -1865,12 +1865,12 @@ GameObject:
   - component: {fileID: 203553386}
   - component: {fileID: 203553388}
   - component: {fileID: 203553387}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (10)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &203553386
 Transform:
@@ -2112,12 +2112,12 @@ GameObject:
   - component: {fileID: 220645352}
   - component: {fileID: 220645354}
   - component: {fileID: 220645353}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (21)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &220645352
 Transform:
@@ -2242,12 +2242,12 @@ GameObject:
   - component: {fileID: 226348796}
   - component: {fileID: 226348798}
   - component: {fileID: 226348797}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (15)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &226348796
 Transform:
@@ -2372,12 +2372,12 @@ GameObject:
   - component: {fileID: 235034021}
   - component: {fileID: 235034023}
   - component: {fileID: 235034022}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (3)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &235034021
 Transform:
@@ -2502,12 +2502,12 @@ GameObject:
   - component: {fileID: 235361778}
   - component: {fileID: 235361780}
   - component: {fileID: 235361779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (16)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &235361778
 Transform:
@@ -2638,7 +2638,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &236283423
 Transform:
@@ -2669,7 +2669,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &236283425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2783,7 +2785,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &236333415
 MonoBehaviour:
@@ -2839,7 +2841,7 @@ GameObject:
   - component: {fileID: 263642111}
   - component: {fileID: 263642110}
   - component: {fileID: 263642109}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: button (3)
   m_TagString: Surface
   m_Icon: {fileID: 0}
@@ -2861,7 +2863,7 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065938765}
+      - m_Target: {fileID: 1065938769}
         m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
         m_MethodName: StartFan
         m_Mode: 1
@@ -3092,7 +3094,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &288934802
 Transform:
@@ -3217,12 +3219,12 @@ GameObject:
   - component: {fileID: 321982527}
   - component: {fileID: 321982529}
   - component: {fileID: 321982528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (17)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &321982527
 Transform:
@@ -3353,7 +3355,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &345072720
 BoxCollider2D:
@@ -3505,12 +3507,12 @@ GameObject:
   - component: {fileID: 351068843}
   - component: {fileID: 351068845}
   - component: {fileID: 351068844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (18)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &351068843
 Transform:
@@ -3641,7 +3643,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &358165032
 BoxCollider2D:
@@ -3794,12 +3796,12 @@ GameObject:
   - component: {fileID: 361814058}
   - component: {fileID: 361814060}
   - component: {fileID: 361814059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (11)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &361814058
 Transform:
@@ -3987,7 +3989,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &396172200
 Transform:
@@ -4018,7 +4020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &396172202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4127,12 +4131,12 @@ GameObject:
   - component: {fileID: 404140121}
   - component: {fileID: 404140123}
   - component: {fileID: 404140122}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (8)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &404140121
 Transform:
@@ -4263,7 +4267,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &408500954
 BoxCollider2D:
@@ -4414,7 +4418,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.56
+      value: -32.02
       objectReference: {fileID: 0}
     - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4481,7 +4485,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &444683101
 BoxCollider2D:
@@ -4690,12 +4694,12 @@ GameObject:
   - component: {fileID: 468185986}
   - component: {fileID: 468185988}
   - component: {fileID: 468185987}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (18)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &468185986
 Transform:
@@ -5067,12 +5071,12 @@ GameObject:
   - component: {fileID: 533537059}
   - component: {fileID: 533537061}
   - component: {fileID: 533537060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (9)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &533537059
 Transform:
@@ -5203,7 +5207,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &555212068
 BoxCollider2D:
@@ -5361,12 +5365,12 @@ GameObject:
   - component: {fileID: 557983696}
   - component: {fileID: 557983698}
   - component: {fileID: 557983697}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (13)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &557983696
 Transform:
@@ -5497,7 +5501,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &566160516
 Transform:
@@ -5528,7 +5532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &566160518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5642,7 +5648,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &575269256
 MonoBehaviour:
@@ -5705,12 +5711,12 @@ GameObject:
   - component: {fileID: 577735042}
   - component: {fileID: 577735044}
   - component: {fileID: 577735043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (8)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &577735042
 Transform:
@@ -5912,12 +5918,12 @@ GameObject:
   - component: {fileID: 600538682}
   - component: {fileID: 600538684}
   - component: {fileID: 600538683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &600538682
 Transform:
@@ -6042,12 +6048,12 @@ GameObject:
   - component: {fileID: 621686239}
   - component: {fileID: 621686241}
   - component: {fileID: 621686240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (20)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &621686239
 Transform:
@@ -6177,7 +6183,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &647586252
 Transform:
@@ -6302,12 +6308,12 @@ GameObject:
   - component: {fileID: 649318680}
   - component: {fileID: 649318682}
   - component: {fileID: 649318681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &649318680
 Transform:
@@ -6432,12 +6438,12 @@ GameObject:
   - component: {fileID: 695816883}
   - component: {fileID: 695816885}
   - component: {fileID: 695816884}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (22)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &695816883
 Transform:
@@ -6696,12 +6702,12 @@ GameObject:
   - component: {fileID: 705344782}
   - component: {fileID: 705344781}
   - component: {fileID: 705344780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mid
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &705344780
 BoxCollider2D:
@@ -6921,12 +6927,12 @@ GameObject:
   - component: {fileID: 736028170}
   - component: {fileID: 736028169}
   - component: {fileID: 736028168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'bottom-right '
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &736028168
 BoxCollider2D:
@@ -7058,12 +7064,12 @@ GameObject:
   - component: {fileID: 750312359}
   - component: {fileID: 750312361}
   - component: {fileID: 750312360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (24)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &750312359
 Transform:
@@ -7188,12 +7194,12 @@ GameObject:
   - component: {fileID: 770734662}
   - component: {fileID: 770734664}
   - component: {fileID: 770734663}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (14)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &770734662
 Transform:
@@ -7324,7 +7330,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &789622457
 BoxCollider2D:
@@ -7466,7 +7472,6 @@ Transform:
   - {fileID: 899779196}
   - {fileID: 165274216}
   - {fileID: 1672329338}
-  - {fileID: 1571981730}
   - {fileID: 236283423}
   - {fileID: 566160516}
   - {fileID: 1866081126}
@@ -7490,12 +7495,12 @@ GameObject:
   - component: {fileID: 796989251}
   - component: {fileID: 796989253}
   - component: {fileID: 796989252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (12)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &796989251
 Transform:
@@ -7620,12 +7625,12 @@ GameObject:
   - component: {fileID: 803237475}
   - component: {fileID: 803237477}
   - component: {fileID: 803237476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (10)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &803237475
 Transform:
@@ -7750,12 +7755,12 @@ GameObject:
   - component: {fileID: 857971105}
   - component: {fileID: 857971104}
   - component: {fileID: 857971103}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: top
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &857971103
 BoxCollider2D:
@@ -7898,12 +7903,12 @@ GameObject:
   - component: {fileID: 863011609}
   - component: {fileID: 863011611}
   - component: {fileID: 863011610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (13)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &863011609
 Transform:
@@ -8093,7 +8098,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &899779196
 Transform:
@@ -8224,7 +8229,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &964185347
 Transform:
@@ -8255,7 +8260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &964185349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8364,12 +8371,12 @@ GameObject:
   - component: {fileID: 983661309}
   - component: {fileID: 983661311}
   - component: {fileID: 983661310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &983661309
 Transform:
@@ -8494,12 +8501,12 @@ GameObject:
   - component: {fileID: 986728837}
   - component: {fileID: 986728839}
   - component: {fileID: 986728838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (15)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &986728837
 Transform:
@@ -8746,7 +8753,7 @@ GameObject:
   - component: {fileID: 1006379596}
   - component: {fileID: 1006379595}
   - component: {fileID: 1006379594}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: button (2)
   m_TagString: Surface
   m_Icon: {fileID: 0}
@@ -8768,7 +8775,7 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1636323429}
+      - m_Target: {fileID: 1636323433}
         m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
         m_MethodName: StartFan
         m_Mode: 1
@@ -8936,7 +8943,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1020154010
 Transform:
@@ -8967,7 +8974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1020154012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9076,12 +9085,12 @@ GameObject:
   - component: {fileID: 1047873239}
   - component: {fileID: 1047873241}
   - component: {fileID: 1047873240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (19)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1047873239
 Transform:
@@ -9264,9 +9273,9 @@ GameObject:
   - component: {fileID: 1065938767}
   - component: {fileID: 1065938766}
   - component: {fileID: 1065938769}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rotateDoor
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9408,8 +9417,8 @@ GameObject:
   - component: {fileID: 1075866648}
   - component: {fileID: 1075866647}
   m_Layer: 7
-  m_Name: Square (5)
-  m_TagString: Surface
+  m_Name: BreakableWall (1)
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9676,7 +9685,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1088796507
 Transform:
@@ -9707,7 +9716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1088796509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9816,12 +9827,12 @@ GameObject:
   - component: {fileID: 1106268688}
   - component: {fileID: 1106268690}
   - component: {fileID: 1106268689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (6)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1106268688
 Transform:
@@ -9946,12 +9957,12 @@ GameObject:
   - component: {fileID: 1122233904}
   - component: {fileID: 1122233906}
   - component: {fileID: 1122233905}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (7)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1122233904
 Transform:
@@ -10076,12 +10087,12 @@ GameObject:
   - component: {fileID: 1131108475}
   - component: {fileID: 1131108477}
   - component: {fileID: 1131108476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (12)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1131108475
 Transform:
@@ -10206,12 +10217,12 @@ GameObject:
   - component: {fileID: 1138220921}
   - component: {fileID: 1138220923}
   - component: {fileID: 1138220922}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (27)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1138220921
 Transform:
@@ -10336,12 +10347,12 @@ GameObject:
   - component: {fileID: 1138816171}
   - component: {fileID: 1138816170}
   - component: {fileID: 1138816169}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: maze
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &1138816169
 BoxCollider2D:
@@ -10495,7 +10506,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1146663071
 Transform:
@@ -10526,7 +10537,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1146663073
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10635,12 +10648,12 @@ GameObject:
   - component: {fileID: 1159956288}
   - component: {fileID: 1159956290}
   - component: {fileID: 1159956289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (19)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1159956288
 Transform:
@@ -10770,7 +10783,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1179072079
 Transform:
@@ -10974,12 +10987,12 @@ GameObject:
   - component: {fileID: 1282176022}
   - component: {fileID: 1282176021}
   - component: {fileID: 1282176020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: water-box
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &1282176020
 BoxCollider2D:
@@ -11092,7 +11105,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1138220921}
-  - {fileID: 1792069705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1001 &1311096149
@@ -11163,12 +11175,12 @@ GameObject:
   - component: {fileID: 1312522310}
   - component: {fileID: 1312522312}
   - component: {fileID: 1312522311}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (8)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1312522310
 Transform:
@@ -11298,12 +11310,12 @@ GameObject:
   - component: {fileID: 1320009754}
   - component: {fileID: 1320009756}
   - component: {fileID: 1320009755}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (11)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1320009754
 Transform:
@@ -11428,12 +11440,12 @@ GameObject:
   - component: {fileID: 1332335482}
   - component: {fileID: 1332335484}
   - component: {fileID: 1332335483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (17)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1332335482
 Transform:
@@ -11692,12 +11704,12 @@ GameObject:
   - component: {fileID: 1339590917}
   - component: {fileID: 1339590919}
   - component: {fileID: 1339590918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (18)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1339590917
 Transform:
@@ -11998,7 +12010,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1379700767
 GameObject:
   m_ObjectHideFlags: 0
@@ -12015,7 +12029,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1379700768
 Transform:
@@ -12146,7 +12160,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1384826479
 Transform:
@@ -12177,7 +12191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1384826481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12286,12 +12302,12 @@ GameObject:
   - component: {fileID: 1386758582}
   - component: {fileID: 1386758584}
   - component: {fileID: 1386758583}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1386758582
 Transform:
@@ -12416,12 +12432,12 @@ GameObject:
   - component: {fileID: 1402834532}
   - component: {fileID: 1402834534}
   - component: {fileID: 1402834533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (14)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1402834532
 Transform:
@@ -12623,12 +12639,12 @@ GameObject:
   - component: {fileID: 1419868274}
   - component: {fileID: 1419868276}
   - component: {fileID: 1419868275}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (10)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1419868274
 Transform:
@@ -13116,7 +13132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1475827291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13429,7 +13447,7 @@ GameObject:
   - component: {fileID: 1500840786}
   - component: {fileID: 1500840785}
   - component: {fileID: 1500840789}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: button
   m_TagString: Surface
   m_Icon: {fileID: 0}
@@ -13625,12 +13643,12 @@ GameObject:
   - component: {fileID: 1564704993}
   - component: {fileID: 1564704995}
   - component: {fileID: 1564704994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (7)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1564704993
 Transform:
@@ -13756,8 +13774,8 @@ GameObject:
   - component: {fileID: 1571981732}
   - component: {fileID: 1571981731}
   m_Layer: 7
-  m_Name: edges (6)
-  m_TagString: Surface
+  m_Name: BreakableWall
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13770,12 +13788,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571981729}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4, y: -0.373, z: 0}
-  m_LocalScale: {x: 0.053763427, y: 7.031925, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.595633, y: -204.80559, z: 0}
+  m_LocalScale: {x: 0.56360364, y: 3.9632201, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 789622460}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1571981731
 BoxCollider2D:
@@ -13885,12 +13903,12 @@ GameObject:
   - component: {fileID: 1578026969}
   - component: {fileID: 1578026971}
   - component: {fileID: 1578026970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (17)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1578026969
 Transform:
@@ -14015,12 +14033,12 @@ GameObject:
   - component: {fileID: 1601247687}
   - component: {fileID: 1601247689}
   - component: {fileID: 1601247688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (16)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1601247687
 Transform:
@@ -14146,9 +14164,9 @@ GameObject:
   - component: {fileID: 1636323431}
   - component: {fileID: 1636323430}
   - component: {fileID: 1636323433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rotateDoor(2)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14289,12 +14307,12 @@ GameObject:
   - component: {fileID: 1640638898}
   - component: {fileID: 1640638900}
   - component: {fileID: 1640638899}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (4)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1640638898
 Transform:
@@ -14425,7 +14443,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1672329338
 Transform:
@@ -14456,7 +14474,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1672329340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14565,12 +14585,12 @@ GameObject:
   - component: {fileID: 1695586193}
   - component: {fileID: 1695586195}
   - component: {fileID: 1695586194}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (1)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1695586193
 Transform:
@@ -14700,7 +14720,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1699035943
 Transform:
@@ -14825,12 +14845,12 @@ GameObject:
   - component: {fileID: 1717076688}
   - component: {fileID: 1717076690}
   - component: {fileID: 1717076689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (26)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1717076688
 Transform:
@@ -14955,12 +14975,12 @@ GameObject:
   - component: {fileID: 1739151375}
   - component: {fileID: 1739151377}
   - component: {fileID: 1739151376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (25)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1739151375
 Transform:
@@ -15085,12 +15105,12 @@ GameObject:
   - component: {fileID: 1739981218}
   - component: {fileID: 1739981220}
   - component: {fileID: 1739981219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (7)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1739981218
 Transform:
@@ -15215,12 +15235,12 @@ GameObject:
   - component: {fileID: 1750739992}
   - component: {fileID: 1750739994}
   - component: {fileID: 1750739993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (17)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1750739992
 Transform:
@@ -15346,12 +15366,12 @@ GameObject:
   - component: {fileID: 1759427565}
   - component: {fileID: 1759427567}
   - component: {fileID: 1759427568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: door
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1759427565
 SpriteRenderer:
@@ -15493,7 +15513,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1781178826
 Transform:
@@ -15618,9 +15638,9 @@ GameObject:
   - component: {fileID: 1792069705}
   - component: {fileID: 1792069707}
   - component: {fileID: 1792069706}
-  m_Layer: 0
-  m_Name: square (23)
-  m_TagString: Untagged
+  m_Layer: 7
+  m_Name: BreakableWall (2)
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15633,12 +15653,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792069704}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.48, y: -0.03, z: 0}
-  m_LocalScale: {x: 1, y: 1.0833876, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 50.590908, y: -200.12717, z: 0}
+  m_LocalScale: {x: 0.60256267, y: 4.3007216, z: 0.120512515}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1282176022}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &1792069706
 BoxCollider2D:
@@ -15754,7 +15774,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &1819330659
 BoxCollider2D:
@@ -15906,12 +15926,12 @@ GameObject:
   - component: {fileID: 1836363097}
   - component: {fileID: 1836363099}
   - component: {fileID: 1836363098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (2)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1836363097
 Transform:
@@ -16041,7 +16061,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1842356940
 Transform:
@@ -16171,7 +16191,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1848801983
 Transform:
@@ -16334,7 +16354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1849486482
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16475,7 +16497,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1852289656
 Transform:
@@ -16605,7 +16627,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1866081126
 Transform:
@@ -16736,7 +16758,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &1894282816
 BoxCollider2D:
@@ -16895,7 +16917,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1929151432
 Transform:
@@ -17020,12 +17042,12 @@ GameObject:
   - component: {fileID: 1958202861}
   - component: {fileID: 1958202860}
   - component: {fileID: 1958202859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mid-top
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &1958202859
 BoxCollider2D:
@@ -17216,12 +17238,12 @@ GameObject:
   - component: {fileID: 1966368678}
   - component: {fileID: 1966368680}
   - component: {fileID: 1966368679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1966368678
 Transform:
@@ -17346,12 +17368,12 @@ GameObject:
   - component: {fileID: 1991154611}
   - component: {fileID: 1991154613}
   - component: {fileID: 1991154612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (16)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1991154611
 Transform:
@@ -17611,7 +17633,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2023986815
 Transform:
@@ -17736,12 +17758,12 @@ GameObject:
   - component: {fileID: 2042366375}
   - component: {fileID: 2042366377}
   - component: {fileID: 2042366376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (22)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2042366375
 Transform:
@@ -17866,12 +17888,12 @@ GameObject:
   - component: {fileID: 2064871405}
   - component: {fileID: 2064871407}
   - component: {fileID: 2064871406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2064871405
 Transform:
@@ -18102,12 +18124,12 @@ GameObject:
   - component: {fileID: 2091134519}
   - component: {fileID: 2091134521}
   - component: {fileID: 2091134520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (8)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2091134519
 Transform:
@@ -18232,12 +18254,12 @@ GameObject:
   - component: {fileID: 2124774271}
   - component: {fileID: 2124774273}
   - component: {fileID: 2124774272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: square (20)
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2124774271
 Transform:
@@ -18403,6 +18425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7852879155507105236, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18424,7 +18450,7 @@ GameObject:
   m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2140051094
 Transform:
@@ -18612,9 +18638,11 @@ SceneRoots:
   - {fileID: 444683104}
   - {fileID: 1358539265}
   - {fileID: 1494696824}
+  - {fileID: 1571981730}
+  - {fileID: 1075866645}
+  - {fileID: 1792069705}
   - {fileID: 789622460}
   - {fileID: 358165035}
-  - {fileID: 1075866645}
   - {fileID: 555212071}
   - {fileID: 165637827}
   - {fileID: 524548194}

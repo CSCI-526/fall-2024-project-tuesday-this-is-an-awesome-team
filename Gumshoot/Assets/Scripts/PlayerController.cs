@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
                 DamageObject damageObj = PulledObject.GetComponent<DamageObject>();
                 if (damageObj)
                 {
-                    StartCoroutine(damageObj.Launch());
+                    StartCoroutine(damageObj.Launch(gameObject, 0.4f));
                 }
                 if (PullContactInstance)
                 {

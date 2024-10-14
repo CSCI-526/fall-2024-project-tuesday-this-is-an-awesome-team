@@ -11,6 +11,7 @@ TagManager:
   - Block
   - VisionCollider
   - FirePoint
+  - Destructible
   layers:
   - Default
   - TransparentFX

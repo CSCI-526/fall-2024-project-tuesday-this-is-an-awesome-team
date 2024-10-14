@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2518503189552226278}
   - component: {fileID: 4506406082065551184}
   - component: {fileID: 4717190256281255840}
-  - component: {fileID: -6890762771695335195}
   m_Layer: 8
   m_Name: ShootingPlayer
   m_TagString: Player
@@ -143,7 +142,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1.6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -210,21 +209,9 @@ MonoBehaviour:
   firePoint: {fileID: 4946048000663345995}
   muzzle: {fileID: 7636305601396548182}
   fireRate: 60
---- !u!114 &-6890762771695335195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7096354043435132444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3595e3b90208748c89f0b95264b82c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   moveSpeed: 5
   playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
-  cooldownDuration: 12
+  cooldownDuration: 30
   countdownText: {fileID: 0}
 --- !u!1 &8810403615861943467
 GameObject:

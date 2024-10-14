@@ -141,7 +141,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1.6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -181,7 +181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!114 &197449956823384502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fa75105e6a54a1c8265369d16caf8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalForce: 5
-  horizontalForce: 5
+  verticalForce: 10
+  horizontalForce: 4
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -286,7 +288,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 8
 --- !u!114 &8992701682191526904
 MonoBehaviour:
   m_ObjectHideFlags: 0
