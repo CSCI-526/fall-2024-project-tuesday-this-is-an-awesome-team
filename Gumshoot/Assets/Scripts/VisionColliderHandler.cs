@@ -58,7 +58,7 @@ public class VisionColliderHandler : MonoBehaviour
 
     public bool HasOverlap()
     {
-
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         if (enemy == null || playerTransform == null)
             return false;
 
