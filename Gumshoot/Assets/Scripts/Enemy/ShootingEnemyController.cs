@@ -1,6 +1,6 @@
 using UnityEngine;
 /*This class contorls shooting enemy. It uses flying movement method and has the ability to shoot. Fire point and muzzle can rotate around the shooting enemy based on the mouse position to shoot in different directions and shoot a projectile by pressing the "space" key*/
-public class ShootingEnemyController : EnemyControllerBase
+public class ShootingEnemyController : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform firePoint;
@@ -8,18 +8,14 @@ public class ShootingEnemyController : EnemyControllerBase
     public float fireRate = 50f; 
     private ShootingControl shootingControl;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-        movementStrategy = new FlyingMovementController();
-        shootingControl = new ShootingControl(projectilePrefab, firePoint, fireRate);
+        shootingControl = new ShootingControl(projectilePrefab, firePoint, fireRate, false);
     }
 
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
         RotateTowardsMouse();
-        shootingControl.UpdateCooldown();
         if (Input.GetKeyDown(KeyCode.Space) && shootingControl.CanShoot())
             HandleShooting();
     }

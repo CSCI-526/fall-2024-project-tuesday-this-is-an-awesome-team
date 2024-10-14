@@ -6,13 +6,16 @@ public class ShootingControl
     private Transform firePoint;
     private float fireRate; 
     private float fireCooldown;
+    private bool coolDown;
     
-    public ShootingControl(GameObject projectilePrefab, Transform firePoint, float fireRate)
+    
+    public ShootingControl(GameObject projectilePrefab, Transform firePoint, float fireRate, bool coolDown)
     {
         this.projectilePrefab = projectilePrefab;
         this.firePoint = firePoint;
         this.fireRate = fireRate;
         this.fireCooldown = 0f; 
+        this.coolDown = coolDown;
     }
 
     public void UpdateCooldown()
@@ -30,13 +33,16 @@ public class ShootingControl
 
     public void Shoot(Vector2 shootDirection)
     {
-        if (CanShoot() && projectilePrefab != null && firePoint != null)
+        if (projectilePrefab != null && firePoint != null)
         {
-            GameObject m_projectile = Object.Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            Projectile projectile = m_projectile.GetComponent<Projectile>();
-            if (projectile != null)
-                projectile.SetDirection(shootDirection); 
-            fireCooldown = 1f / fireRate;
+            if (coolDown && CanShoot() || ! coolDown) {
+                GameObject m_projectile = Object.Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                Projectile projectile = m_projectile.GetComponent<Projectile>();
+                if (projectile != null)
+                    projectile.SetDirection(shootDirection);
+            }
+            if (coolDown) 
+                fireCooldown = 1f / fireRate;
         }
     }
 }
