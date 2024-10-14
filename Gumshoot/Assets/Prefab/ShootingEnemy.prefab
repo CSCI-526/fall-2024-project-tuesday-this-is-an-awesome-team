@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 237282247406969798}
   - component: {fileID: 7245306060468806666}
   - component: {fileID: 2512646910886731678}
+  - component: {fileID: -1278632769897868962}
   m_Layer: 7
   m_Name: ShootingEnemy
   m_TagString: Enemy
@@ -153,7 +154,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -254,6 +255,20 @@ MonoBehaviour:
   firePoint: {fileID: 4685268646063162365}
   fireRate: 0.2
   firePointDistance: 2
+--- !u!114 &-1278632769897868962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852879155507105236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e98e146bdd2044f94b22bd0ec81932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  col: {fileID: 0}
 --- !u!1 &8657356234408578119
 GameObject:
   m_ObjectHideFlags: 0

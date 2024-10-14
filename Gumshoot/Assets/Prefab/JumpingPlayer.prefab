@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2518503189552226278}
   - component: {fileID: 4506406082065551184}
   - component: {fileID: 8821995103272733654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpingPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ MonoBehaviour:
   PulledObject: {fileID: 0}
   SurfaceContactInstance: {fileID: 0}
   PullContactInstance: {fileID: 0}
-  jumpForce: 250
+  jumpForce: 500
   throwForce: 750
   maxDist: 10
   extractSpeed: 24

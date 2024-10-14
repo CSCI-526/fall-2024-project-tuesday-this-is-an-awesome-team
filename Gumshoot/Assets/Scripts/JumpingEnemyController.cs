@@ -24,15 +24,6 @@ public class JumpingEnemyController : MonoBehaviour
         StartCoroutine(CooldownCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!isCooldown)
-        {
-            playerController.jumpForce = 500f;
-        }
-    }
-
     IEnumerator CooldownCoroutine()
     {
         float remainingTime = cooldownDuration;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7165228867015015007}
   - component: {fileID: 5095388621353256640}
   - component: {fileID: 237282247406969798}
+  - component: {fileID: -6663049108555087766}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -204,6 +205,20 @@ MonoBehaviour:
   damage: 1
   canExplode: 0
   canHurtPlayer: 1
+--- !u!114 &-6663049108555087766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852879155507105236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e98e146bdd2044f94b22bd0ec81932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  col: {fileID: 0}
 --- !u!1 &8657356234408578119
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +232,7 @@ GameObject:
   - component: {fileID: 8992701682191526904}
   m_Layer: 0
   m_Name: VisionCollider
-  m_TagString: Untagged
+  m_TagString: VisionCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82a9a4e99a844f188757a2a1d99408f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingEnemy: {fileID: 8121366884523129137}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -293,3 +307,4 @@ MonoBehaviour:
     m_Bits: 1
   segments: 50
   lineColor: {r: 1, g: 0, b: 0, a: 1}
+  playerIsVisible: 0

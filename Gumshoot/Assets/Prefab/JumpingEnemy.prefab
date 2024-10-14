@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5095388621353256640}
   - component: {fileID: 237282247406969798}
   - component: {fileID: 197449956823384502}
+  - component: {fileID: -574798008794284796}
   m_Layer: 0
   m_Name: JumpingEnemy
   m_TagString: Enemy
@@ -204,6 +205,20 @@ MonoBehaviour:
   visionHandler: {fileID: 0}
   controllerPrefab: {fileID: 7096354043435132444, guid: 3fffc236542be4ee99a76a52452f56ac, type: 3}
   jumpCooldown: 2
+--- !u!114 &-574798008794284796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852879155507105236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e98e146bdd2044f94b22bd0ec81932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  col: {fileID: 0}
 --- !u!1 &8657356234408578119
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +232,7 @@ GameObject:
   - component: {fileID: 8992701682191526904}
   m_Layer: 0
   m_Name: VisionCollider
-  m_TagString: Untagged
+  m_TagString: VisionCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
