@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = (SurfaceContactInstance.transform.position - transform.position).normalized;
             float dist = (SurfaceContactInstance.transform.position - transform.position).magnitude;
-            if (dist > 0.7f)
+            if (dist > 1f)
             {
                 rb.velocity = (retractSpeed * direction);
             }
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = (transform.position - PulledObject.transform.position).normalized;
             float dist = (PulledObject.transform.position - transform.position).magnitude;
-            if (dist > 2f)
+            if (dist > 1.8f)
             {
                 PulledObject.Move(retractSpeed * direction);
             }
