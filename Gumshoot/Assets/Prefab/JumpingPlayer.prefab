@@ -183,7 +183,7 @@ MonoBehaviour:
   PulledObject: {fileID: 0}
   SurfaceContactInstance: {fileID: 0}
   PullContactInstance: {fileID: 0}
-  jumpForce: 500
+  jumpForce: 1000
   throwForce: 750
   maxDist: 10
   extractSpeed: 24
@@ -203,5 +203,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
-  cooldownDuration: 12
+  cooldownDuration: 20
   countdownText: {fileID: 0}
