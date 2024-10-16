@@ -25,8 +25,8 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
     private Rigidbody2D rb;
 
     private bool canJump = true;
-    public float jumpCooldown = 2f;
-    private float cooldownTimer = 0f;
+    //public float jumpCooldown = 2f;
+    //private float cooldownTimer = 0f;
 
     void Start()
     {
