@@ -20,7 +20,9 @@ public class Health : MonoBehaviour
             if (CompareTag("Player"))
             {
                 Debug.Log("Killed by " + instigator.name);
+                Debug.Log(LevelManager.deathPerCheckpoint[LevelManager.Instance.latestCheckpointID + 1]);
                 LevelManager.Instance.StartCoroutine(LevelManager.Instance.Die());
+                Debug.Log(LevelManager.deathPerCheckpoint[LevelManager.Instance.latestCheckpointID + 1]);
             }
             Destroy(gameObject);
         }

@@ -11,8 +11,10 @@ public class LevelManager : MonoBehaviour
 
     public GameObject playerPrefab;
 
-    private int latestCheckpointID = -1;
+    [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
+
+    [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
     private void Awake()
     {
@@ -31,6 +33,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+
+    private void UpdateDeathPerCheckpoint() {
+        deathPerCheckpoint[latestCheckpointID + 1] += 1;
+    }
+
+
     public void UpdateLatestCheckpoint(int checkpointID, Vector3 position)
     {
         if (checkpointID > latestCheckpointID)
@@ -44,8 +52,10 @@ public class LevelManager : MonoBehaviour
     public IEnumerator Die()
     {
         UIManager.Instance.loseText.SetActive(true);
+        UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(2f);
         Restart();
+
     }
 
     private void Respawn()

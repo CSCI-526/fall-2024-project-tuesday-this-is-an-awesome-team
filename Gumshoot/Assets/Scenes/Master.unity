@@ -2870,6 +2870,7 @@ GameObject:
   - component: {fileID: 236333416}
   - component: {fileID: 236333415}
   - component: {fileID: 236333417}
+  - component: {fileID: 236333418}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -2890,6 +2891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
+  latestCheckpointID: -1
 --- !u!4 &236333416
 Transform:
   m_ObjectHideFlags: 0
@@ -2919,6 +2921,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 1336899219}
   loseText: {fileID: 703853448}
+--- !u!114 &236333418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236333414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f52a49695690a4593ceb9fa8a07c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  URL: https://docs.google.com/forms/u/0/d/e/1FAIpQLSfrTcIf0J8YUaPTJSX4skfFSWwWAgo3B3CtCUYwcNY9fNlBGQ/formResponse
 --- !u!1 &263642108
 GameObject:
   m_ObjectHideFlags: 0
