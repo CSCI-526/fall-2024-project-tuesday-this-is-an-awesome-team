@@ -23,14 +23,7 @@ public class LevelManager : MonoBehaviour
 
     public void Restart()
     {
-        if (latestCheckpointID != -1)
-        {
-            Respawn();
-        }
-        else
-        {
-            SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene(0);
     }
 
 
@@ -54,7 +47,15 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.loseText.SetActive(true);
         UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(2f);
-        Restart();
+        if (latestCheckpointID != -1)
+        {
+            Respawn();
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+
 
     }
 
