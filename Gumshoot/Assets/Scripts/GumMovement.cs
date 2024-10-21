@@ -32,13 +32,23 @@ public class GumMovement : MonoBehaviour
     // String drawing
     private readonly Stack<GameObject> stringList = new(); // First index is closest to hook
 
+    private Rigidbody2D rb;
+    private Collider2D col;
+
     public void Initialize(PlayerController newOwner, Vector3 direction)
     {
         owner = newOwner;
         this.direction = direction;
-        transform.localPosition = transform.localPosition + direction;
+        transform.localPosition += direction * 0.5f;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, -direction);
         StringGroupInstance = Instantiate(StringGroupPrefab, transform);
+
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        /*if (owner.PulledObject)
+        {
+            owner.PulledObject.GetComponent<Collider2D>().enabled = false;
+        }*/
     }
 
     // Update is called once per frame
@@ -51,13 +61,16 @@ public class GumMovement : MonoBehaviour
                 if (dist < owner.maxDist)
                 {
                     dist += Time.deltaTime * owner.extractSpeed;
-                    transform.localPosition += (owner.extractSpeed * Time.deltaTime * direction);
+                    //transform.localPosition += (owner.extractSpeed * Time.deltaTime * direction);
+                    rb.velocity = (owner.extractSpeed * direction + (Vector3)owner.rb.velocity);
                 }
                 // If the gum string has reached max length, start retracting
                 else
                 {
-                    dist -= playerRadius;
+                    //dist -= playerRadius;
+                    rb.velocity = Vector2.zero;
                     state = GumState.Retracting;
+                    col.enabled = false;
                 }
                 break;
             case GumState.PullingEnemy:
@@ -65,13 +78,15 @@ public class GumMovement : MonoBehaviour
                 // Since the player could be moving, manually calculate the line every frame
                 direction = (owner.PullContactInstance.transform.position - owner.transform.position).normalized;
                 dist = (owner.PullContactInstance.transform.position - owner.transform.position).magnitude;
+                owner.PulledObject.Move(owner.extractSpeed * -direction + (Vector3)owner.rb.velocity);
                 goto case GumState.Retracting;
             case GumState.Retracting:
                 // Moves the gum string toward the player
-                if (dist > 1f)
+                if (dist > 0.8f)
                 {
                     dist -= Time.deltaTime * owner.retractSpeed;
-                    transform.localPosition -= (owner.retractSpeed * Time.deltaTime * direction);
+                    //transform.localPosition -= (owner.retractSpeed * Time.deltaTime * direction);
+                    rb.velocity = (owner.extractSpeed * -direction + (Vector3)owner.rb.velocity);
                 }
                 // If the gum string has reached the player, stop all gum movement
                 else
@@ -88,7 +103,11 @@ public class GumMovement : MonoBehaviour
                 if (dist > 0.8f)
                 {
                     dist -= Time.deltaTime * owner.retractSpeed;
-                    owner.transform.position += (owner.retractSpeed * Time.deltaTime * direction);
+                    owner.rb.velocity = (owner.retractSpeed * direction);
+                    if (owner.PulledObject != null)
+                    {
+                        owner.PulledObject.Move(owner.extractSpeed * direction);
+                    }
                 }
                 // If the player has reached the gum string, stop all gum movement
                 else
@@ -101,13 +120,21 @@ public class GumMovement : MonoBehaviour
 
         if (isComplete)
         {
+            /*if (owner.PulledObject)
+            {
+                owner.PulledObject.GetComponent<Collider2D>().enabled = true;
+            }*/
+
             // Detach the pulled object from the gum and attach it to the player instead
             if (state == GumState.PullingObject)
             {
                 transform.DetachChildren();
+                //owner.PulledObject.GetComponent<FixedJoint2D>().enabled = true;
+                //owner.PulledObject.GetComponent<FixedJoint2D>().connectedBody = owner.rb;
+                owner.PulledObject.col.enabled = true;
                 owner.PulledObject.transform.parent = owner.transform;
-                owner.PulledObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                owner.PulledObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+                owner.PulledObject.Move(Vector2.zero);
+                owner.PulledObject.Rotate(0f);
             }
             else if (state == GumState.PullingEnemy)
             {
@@ -125,10 +152,11 @@ public class GumMovement : MonoBehaviour
             else if (state == GumState.PullingPlayer)
             {
                 owner.transform.position = owner.SurfaceContactInstance.transform.position;
+                owner.rb.velocity = Vector2.zero;
                 if (owner.PulledObject)
                 {
-                    owner.PulledObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    owner.PulledObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+                    owner.PulledObject.Move(Vector2.zero);
+                    owner.PulledObject.Rotate(0f);
                 }
             }
             owner.gumExtended = false;
@@ -148,6 +176,8 @@ public class GumMovement : MonoBehaviour
     // Handles drawing the gum string
     private void DrawString()
     {
+        float dist = (rb.position - owner.rb.position).magnitude;
+
         // Correct the string's rotation and position in case the player/surface could be moving
         if (state == GumState.PullingObject || state == GumState.PullingEnemy)
         {
@@ -161,18 +191,24 @@ public class GumMovement : MonoBehaviour
         }
 
         // If the length of the string has exceeded the combined length of the string sprites, spawn another string sprite
-        while (dist > stringList.Count * stringSpriteLength * 7.5f)
+        if (state == GumState.Extending)
         {
-            // Add chains
-            GameObject StringInstance = Instantiate(StringPrefab, StringGroupInstance.transform);
-            StringInstance.transform.localPosition = new Vector3(0f, (stringSpriteLength / 2f + stringSpriteLength * stringList.Count), 0f);
-            stringList.Push(StringInstance);
+            while (dist > (stringList.Count - 1) * stringSpriteLength * 7.5f)
+            {
+                // Add chains
+                GameObject StringInstance = Instantiate(StringPrefab, StringGroupInstance.transform);
+                StringInstance.transform.localPosition = new Vector3(0f, (stringSpriteLength / 2f + stringSpriteLength * stringList.Count), 0f);
+                stringList.Push(StringInstance);
+            }
         }
         // Destroy string sprites as it retracts
-        while (dist + playerRadius <= (stringList.Count - 1) * stringSpriteLength * 7.5f)
+        else
         {
-            // Remove chains
-            Destroy(stringList.Pop());
+            while (dist + playerRadius <= (stringList.Count - 1) * stringSpriteLength * 7.5f)
+            {
+                // Remove chains
+                Destroy(stringList.Pop());
+            }
         }
     }
 
@@ -182,8 +218,9 @@ public class GumMovement : MonoBehaviour
         // Only accept gum collisions when extending
         if (state == GumState.Extending)
         {
+            rb.velocity = Vector2.zero;
             // Handles pulling the player toward a surface
-            if (collision.collider.gameObject.CompareTag("Surface"))
+            if (collision.collider.gameObject.CompareTag("Surface") || collision.collider.gameObject.CompareTag("Destructible"))
             {
                 GetComponent<SpriteRenderer>().enabled = false;
                 owner.stuckToSurface = false;
@@ -206,9 +243,9 @@ public class GumMovement : MonoBehaviour
                 owner.GetComponent<Rigidbody2D>().gravityScale = 0f;
                 if (owner.PulledObject != null)
                 {
-                    owner.PulledObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
+                    owner.PulledObject.rb.gravityScale = 0f;
                 }
-                owner.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                owner.rb.velocity = Vector2.zero;
 
                 // Recalculate distance
                 dist = Vector3.Distance(owner.transform.position, transform.position);
@@ -216,6 +253,9 @@ public class GumMovement : MonoBehaviour
             // Handles pulling an object toward the player
             else if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Pullable") || collision.gameObject.CompareTag("Enemy"))
             {
+                collision.gameObject.GetComponent<Pullable>().Move(Vector2.zero);
+                collision.gameObject.GetComponent<Pullable>().Rotate(0f);
+
                 // Do not grab objects if the player is already holding something
                 if (owner.PulledObject != null)
                 {
@@ -229,7 +269,8 @@ public class GumMovement : MonoBehaviour
                     return;
                 }
 
-                //collision.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                collision.gameObject.GetComponent<Collider2D>().enabled = false;
                 GetComponent<SpriteRenderer>().enabled = false;
                 if (owner.PullContactInstance)
                 {
@@ -247,13 +288,25 @@ public class GumMovement : MonoBehaviour
                 else
                 {
                     state = GumState.PullingEnemy;
-                    collision.gameObject.GetComponent<DamageObject>().canHurtPlayer = false;
+                }
+                DamageObject damager = collision.gameObject.GetComponent<DamageObject>();
+                if (damager)
+                {
+                    damager.instigator = owner.gameObject;
+                    damager.canHurtInstigator = false;
+                    damager.destroysWalls = false;
+                }
+                Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+                if (projectile)
+                {
+                    projectile.enabled = false;
                 }
 
                 // Attach the object onto the gum
                 collision.gameObject.transform.parent = transform;
-                owner.PulledObject = collision.gameObject;
-                owner.PulledObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
+                owner.PulledObject = collision.gameObject.GetComponent<Pullable>();
+                owner.PulledObject.col.enabled = false;
+                owner.PulledObject.rb.gravityScale = 0f;
             }
         }
     }

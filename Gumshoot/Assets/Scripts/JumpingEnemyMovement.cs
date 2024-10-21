@@ -25,8 +25,8 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
     private Rigidbody2D rb;
 
     private bool canJump = true;
-    public float jumpCooldown = 2f;
-    private float cooldownTimer = 0f;
+    //public float jumpCooldown = 2f;
+    //private float cooldownTimer = 0f;
 
     void Start()
     {
@@ -47,17 +47,7 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
             return;
         }
 
-        if (!canJump)
-        {
-            cooldownTimer += Time.deltaTime;
-            if (cooldownTimer >= jumpCooldown)
-            {
-                canJump = true;
-                cooldownTimer = 0f;
-            }
-        }
-
-        if (visionHandler.playerIsVisible && canJump)
+        if (visionHandler.playerIsVisible && rb.velocity.y == 0)
         {
             JumpTowardsPlayer();
         }
@@ -73,13 +63,5 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
         rb.AddForce(jumpForceVector, ForceMode2D.Impulse);
 
         canJump = false;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Surface"))
-        {
-            canJump = true;
-        }
     }
 }

@@ -466,7 +466,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &56874000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1390,6 +1392,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &244273862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -196.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725124953191632303, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: checkpointID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100013934682826334, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_Name
+      value: Checkpoint (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
 --- !u!1 &252428454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1573,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &327294461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1752,7 +1817,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.71
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1841,7 +1906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!114 &365442934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3054,7 +3121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &577913936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3200,7 +3269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &602039278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3891,6 +3962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926f62046ef66b54cabfda784fc72148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
 --- !u!4 &742013424
 Transform:
   m_ObjectHideFlags: 0
@@ -3954,7 +4026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &742398676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4230,7 +4304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &754237735
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4376,7 +4452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &866161612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4867,7 +4945,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &931032091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6641,7 +6721,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1472473625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7078,7 +7160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1510775417
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7879,7 +7963,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
-  canHurtPlayer: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!61 &1712409755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8919,6 +9005,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1979081929341532234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -214.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100013934682826334, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8957,3 +9100,5 @@ SceneRoots:
   - {fileID: 362667188}
   - {fileID: 1376087691}
   - {fileID: 1204180693}
+  - {fileID: 1979081929341532234}
+  - {fileID: 244273862}

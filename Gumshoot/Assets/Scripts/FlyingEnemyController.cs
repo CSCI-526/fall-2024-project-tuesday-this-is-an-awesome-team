@@ -14,6 +14,7 @@ public class FlyingEnemyController : MonoBehaviour
     public Text countdownText;
 
     private PlayerController playerController;
+    private Rigidbody2D rb;
 
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class FlyingEnemyController : MonoBehaviour
     {
         countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
         playerController = GetComponent<PlayerController>();
+        rb = GetComponent<Rigidbody2D>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
         FlyingEnemyMovement.player = transform;
@@ -39,8 +41,12 @@ public class FlyingEnemyController : MonoBehaviour
                 playerController.Jump(Vector3.zero);
             }
 
-            Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0f);
-            transform.position += moveDirection * moveSpeed * Time.deltaTime;
+            Vector2 moveDirection = new Vector2(horizontalInput, verticalInput);
+            rb.velocity = moveSpeed * moveDirection;
+            if (playerController.PulledObject)
+            {
+                playerController.PulledObject.Move(moveSpeed * moveDirection);
+            }
         }
     }
 

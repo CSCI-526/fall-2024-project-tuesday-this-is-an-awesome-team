@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2518503189552226278}
   - component: {fileID: 4506406082065551184}
   - component: {fileID: 8821995103272733654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpingPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1.6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -183,7 +183,7 @@ MonoBehaviour:
   PulledObject: {fileID: 0}
   SurfaceContactInstance: {fileID: 0}
   PullContactInstance: {fileID: 0}
-  jumpForce: 250
+  jumpForce: 1000
   throwForce: 750
   maxDist: 10
   extractSpeed: 24
@@ -203,5 +203,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
-  cooldownDuration: 12
+  cooldownDuration: 20
   countdownText: {fileID: 0}

@@ -18,7 +18,8 @@ public class ShootingEnemyShoot : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        shootingControl = new ShootingControl(projectilePrefab, firePoint, fireRate, true);
+        shootingControl = gameObject.AddComponent<ShootingControl>();
+        shootingControl.init(projectilePrefab, firePoint, fireRate, true);
         visionColliderHandler = transform.Find("VisionCollider").GetComponent<VisionColliderHandler>();
     }
 
@@ -26,7 +27,6 @@ public class ShootingEnemyShoot : MonoBehaviour
     {
         if (GetComponent<Health>().health <= 0)
             return;
-        shootingControl.UpdateCooldown();
         if (visionColliderHandler != null && visionColliderHandler.playerIsVisible)
             TryShooting();
     }
@@ -37,7 +37,7 @@ public class ShootingEnemyShoot : MonoBehaviour
         {
             AdjustFirePoint();
             Vector2 shootDirection = (player.position - firePoint.position).normalized; 
-            shootingControl.Shoot(shootDirection); 
+            shootingControl.Shoot(shootDirection, gameObject); 
         }
     }
 

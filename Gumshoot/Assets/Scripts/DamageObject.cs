@@ -6,32 +6,24 @@ public class DamageObject : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
     [SerializeField] private bool canExplode = true;
-    public bool canHurtPlayer = false;
+    public bool destroysWalls = false;
+    public bool canHurtInstigator = false;
+    public GameObject instigator = null;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.gameObject == instigator && !canHurtInstigator)
         {
-            if (canHurtPlayer)
-            {
-                Health hpObj = collision.collider.GetComponent<Health>();
-                if (hpObj)
-                {
-                    hpObj.Damage(damage);
-                }
-
-                if (canExplode)
-                {
-                    Destroy(gameObject);
-                }
-            }
+            return;
         }
-        else if (collision.collider.CompareTag("Enemy"))
+
+        if (collision.collider.CompareTag("Player"))
         {
             Health hpObj = collision.collider.GetComponent<Health>();
             if (hpObj)
             {
-                hpObj.Damage(damage);
+                Debug.Log("Damaging: " + collision.gameObject.name);
+                hpObj.Damage(damage, gameObject);
             }
 
             if (canExplode)
@@ -39,13 +31,41 @@ public class DamageObject : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if (collision.collider.CompareTag("Enemy"))
+        {
+            Health hpObj = collision.collider.GetComponent<Health>();
+            if (hpObj)
+            {
+                hpObj.Damage(damage, gameObject);
+            }
 
+            if (canExplode)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (destroysWalls)
+        {
+            if (collision.collider.CompareTag("Destructible"))
+            {
+                Destroy(collision.gameObject);
+            }
+            if (!collision.collider.CompareTag("Gum"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
-    public IEnumerator Launch()
+    public IEnumerator Launch(GameObject instigator, float cooldown)
     {
-        canHurtPlayer = false;
-        yield return new WaitForSeconds(0.4f);
-        canHurtPlayer = true;
+        Debug.Log("Damage cooldown");
+        this.instigator = instigator;
+        canHurtInstigator = false;
+        yield return new WaitForSeconds(cooldown);
+        if (this.instigator == instigator)
+        {
+            canHurtInstigator = true;
+        }
     }
 }

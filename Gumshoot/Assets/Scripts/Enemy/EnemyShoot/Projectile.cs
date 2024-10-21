@@ -14,16 +14,4 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("projectile Collided with: " + collision.tag);
-        if (collision.CompareTag("VisionCollider"))   // ignore colliding with vision collider
-            return;
-
-        if (collision.GetComponent<ShootingAction>())
-            collision.GetComponent<ShootingAction>().Action();
-
-        Destroy(gameObject); 
-    }
 }
