@@ -151,8 +151,9 @@ public class GumMovement : MonoBehaviour
             }
             else if (state == GumState.PullingPlayer)
             {
-                //owner.transform.position = owner.SurfaceContactInstance.transform.position;
+                owner.rb.position = owner.SurfaceContactInstance.transform.position;
                 owner.rb.velocity = Vector2.zero;
+                owner.GetComponent<Collider2D>().enabled = true;
                 if (owner.PulledObject)
                 {
                     owner.PulledObject.Move(Vector2.zero);
@@ -241,6 +242,7 @@ public class GumMovement : MonoBehaviour
                 // Stop player movement
                 transform.parent = null;
                 owner.GetComponent<Rigidbody2D>().gravityScale = 0f;
+                owner.GetComponent<Collider2D>().enabled = false;
                 if (owner.PulledObject != null)
                 {
                     owner.PulledObject.rb.gravityScale = 0f;
