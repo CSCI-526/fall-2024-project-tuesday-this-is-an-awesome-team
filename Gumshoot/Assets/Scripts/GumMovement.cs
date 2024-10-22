@@ -151,7 +151,7 @@ public class GumMovement : MonoBehaviour
             }
             else if (state == GumState.PullingPlayer)
             {
-                owner.transform.position = owner.SurfaceContactInstance.transform.position;
+                //owner.transform.position = owner.SurfaceContactInstance.transform.position;
                 owner.rb.velocity = Vector2.zero;
                 if (owner.PulledObject)
                 {
