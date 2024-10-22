@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             float dist = (PulledObject.transform.position - transform.position).magnitude;
             if (dist > 1.8f)
             {
-                PulledObject.Move(retractSpeed * direction);
+                PulledObject.transform.position += (retractSpeed * direction * Time.deltaTime);
             }
         }
 
