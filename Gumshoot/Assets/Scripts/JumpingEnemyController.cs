@@ -20,7 +20,6 @@ public class JumpingEnemyController : MonoBehaviour
         playerController = GetComponent<PlayerController>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
-        JumpingEnemyMovement.player = transform;
         StartCoroutine(CooldownCoroutine());
     }
 
@@ -40,7 +39,6 @@ public class JumpingEnemyController : MonoBehaviour
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        JumpingEnemyMovement.player = newPlayer.transform;
         Destroy(gameObject);
     }
 }

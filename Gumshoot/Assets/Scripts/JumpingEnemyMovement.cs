@@ -15,7 +15,6 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
     [Header("References")]
     public VisionColliderHandler visionHandler;
 
-    public static Transform player;
     public GameObject controllerPrefab;
 
     public GameObject ControllerPrefab => controllerPrefab;
@@ -30,7 +29,6 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -55,9 +53,9 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
 
     void JumpTowardsPlayer()
     {
-        if (player == null) return;
+        if (PlayerController.Instance == null) return;
 
-        Vector2 directionToPlayer = (player.position - transform.position).normalized;
+        Vector2 directionToPlayer = (PlayerController.Instance.transform.position - transform.position).normalized;
         float horizontalDirection = Mathf.Sign(directionToPlayer.x);
         Vector2 jumpForceVector = new Vector2(horizontalDirection * horizontalForce, verticalForce);
         rb.AddForce(jumpForceVector, ForceMode2D.Impulse);

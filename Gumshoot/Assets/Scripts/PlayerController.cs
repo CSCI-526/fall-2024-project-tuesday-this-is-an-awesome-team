@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject gumPrefab;
     public GameObject contactPrefab;
+    public static PlayerController Instance;
 
     [HideInInspector] public bool gumExtended = false;
     [HideInInspector] public Pullable PulledObject = null;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         rb = GetComponent<Rigidbody2D>();
     }
 
