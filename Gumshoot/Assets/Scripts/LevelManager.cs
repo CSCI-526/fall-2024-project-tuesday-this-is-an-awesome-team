@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
 
-    [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
     [SerializeField] private string NextLevel = "";
 
@@ -42,8 +42,22 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private void UpdateDeathPerCheckpoint() {
-        deathPerCheckpoint[latestCheckpointID + 1] += 1;
+    private void UpdateDeathPerCheckpoint()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Level 0")
+        {
+            deathPerCheckpoint[0] += 1;
+        }
+        else if (sceneName == "Level 1")
+        {
+            deathPerCheckpoint[1] += 1;
+        }
+        else if (sceneName == "Master")
+        {
+            deathPerCheckpoint[latestCheckpointID + 3] += 1;
+        }
     }
 
 
