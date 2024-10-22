@@ -27,12 +27,16 @@ public class LevelManager : MonoBehaviour
     {
         if (NextLevel.Length > 0)
         {
+            Destroy(DataPersistanceManager.Instance.gameObject);
+            DataPersistanceManager.Instance = null;
             SceneManager.LoadScene(NextLevel);
         }
     }
 
     public void LoadMainMenu()
     {
+        Destroy(DataPersistanceManager.Instance.gameObject);
+        DataPersistanceManager.Instance = null;
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -76,24 +80,24 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.loseText.SetActive(true);
         UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(2f);
-        Respawn();
+        if (latestCheckpointID == -1)
+        {
+            Destroy(DataPersistanceManager.Instance.gameObject);
+            DataPersistanceManager.Instance = null;
+            Restart();
+        }
+        else
+        {
+            Respawn();
+        }
+        
 
 
     }
 
     public void Respawn()
     {
-        if (latestCheckpointID != -1)
-        {
-            GameObject newPlayer = Instantiate(playerPrefab, latestCheckpointPosition, Quaternion.identity);
-            GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-            UIManager.Instance.loseText.SetActive(false);
-            UIManager.Instance.countdownText.text = "";
-            Debug.Log("Player respawned at Checkpoint " + latestCheckpointID);
-        }
-        else
-        {
-            Restart();
-        }
+        DataPersistanceManager.Instance.hasNewPos = true;
+        Restart();
     }
 }

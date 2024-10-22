@@ -14,6 +14,7 @@ public class Checkpoint : MonoBehaviour
             Debug.Log("Reached checkpoint " + checkpointID);
             Debug.Log("Current position " + transform.position);
             GetComponent<SpriteRenderer>().color = Color.green;
+            DataPersistanceManager.Instance.Save(transform.position);
         }
     }
 

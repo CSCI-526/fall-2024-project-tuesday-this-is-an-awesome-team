@@ -48,7 +48,9 @@ public class DamageObject : MonoBehaviour
         {
             if (collision.collider.CompareTag("Destructible"))
             {
-                Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
+                collision.gameObject.GetComponent<SaveObject>().State = true;
+                Destroy(gameObject);
             }
             if (!collision.collider.CompareTag("Gum"))
             {

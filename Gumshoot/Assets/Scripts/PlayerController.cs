@@ -29,6 +29,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        if (DataPersistanceManager.Instance && DataPersistanceManager.Instance.hasNewPos)
+        {
+            transform.position = DataPersistanceManager.Instance.newPos;
+            DataPersistanceManager.Instance.hasNewPos = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
