@@ -24,8 +24,11 @@ public class UIManager : MonoBehaviour
     public void Reset()
     {
         Debug.Log("Reset pressed");
-        Destroy(DataPersistanceManager.Instance.gameObject);
-        DataPersistanceManager.Instance = null;
+        if (DataPersistanceManager.Instance)
+        {
+            Destroy(DataPersistanceManager.Instance.gameObject);
+            DataPersistanceManager.Instance = null;
+        }
         LevelManager.Instance.Restart();
     }
 

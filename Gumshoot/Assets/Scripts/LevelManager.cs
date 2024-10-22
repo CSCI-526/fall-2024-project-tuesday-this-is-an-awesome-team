@@ -30,16 +30,23 @@ public class LevelManager : MonoBehaviour
     {
         if (NextLevel.Length > 0)
         {
-            Destroy(DataPersistanceManager.Instance.gameObject);
-            DataPersistanceManager.Instance = null;
+            if (DataPersistanceManager.Instance)
+            {
+                Destroy(DataPersistanceManager.Instance.gameObject);
+                DataPersistanceManager.Instance = null;
+            }
             SceneManager.LoadScene(NextLevel);
         }
     }
 
     public void LoadMainMenu()
     {
-        Destroy(DataPersistanceManager.Instance.gameObject);
-        DataPersistanceManager.Instance = null;
+        if (DataPersistanceManager.Instance)
+        {
+            Destroy(DataPersistanceManager.Instance.gameObject);
+            DataPersistanceManager.Instance = null;
+        }
+        
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -106,8 +113,12 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         if (latestCheckpointID == -1)
         {
-            Destroy(DataPersistanceManager.Instance.gameObject);
-            DataPersistanceManager.Instance = null;
+            if (DataPersistanceManager.Instance)
+            {
+                Destroy(DataPersistanceManager.Instance.gameObject);
+                DataPersistanceManager.Instance = null;
+            }
+            
             Restart();
         }
         else
