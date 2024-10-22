@@ -28,9 +28,9 @@ public class SendToGoogle : MonoBehaviour
     public void Send()
     {
         _deathsPerCheckpoint = string.Join(", ", LevelManager.deathPerCheckpoint);
-        _deathLocationsLevel0 = string.Join(", ", LevelManager.deathLocationListLevel0.ConvertAll(v => $"{v.x}, {v.y}, {v.z}"));
-        _deathLocationsLevel1 = string.Join(", ", LevelManager.deathLocationListLevel1.ConvertAll(v => $"{v.x}, {v.y}, {v.z}"));
-        _deathLocationsLevelMain = string.Join(", ", LevelManager.deathLocationListLevelMain.ConvertAll(v => $"{v.x}, {v.y}, {v.z}"));
+        _deathLocationsLevel0 = string.Join(", ", LevelManager.deathLocationListLevel0.ConvertAll(v => $"{v.x}, {v.y}"));
+        _deathLocationsLevel1 = string.Join(", ", LevelManager.deathLocationListLevel1.ConvertAll(v => $"{v.x}, {v.y}"));
+        _deathLocationsLevelMain = string.Join(", ", LevelManager.deathLocationListLevelMain.ConvertAll(v => $"{v.x}, {v.y}"));
         _checkpointOrder = "01234";
         _timesUseEnemyAbility = 2;
 
