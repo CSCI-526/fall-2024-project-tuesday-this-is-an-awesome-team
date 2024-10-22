@@ -151,13 +151,17 @@ public class GumMovement : MonoBehaviour
             }
             else if (state == GumState.PullingPlayer)
             {
-                owner.rb.position = owner.SurfaceContactInstance.transform.position;
+                //owner.rb.position = owner.SurfaceContactInstance.transform.position;
                 owner.rb.velocity = Vector2.zero;
                 owner.GetComponent<Collider2D>().enabled = true;
                 if (owner.PulledObject)
                 {
                     owner.PulledObject.Move(Vector2.zero);
                     owner.PulledObject.Rotate(0f);
+                }
+                if (owner.SurfaceContactInstance.transform.parent.GetComponent<DamageObject>() != null)
+                {
+                    owner.GetComponent<Health>().Damage(1, owner.SurfaceContactInstance.transform.parent.gameObject);
                 }
             }
             owner.gumExtended = false;
