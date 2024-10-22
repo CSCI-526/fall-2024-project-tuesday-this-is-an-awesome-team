@@ -20,7 +20,7 @@ public class FlyingEnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+        countdownText = UIManager.Instance.countdownText;
         playerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
 

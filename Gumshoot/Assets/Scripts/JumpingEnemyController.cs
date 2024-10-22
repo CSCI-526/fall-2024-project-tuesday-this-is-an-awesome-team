@@ -16,7 +16,7 @@ public class JumpingEnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+        countdownText = UIManager.Instance.countdownText;
         playerController = GetComponent<PlayerController>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;

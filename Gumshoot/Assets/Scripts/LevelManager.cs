@@ -16,14 +16,29 @@ public class LevelManager : MonoBehaviour
 
     [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
+    [SerializeField] private string NextLevel = "";
+
     private void Awake()
     {
         Instance = this;
     }
 
+    public void LoadNextLevel()
+    {
+        if (NextLevel.Length > 0)
+        {
+            SceneManager.LoadScene(NextLevel);
+        }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
@@ -47,28 +62,24 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.loseText.SetActive(true);
         UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(2f);
-        if (latestCheckpointID != -1)
-        {
-            Respawn();
-        }
-        else
-        {
-            SceneManager.LoadScene(0);
-        }
+        Respawn();
 
 
     }
 
-    private void Respawn()
+    public void Respawn()
     {
-        GameObject newPlayer = Instantiate(playerPrefab, latestCheckpointPosition, Quaternion.identity);
-        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        UIManager.Instance.loseText.SetActive(false);
-        Text cooldownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
-        if (cooldownText != null)
+        if (latestCheckpointID != -1)
         {
-            cooldownText.gameObject.SetActive(false);
+            GameObject newPlayer = Instantiate(playerPrefab, latestCheckpointPosition, Quaternion.identity);
+            GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
+            UIManager.Instance.loseText.SetActive(false);
+            UIManager.Instance.countdownText.text = "";
+            Debug.Log("Player respawned at Checkpoint " + latestCheckpointID);
         }
-        Debug.Log("Player respawned at Checkpoint " + latestCheckpointID);
+        else
+        {
+            Restart();
+        }
     }
 }
