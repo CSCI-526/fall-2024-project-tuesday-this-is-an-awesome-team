@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 98017397}
   - component: {fileID: 98017399}
   - component: {fileID: 98017398}
+  - component: {fileID: 98017400}
   m_Layer: 7
   m_Name: Square (20)
   m_TagString: Surface
@@ -535,6 +536,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &98017400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98017396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &99722157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,6 +2833,7 @@ GameObject:
   - component: {fileID: 263642111}
   - component: {fileID: 263642110}
   - component: {fileID: 263642109}
+  - component: {fileID: 263642114}
   m_Layer: 0
   m_Name: button (3)
   m_TagString: Surface
@@ -2988,6 +3007,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1039792518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &263642114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263642108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 5
+  State: 0
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 263642109}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &284502672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8013,6 +8061,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &882340782
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1039792518}
+    m_Modifications:
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -214.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451966236787770428, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      propertyPath: m_Name
+      value: TNT (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+--- !u!4 &882340783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
+  m_PrefabInstance: {fileID: 882340782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &899593181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8807,6 +8920,7 @@ GameObject:
   - component: {fileID: 1006379596}
   - component: {fileID: 1006379595}
   - component: {fileID: 1006379594}
+  - component: {fileID: 1006379599}
   m_Layer: 0
   m_Name: button (2)
   m_TagString: Surface
@@ -8980,6 +9094,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1039792518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006379599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006379593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 4
+  State: 0
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1006379594}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1018581791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6686161508216162970, guid: c0c7d5c113a355945945b0aba06973bd, type: 3}
@@ -9172,6 +9315,7 @@ Transform:
   - {fileID: 1045144856}
   - {fileID: 1265482271}
   - {fileID: 1589042078}
+  - {fileID: 882340783}
   - {fileID: 508454346}
   - {fileID: 779304349}
   - {fileID: 578656007}
@@ -9384,6 +9528,7 @@ GameObject:
   - component: {fileID: 1065938767}
   - component: {fileID: 1065938766}
   - component: {fileID: 1065938769}
+  - component: {fileID: 1065938770}
   m_Layer: 7
   m_Name: rotateDoor
   m_TagString: Surface
@@ -9516,6 +9661,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
+--- !u!114 &1065938770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065938765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1075866644
 GameObject:
   m_ObjectHideFlags: 0
@@ -9527,6 +9689,7 @@ GameObject:
   - component: {fileID: 1075866645}
   - component: {fileID: 1075866648}
   - component: {fileID: 1075866647}
+  - component: {fileID: 1075866649}
   m_Layer: 7
   m_Name: BreakableWall (1)
   m_TagString: Destructible
@@ -9646,6 +9809,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1075866649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075866644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1
+  State: 0
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1075866644}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1081181258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 982175648990551677, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
@@ -10040,6 +10232,7 @@ GameObject:
   - component: {fileID: 1122233904}
   - component: {fileID: 1122233906}
   - component: {fileID: 1122233905}
+  - component: {fileID: 1122233907}
   m_Layer: 7
   m_Name: Square (7)
   m_TagString: Surface
@@ -10159,6 +10352,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1122233907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122233903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1131108474
 GameObject:
   m_ObjectHideFlags: 0
@@ -13247,6 +13457,7 @@ GameObject:
   - component: {fileID: 1500840786}
   - component: {fileID: 1500840785}
   - component: {fileID: 1500840789}
+  - component: {fileID: 1500840790}
   m_Layer: 0
   m_Name: button
   m_TagString: Surface
@@ -13423,6 +13634,35 @@ MonoBehaviour:
       - m_Target: {fileID: 1358539266}
         m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
         m_MethodName: StartFan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1500840790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500840783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 3
+  State: 0
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1500840789}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13634,6 +13874,7 @@ GameObject:
   - component: {fileID: 1571981730}
   - component: {fileID: 1571981732}
   - component: {fileID: 1571981731}
+  - component: {fileID: 1571981733}
   m_Layer: 7
   m_Name: BreakableWall
   m_TagString: Destructible
@@ -13753,6 +13994,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1571981733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571981729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  State: 0
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1571981729}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1578026968
 GameObject:
   m_ObjectHideFlags: 0
@@ -14112,6 +14382,7 @@ GameObject:
   - component: {fileID: 1636323431}
   - component: {fileID: 1636323430}
   - component: {fileID: 1636323433}
+  - component: {fileID: 1636323434}
   m_Layer: 7
   m_Name: rotateDoor(2)
   m_TagString: Surface
@@ -14244,6 +14515,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
+--- !u!114 &1636323434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636323429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1640638897
 GameObject:
   m_ObjectHideFlags: 0
@@ -14958,6 +15246,7 @@ GameObject:
   - component: {fileID: 1717076688}
   - component: {fileID: 1717076690}
   - component: {fileID: 1717076689}
+  - component: {fileID: 1717076691}
   m_Layer: 7
   m_Name: Square (26)
   m_TagString: Surface
@@ -15077,6 +15366,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1717076691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717076687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1001 &1725639468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15708,6 +16014,7 @@ GameObject:
   - component: {fileID: 1792069705}
   - component: {fileID: 1792069707}
   - component: {fileID: 1792069706}
+  - component: {fileID: 1792069708}
   m_Layer: 7
   m_Name: BreakableWall (2)
   m_TagString: Destructible
@@ -15827,6 +16134,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1792069708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792069704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 2
+  State: 0
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1792069704}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1819330658
 GameObject:
   m_ObjectHideFlags: 0
@@ -17999,6 +18335,7 @@ GameObject:
   - component: {fileID: 2064871405}
   - component: {fileID: 2064871407}
   - component: {fileID: 2064871406}
+  - component: {fileID: 2064871408}
   m_Layer: 7
   m_Name: Square (6)
   m_TagString: Surface
@@ -18118,6 +18455,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2064871408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064871404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &2091134518
 GameObject:
   m_ObjectHideFlags: 0
@@ -18763,6 +19117,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b80ea2a363b591146bc6c077773932f0, type: 3}
+--- !u!1001 &7684143566036065096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40.061977
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.809212
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.27170232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397570907335102, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434773421938158107, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
+      propertyPath: m_Name
+      value: DataPersistence
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51c15e6caaf7f84489e13235de748150, type: 3}
 --- !u!1001 &8081946887160460650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18887,3 +19298,4 @@ SceneRoots:
   - {fileID: 984381238}
   - {fileID: 1039792518}
   - {fileID: 1640759004}
+  - {fileID: 7684143566036065096}
