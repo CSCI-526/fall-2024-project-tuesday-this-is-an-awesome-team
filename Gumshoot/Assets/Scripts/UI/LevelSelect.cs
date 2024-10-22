@@ -3,15 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
-    public void LoadLevel1()
+    public void LoadLevel(string levelName)
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(levelName);
     }
-
-    public void LoadLevel2()
-    {
-        SceneManager.LoadScene("Master");
-    }
-
-
 }

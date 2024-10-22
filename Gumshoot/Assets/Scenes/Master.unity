@@ -2725,17 +2725,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &236333415 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1094629303677478041, guid: 71a127f6125daf5468f3c58aff14af19, type: 3}
-  m_PrefabInstance: {fileID: 1837034369649410431}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926f62046ef66b54cabfda784fc72148, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &263642108
 GameObject:
   m_ObjectHideFlags: 0
@@ -18168,20 +18157,12 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1449479555}
-    - target: {fileID: 2759174491462435800, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 236333415}
     - target: {fileID: 4073809005234358410, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4855222754743468157, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8189381000698877659, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8748427558382435425, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}

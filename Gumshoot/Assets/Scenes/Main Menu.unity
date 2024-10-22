@@ -1074,14 +1074,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 905896554}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: LoadLevel2
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &560582597
@@ -1674,7 +1674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &986485002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1093481958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2356,7 +2356,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541918552}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905896554}
+        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Master
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541918552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,14 +2492,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 905896554}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: LoadLevel1
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1572041713

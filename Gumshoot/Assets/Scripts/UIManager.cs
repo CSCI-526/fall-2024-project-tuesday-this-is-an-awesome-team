@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
 
     public void Reset()
     {
+        Debug.Log("Reset pressed");
         LevelManager.Instance.Restart();
     }
 
