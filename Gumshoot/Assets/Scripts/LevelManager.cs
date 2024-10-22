@@ -15,6 +15,9 @@ public class LevelManager : MonoBehaviour
     private Vector3 latestCheckpointPosition;
 
     [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    [HideInInspector] public static List<Vector3> deathLocationListLevel0 = new List<Vector3>();
+    [HideInInspector] public static List<Vector3> deathLocationListLevel1 = new List<Vector3>();
+    [HideInInspector] public static List<Vector3> deathLocationListLevelMain = new List<Vector3>();
 
     [SerializeField] private string NextLevel = "";
 
@@ -49,6 +52,7 @@ public class LevelManager : MonoBehaviour
     private void UpdateDeathPerCheckpoint()
     {
         string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(sceneName);
 
         if (sceneName == "Level 0")
         {
@@ -64,6 +68,26 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void AddDeathLocation(Vector3 deathPosition)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Level 0")
+        {
+            deathLocationListLevel0.Add(deathPosition);
+            Debug.Log("Death location added to Level 0: " + deathPosition);
+        }
+        else if (sceneName == "Level 1")
+        {
+            deathLocationListLevel1.Add(deathPosition);
+            Debug.Log("Death location added to Level 1: " + deathPosition);
+        }
+        else if (sceneName == "Master")
+        {
+            deathLocationListLevelMain.Add(deathPosition);
+            Debug.Log("Death location added to Master: " + deathPosition);
+        }
+    }
 
     public void UpdateLatestCheckpoint(int checkpointID, Vector3 position)
     {
