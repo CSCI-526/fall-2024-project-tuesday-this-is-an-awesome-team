@@ -22,6 +22,10 @@ public class Button : MonoBehaviour
         isPressed = true;
         GetComponent<SpriteRenderer>().color = Color.green;
         OnPress?.Invoke();
-        GetComponent<SaveObject>().State = true;
+        SaveObject save = GetComponent<SaveObject>();
+        if (save)
+        {
+            save.State = true;
+        }
     }
 }

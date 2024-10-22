@@ -346,7 +346,6 @@ Transform:
   m_LocalScale: {x: 9.966632, y: 0.5186723, z: 0.10373445}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 947222542}
   - {fileID: 272574028}
   - {fileID: 2079466326}
   - {fileID: 647069950}
@@ -724,7 +723,7 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947222541}
+      - m_Target: {fileID: 947222545}
         m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
         m_MethodName: StartFan
         m_Mode: 1
@@ -2012,11 +2011,11 @@ Transform:
   m_GameObject: {fileID: 947222541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.337, y: 27.5, z: 0}
-  m_LocalScale: {x: 0.052040875, y: 15.529802, z: 1}
+  m_LocalPosition: {x: 8.648755, y: 20.863487, z: 0}
+  m_LocalScale: {x: 0.5186722, y: 8.054878, z: 0.10373445}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 139746318}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &947222543
 SpriteRenderer:
@@ -4694,6 +4693,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1159484547}
+  - {fileID: 947222542}
   - {fileID: 139746318}
   - {fileID: 557378424}
   - {fileID: 1028229121}
