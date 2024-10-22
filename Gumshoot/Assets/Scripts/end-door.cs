@@ -8,8 +8,13 @@ public class EndDoor : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            UIManager.Instance.winText.SetActive(true);
-            Destroy(collision.gameObject);
+            Win(collision.gameObject);
         }
+    }
+
+    public void Win(GameObject player)
+    {
+        UIManager.Instance.winText.SetActive(true);
+        Destroy(player);
     }
 }
