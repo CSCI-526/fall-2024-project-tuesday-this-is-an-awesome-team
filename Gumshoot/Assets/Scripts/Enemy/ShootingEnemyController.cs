@@ -26,7 +26,6 @@ public class ShootingEnemyController : MonoBehaviour
         countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
-        FlyingEnemyMovement.player = transform;
         StartCoroutine(CooldownCoroutine());
     }
 
@@ -46,7 +45,6 @@ public class ShootingEnemyController : MonoBehaviour
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        FlyingEnemyMovement.player = newPlayer.transform;
         Destroy(gameObject);
     }
 

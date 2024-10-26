@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject gumPrefab;
     public GameObject contactPrefab;
+    public static PlayerController Instance;
 
     [HideInInspector] public bool gumExtended = false;
     [HideInInspector] public Pullable PulledObject = null;
@@ -24,7 +25,17 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        if (DataPersistanceManager.Instance && DataPersistanceManager.Instance.hasNewPos)
+        {
+            transform.position = DataPersistanceManager.Instance.newPos;
+            DataPersistanceManager.Instance.hasNewPos = false;
+        }
     }
 
     // Update is called once per frame
@@ -47,7 +58,7 @@ public class PlayerController : MonoBehaviour
             float dist = (PulledObject.transform.position - transform.position).magnitude;
             if (dist > 1.8f)
             {
-                PulledObject.Move(retractSpeed * direction);
+                PulledObject.transform.position += (retractSpeed * direction * Time.deltaTime);
             }
         }
 

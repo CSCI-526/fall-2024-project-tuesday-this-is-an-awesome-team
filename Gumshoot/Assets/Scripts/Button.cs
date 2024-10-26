@@ -13,9 +13,19 @@ public class Button : MonoBehaviour
     {
         if (!isPressed && other.CompareTag("Block"))
         {
-            isPressed = true;
-            GetComponent<SpriteRenderer>().color = Color.green;
-            OnPress?.Invoke();
+            Press();
+        }
+    }
+
+    public void Press()
+    {
+        isPressed = true;
+        GetComponent<SpriteRenderer>().color = Color.green;
+        OnPress?.Invoke();
+        SaveObject save = GetComponent<SaveObject>();
+        if (save)
+        {
+            save.State = true;
         }
     }
 }

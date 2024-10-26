@@ -21,7 +21,6 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
     [Header("References")]
     public VisionColliderHandler visionHandler;
 
-    public static Transform player;
     public GameObject controllerPrefab;
 
     public GameObject ControllerPrefab => controllerPrefab;
@@ -42,7 +41,6 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
     void Start()
     {
         patrolStartPos = transform.position;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -110,11 +108,11 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
 
     void ChasePlayer()
     {
-        if (player == null)
+        if (PlayerController.Instance == null)
             return;
 
-        Vector2 direction = (player.position - transform.position).normalized;
-        Vector2 targetPosition = player.position;
+        Vector2 direction = (PlayerController.Instance.transform.position - transform.position).normalized;
+        Vector2 targetPosition = PlayerController.Instance.transform.position;
 
         // Smoothly chase using SmoothDamp, limiting to maximum chase speed
         transform.position = Vector2.SmoothDamp(transform.position, targetPosition, ref currentVelocity, 0.1f, chaseSpeed);

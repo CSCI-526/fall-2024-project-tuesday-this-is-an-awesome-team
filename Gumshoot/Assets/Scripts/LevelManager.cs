@@ -14,23 +14,87 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
 
-    [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    [HideInInspector] public static List<Vector2> deathLocationListLevel0 = new List<Vector2>();
+    [HideInInspector] public static List<Vector2> deathLocationListLevel1 = new List<Vector2>();
+    [HideInInspector] public static List<Vector2> deathLocationListLevelMain = new List<Vector2>();
+
+    [SerializeField] private string NextLevel = "";
 
     private void Awake()
     {
         Instance = this;
     }
 
+    public void LoadNextLevel()
+    {
+        if (NextLevel.Length > 0)
+        {
+            if (DataPersistanceManager.Instance)
+            {
+                Destroy(DataPersistanceManager.Instance.gameObject);
+                DataPersistanceManager.Instance = null;
+            }
+            SceneManager.LoadScene(NextLevel);
+        }
+    }
+
+    public void LoadMainMenu()
+    {
+        if (DataPersistanceManager.Instance)
+        {
+            Destroy(DataPersistanceManager.Instance.gameObject);
+            DataPersistanceManager.Instance = null;
+        }
+        
+        SceneManager.LoadScene("Main Menu");
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
-    private void UpdateDeathPerCheckpoint() {
-        deathPerCheckpoint[latestCheckpointID + 1] += 1;
+    private void UpdateDeathPerCheckpoint()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(sceneName);
+
+        if (sceneName == "Level 0")
+        {
+            deathPerCheckpoint[0] += 1;
+        }
+        else if (sceneName == "Level 1")
+        {
+            deathPerCheckpoint[1] += 1;
+        }
+        else if (sceneName == "Master")
+        {
+            deathPerCheckpoint[latestCheckpointID + 3] += 1;
+        }
     }
 
+    public void AddDeathLocation(Vector2 deathPosition)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Level 0")
+        {
+            deathLocationListLevel0.Add(deathPosition);
+            Debug.Log("Death location added to Level 0: " + deathPosition);
+        }
+        else if (sceneName == "Level 1")
+        {
+            deathLocationListLevel1.Add(deathPosition);
+            Debug.Log("Death location added to Level 1: " + deathPosition);
+        }
+        else if (sceneName == "Master")
+        {
+            deathLocationListLevelMain.Add(deathPosition);
+            Debug.Log("Death location added to Master: " + deathPosition);
+        }
+    }
 
     public void UpdateLatestCheckpoint(int checkpointID, Vector3 position)
     {
@@ -47,28 +111,28 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.loseText.SetActive(true);
         UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(2f);
-        if (latestCheckpointID != -1)
+        if (latestCheckpointID == -1)
         {
-            Respawn();
+            if (DataPersistanceManager.Instance)
+            {
+                Destroy(DataPersistanceManager.Instance.gameObject);
+                DataPersistanceManager.Instance = null;
+            }
+            
+            Restart();
         }
         else
         {
-            SceneManager.LoadScene(0);
+            Respawn();
         }
+        
 
 
     }
 
-    private void Respawn()
+    public void Respawn()
     {
-        GameObject newPlayer = Instantiate(playerPrefab, latestCheckpointPosition, Quaternion.identity);
-        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        UIManager.Instance.loseText.SetActive(false);
-        Text cooldownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
-        if (cooldownText != null)
-        {
-            cooldownText.gameObject.SetActive(false);
-        }
-        Debug.Log("Player respawned at Checkpoint " + latestCheckpointID);
+        DataPersistanceManager.Instance.hasNewPos = true;
+        Restart();
     }
 }

@@ -9,15 +9,11 @@ public class ShootingEnemyShoot : MonoBehaviour
     public Transform firePoint;
     public float fireRate = 1f;
     public float firePointDistance = 0.9f;
-
-    public static Transform player;
-
     private ShootingControl shootingControl;
     private VisionColliderHandler visionColliderHandler;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         shootingControl = gameObject.AddComponent<ShootingControl>();
         shootingControl.init(projectilePrefab, firePoint, fireRate, true);
         visionColliderHandler = transform.Find("VisionCollider").GetComponent<VisionColliderHandler>();
@@ -36,16 +32,16 @@ public class ShootingEnemyShoot : MonoBehaviour
         if (shootingControl.CanShoot())
         {
             AdjustFirePoint();
-            Vector2 shootDirection = (player.position - firePoint.position).normalized; 
+            Vector2 shootDirection = (PlayerController.Instance.transform.position - firePoint.position).normalized; 
             shootingControl.Shoot(shootDirection, gameObject); 
         }
     }
 
     void AdjustFirePoint()
     {
-        if (player != null && firePoint != null)
+        if (PlayerController.Instance != null && firePoint != null)
         {
-            Vector2 directionToPlayer = (player.position - transform.position).normalized;
+            Vector2 directionToPlayer = (PlayerController.Instance.transform.position - transform.position).normalized;
             firePoint.position = transform.position + (Vector3)(directionToPlayer * firePointDistance);
 
             float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;

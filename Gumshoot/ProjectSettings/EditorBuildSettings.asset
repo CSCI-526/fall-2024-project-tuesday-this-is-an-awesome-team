@@ -6,18 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Master.unity
-    guid: 9c46622f4d500d14d878708867199fb0
-  - enabled: 0
-    path: Assets/Scenes/Zhitong.unity
-    guid: c9383a9ad9e3a4440bcd01ca2dc52764
-  - enabled: 0
-    path: Assets/Scenes/YitianGuo.unity
-    guid: a194e00bedd8409448190dcd87b389a6
+    path: Assets/Scenes/Main Menu.unity
+    guid: c1fd626317310fa4b98babdce4faafc7
+  - enabled: 1
+    path: Assets/Scenes/Level 0.unity
+    guid: 78ab7e886092f8f4c9616166c987446e
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 07657e47dbd47304dabc066165d58fee
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: c1fd626317310fa4b98babdce4faafc7
+    path: Assets/Scenes/Master.unity
+    guid: 9c46622f4d500d14d878708867199fb0
   m_configObjects: {}

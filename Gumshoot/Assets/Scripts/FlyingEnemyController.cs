@@ -20,12 +20,11 @@ public class FlyingEnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+        countdownText = UIManager.Instance.countdownText;
         playerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
-        FlyingEnemyMovement.player = transform;
         StartCoroutine(CooldownCoroutine());
     }
 
@@ -66,7 +65,6 @@ public class FlyingEnemyController : MonoBehaviour
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        FlyingEnemyMovement.player = newPlayer.transform;
         Destroy(gameObject);
     }
 }
