@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 29309534}
   m_Layer: 0
   m_Name: Square (6)
-  m_TagString: Surface
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2397,7 +2397,7 @@ GameObject:
   - component: {fileID: 223162150}
   m_Layer: 0
   m_Name: inneroutline (1)
-  m_TagString: Surface
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11107,7 +11107,7 @@ GameObject:
   - component: {fileID: 987088046}
   m_Layer: 0
   m_Name: inneroutline (2)
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12740,7 +12740,7 @@ GameObject:
   - component: {fileID: 1125640068}
   m_Layer: 0
   m_Name: Square (7)
-  m_TagString: Surface
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14412,7 +14412,7 @@ GameObject:
   - component: {fileID: 1224865811}
   m_Layer: 0
   m_Name: level3-outterbox
-  m_TagString: Surface
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18439,7 +18439,7 @@ GameObject:
   - component: {fileID: 1594273604}
   m_Layer: 0
   m_Name: inneroutline (3)
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
