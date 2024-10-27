@@ -16,14 +16,11 @@ public class ShootingEnemyController : MonoBehaviour
     public GameObject playerPrefab;
     private bool isCooldown = false;
     [SerializeField] private float cooldownDuration = 12f;
-    public Text countdownText;
 
     private void Start()
     {
         shootingControl = gameObject.AddComponent<ShootingControl>();
         shootingControl.init(projectilePrefab, firePoint, fireRate, false);
-
-        countdownText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
         StartCoroutine(CooldownCoroutine());
@@ -35,12 +32,10 @@ public class ShootingEnemyController : MonoBehaviour
 
         while (remainingTime > 0)
         {
-            countdownText.text = remainingTime.ToString("F1") + "s";
             yield return new WaitForSeconds(1f);
             remainingTime -= 1f;
         }
 
-        countdownText.text = "";
 
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
