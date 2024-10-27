@@ -11,13 +11,44 @@ public class UIManager : MonoBehaviour
     public GameObject loseText;
     public Text countdownText;
 
+    public GameObject pauseMenu;
+
+    [HideInInspector]
+    public bool isPaused = false;
+
     private void Awake()
     {
         Instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+                PauseGame();
+            else
+                ResumeGame();
+        }
+    }
+
+    public void PauseGame()
+    {
+        isPaused = true;
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
     public void RestartFromLastCheckpoint()
     {
+        Time.timeScale = 1f;
         LevelManager.Instance.Respawn();
     }
 
@@ -29,11 +60,13 @@ public class UIManager : MonoBehaviour
             Destroy(DataPersistanceManager.Instance.gameObject);
             DataPersistanceManager.Instance = null;
         }
+        Time.timeScale = 1f;
         LevelManager.Instance.Restart();
     }
 
     public void ReturnToTitle()
     {
+        Time.timeScale = 1f;
         LevelManager.Instance.LoadMainMenu();
     }
 
