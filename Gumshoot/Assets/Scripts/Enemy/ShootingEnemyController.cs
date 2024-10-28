@@ -10,10 +10,6 @@ public class ShootingEnemyController : MonoBehaviour
     public Transform muzzle;
     public float fireRate = 50f; 
     private ShootingControl shootingControl;
-
-    public float moveSpeed = 5f;
-
-    public GameObject playerPrefab;
     private bool isCooldown = false;
     [SerializeField] private float cooldownDuration = 12f;
 
@@ -35,19 +31,16 @@ public class ShootingEnemyController : MonoBehaviour
             yield return new WaitForSeconds(1f);
             remainingTime -= 1f;
         }
-
-
         isCooldown = true;
-        GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
-        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        Destroy(gameObject);
     }
 
     private void Update()
     {
-        RotateTowardsMouse();
-        if (Input.GetKeyDown(KeyCode.Space) && shootingControl.CanShoot())
-            HandleShooting();
+        if (!isCooldown) {
+            RotateTowardsMouse();
+            if (Input.GetKeyDown(KeyCode.Space) && shootingControl.CanShoot())
+                HandleShooting();
+        }
     }
 
     private void HandleShooting()
