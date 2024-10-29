@@ -119,7 +119,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator Die()
     {
         UIManager.Instance.loseText.SetActive(true);
-        UpdateDeathPerCheckpoint();
+        //UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(1f);
         Respawn();
     }
@@ -127,7 +127,7 @@ public class LevelManager : MonoBehaviour
     public void Respawn()
     {
         //UpdateDeathPerCheckpoint();
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
         if (latestCheckpointID == -1)
         {
             if (DataPersistanceManager.Instance)
