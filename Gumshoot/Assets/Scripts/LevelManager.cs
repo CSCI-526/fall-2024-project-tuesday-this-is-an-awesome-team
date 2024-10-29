@@ -14,9 +14,10 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
 
-    [HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    //[HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     [HideInInspector] public static List<Vector2> deathLocationListLevel0 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel1 = new List<Vector2>();
+    [HideInInspector] public static List<Vector2> deathLocationListLevel2 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevelMain = new List<Vector2>();
 
     [SerializeField] private string NextLevel = "";
@@ -56,7 +57,7 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private void UpdateDeathPerCheckpoint()
+    /*private void UpdateDeathPerCheckpoint()
     {
         string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log(sceneName);
@@ -69,11 +70,15 @@ public class LevelManager : MonoBehaviour
         {
             deathPerCheckpoint[1] += 1;
         }
+        else if (sceneName == "Level 2")
+        {
+            deathPerCheckpoint[2] += 1;
+        }
         else if (sceneName == "Master")
         {
-            deathPerCheckpoint[latestCheckpointID + 3] += 1;
+            deathPerCheckpoint[latestCheckpointID + 4] += 1;
         }
-    }
+    }*/
 
     public void AddDeathLocation(Vector2 deathPosition)
     {
@@ -88,6 +93,11 @@ public class LevelManager : MonoBehaviour
         {
             deathLocationListLevel1.Add(deathPosition);
             Debug.Log("Death location added to Level 1: " + deathPosition);
+        }
+        else if (sceneName == "Level 2")
+        {
+            deathLocationListLevel2.Add(deathPosition);
+            Debug.Log("Death location added to Level 2: " + deathPosition);
         }
         else if (sceneName == "Master")
         {
@@ -109,7 +119,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator Die()
     {
         UIManager.Instance.loseText.SetActive(true);
-        UpdateDeathPerCheckpoint();
+        //UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(2f);
         if (latestCheckpointID == -1)
         {
