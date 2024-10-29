@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public static List<Vector2> deathLocationListLevel0 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel1 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel2 = new List<Vector2>();
+    [HideInInspector] public static List<Vector2> deathLocationListLevel3 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevelMain = new List<Vector2>();
 
     [SerializeField] private string NextLevel = "";
@@ -98,6 +99,11 @@ public class LevelManager : MonoBehaviour
         {
             deathLocationListLevel2.Add(deathPosition);
             Debug.Log("Death location added to Level 2: " + deathPosition);
+        }
+        else if (sceneName == "Level 3")
+        {
+            deathLocationListLevel3.Add(deathPosition);
+            Debug.Log("Death location added to Level 3: " + deathPosition);
         }
         else if (sceneName == "Master")
         {
