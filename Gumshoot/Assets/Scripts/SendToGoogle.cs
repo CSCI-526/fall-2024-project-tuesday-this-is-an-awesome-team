@@ -15,6 +15,7 @@ public class SendToGoogle : MonoBehaviour
     private string _deathLocationsLevelMain;
     private string _checkpointOrder;
     private int _timesUseEnemyAbility;
+    public bool enable = false;
 
     private void Awake()
     {
@@ -24,7 +25,8 @@ public class SendToGoogle : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Send();
+        if(enable)
+            Send();
     }
 
     public void Send()
