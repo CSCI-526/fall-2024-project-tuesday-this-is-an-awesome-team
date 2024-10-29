@@ -142,6 +142,7 @@ public class GumMovement : MonoBehaviour
                 //GameObject newFlyingPlayer = Instantiate(owner.PulledObject.GetComponent<FlyingEnemyMovement>().controllerPrefab, owner.PulledObject.transform.position, Quaternion.identity);
                 GameObject newPlayer = Instantiate(enemyMovement.ControllerPrefab, owner.PulledObject.transform.position, Quaternion.identity);
                 newPlayer.transform.localScale = (owner.PulledObject.transform.lossyScale).Abs();
+                newPlayer.GetComponent<EnemyController>().Init(enemyMovement.ControlTime);
 
                 Destroy(owner.PulledObject);
                 Destroy(owner.gameObject);

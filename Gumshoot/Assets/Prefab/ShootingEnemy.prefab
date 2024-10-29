@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   canExplode: 0
+  destroysWalls: 0
   canHurtInstigator: 0
   instigator: {fileID: 0}
 --- !u!114 &7245306060468806666
@@ -239,6 +240,7 @@ MonoBehaviour:
     m_Bits: 1
   visionHandler: {fileID: 311398718605136653}
   controllerPrefab: {fileID: 7096354043435132444, guid: a6af7e0add3358c4584c1916f9be5460, type: 3}
+  controlTime: 15
 --- !u!114 &2512646910886731678
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,9 +15,11 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
     [Header("References")]
     public VisionColliderHandler visionHandler;
 
-    public GameObject controllerPrefab;
+    [SerializeField] private GameObject controllerPrefab;
+    [SerializeField] private float controlTime;
 
     public GameObject ControllerPrefab => controllerPrefab;
+    public float ControlTime => controlTime;
 
     private Health health;
     private SpriteRenderer sprite;

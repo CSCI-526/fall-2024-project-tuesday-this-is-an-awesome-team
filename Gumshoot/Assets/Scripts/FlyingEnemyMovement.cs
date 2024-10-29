@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IEnemy
 {
     GameObject ControllerPrefab { get; }
+    float ControlTime { get; }
 }
 
 public class FlyingEnemyMovement : MonoBehaviour, IEnemy
@@ -21,9 +22,11 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
     [Header("References")]
     public VisionColliderHandler visionHandler;
 
-    public GameObject controllerPrefab;
+    [SerializeField] private GameObject controllerPrefab;
+    [SerializeField] private float controlTime;
 
     public GameObject ControllerPrefab => controllerPrefab;
+    public float ControlTime => controlTime;
 
     private Vector2 patrolStartPos;
     private bool isFacingRight = true;

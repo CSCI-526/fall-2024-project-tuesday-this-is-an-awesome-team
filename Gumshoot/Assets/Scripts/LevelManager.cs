@@ -110,7 +110,12 @@ public class LevelManager : MonoBehaviour
     {
         UIManager.Instance.loseText.SetActive(true);
         UpdateDeathPerCheckpoint();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        Respawn();
+    }
+
+    public void Respawn()
+    {
         if (latestCheckpointID == -1)
         {
             if (DataPersistanceManager.Instance)
@@ -118,21 +123,13 @@ public class LevelManager : MonoBehaviour
                 Destroy(DataPersistanceManager.Instance.gameObject);
                 DataPersistanceManager.Instance = null;
             }
-            
+
             Restart();
         }
         else
         {
-            Respawn();
+            DataPersistanceManager.Instance.hasNewPos = true;
+            Restart();
         }
-        
-
-
-    }
-
-    public void Respawn()
-    {
-        DataPersistanceManager.Instance.hasNewPos = true;
-        Restart();
     }
 }

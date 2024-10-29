@@ -4,13 +4,12 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FlyingEnemyController : MonoBehaviour
+public class FlyingEnemyController : EnemyController
 {
     public float moveSpeed = 5f;
 
     public GameObject playerPrefab;
     private bool isCooldown = false;
-    [SerializeField] private float cooldownDuration = 12f;
     public Text countdownText;
 
     private PlayerController playerController;

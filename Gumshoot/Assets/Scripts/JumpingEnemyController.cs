@@ -4,11 +4,10 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JumpingEnemyController : MonoBehaviour
+public class JumpingEnemyController : EnemyController
 {
     public GameObject playerPrefab;
     private bool isCooldown = false;
-    [SerializeField] private float cooldownDuration = 12f;
     public Text countdownText;
 
     private PlayerController playerController;

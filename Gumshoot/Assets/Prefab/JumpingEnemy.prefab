@@ -206,7 +206,7 @@ MonoBehaviour:
     m_Bits: 0
   visionHandler: {fileID: 0}
   controllerPrefab: {fileID: 7096354043435132444, guid: 3fffc236542be4ee99a76a52452f56ac, type: 3}
-  jumpCooldown: 2
+  controlTime: 20
 --- !u!114 &-574798008794284796
 MonoBehaviour:
   m_ObjectHideFlags: 0
