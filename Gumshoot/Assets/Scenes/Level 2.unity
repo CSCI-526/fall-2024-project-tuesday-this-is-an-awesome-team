@@ -3929,6 +3929,7 @@ GameObject:
   - component: {fileID: 1081035476}
   - component: {fileID: 1081035478}
   - component: {fileID: 1081035477}
+  - component: {fileID: 1081035479}
   m_Layer: 7
   m_Name: Square
   m_TagString: Surface
@@ -4048,6 +4049,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1081035479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081035475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1114329722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,6 +4598,7 @@ GameObject:
   - component: {fileID: 1280870879}
   - component: {fileID: 1280870878}
   - component: {fileID: 1280870877}
+  - component: {fileID: 1280870881}
   m_Layer: 7
   m_Name: level3-dial (1)
   m_TagString: Surface
@@ -4713,6 +4732,23 @@ Transform:
   - {fileID: 1081035476}
   m_Father: {fileID: 618533415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &1280870881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280870876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!4 &1290489160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2795065087558806391, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
@@ -7520,6 +7556,7 @@ GameObject:
   - component: {fileID: 1773859831}
   - component: {fileID: 1773859833}
   - component: {fileID: 1773859832}
+  - component: {fileID: 1773859834}
   m_Layer: 7
   m_Name: Square
   m_TagString: Surface
@@ -7639,6 +7676,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1773859834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773859830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1797290009
 GameObject:
   m_ObjectHideFlags: 0
@@ -7822,6 +7876,7 @@ GameObject:
   - component: {fileID: 1816337983}
   - component: {fileID: 1816337982}
   - component: {fileID: 1816337981}
+  - component: {fileID: 1816337985}
   m_Layer: 7
   m_Name: level3-dial
   m_TagString: Surface
@@ -7955,6 +8010,23 @@ Transform:
   - {fileID: 1773859831}
   m_Father: {fileID: 618533415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &1816337985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816337980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 0
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1879510847
 GameObject:
   m_ObjectHideFlags: 0
