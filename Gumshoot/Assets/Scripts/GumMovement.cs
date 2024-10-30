@@ -1,6 +1,7 @@
 using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 using UnityEngine.Pool;
 using static UnityEngine.RuleTile.TilingRuleOutput;
@@ -141,6 +142,22 @@ public class GumMovement : MonoBehaviour
                 IEnemy enemyMovement = owner.PulledObject.GetComponent<IEnemy>();
                 //GameObject newFlyingPlayer = Instantiate(owner.PulledObject.GetComponent<FlyingEnemyMovement>().controllerPrefab, owner.PulledObject.transform.position, Quaternion.identity);
                 GameObject newPlayer = Instantiate(enemyMovement.ControllerPrefab, owner.PulledObject.transform.position, Quaternion.identity);
+                
+                if (newPlayer.GetComponent<FlyingEnemyController>() != null)
+                {
+                    Debug.Log("You become a Flying Enemy");
+                    LevelManager.Instance.UpdateEnemyControllerUse(0);
+                }
+                else if (newPlayer.GetComponent<ShootingEnemyController>() != null)
+                {
+                    Debug.Log("You become a Shooting Enemy");
+                    LevelManager.Instance.UpdateEnemyControllerUse(1);
+                }
+                else if (newPlayer.GetComponent<JumpingEnemyController>() != null)
+                {
+                    Debug.Log("You become a Jumping Enemy");
+                    LevelManager.Instance.UpdateEnemyControllerUse(2);
+                }
                 newPlayer.transform.localScale = (owner.PulledObject.transform.lossyScale).Abs();
                 newPlayer.GetComponent<EnemyController>().Init(enemyMovement.ControlTime);
 

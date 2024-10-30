@@ -14,7 +14,7 @@ public class SendToGoogle : MonoBehaviour
     private string _deathLocationsLevel3;
     private string _deathLocationsLevelMain;
     private string _checkpointOrder;
-    private int _timesUseEnemyAbility;
+    private string _timesUseEnemyAbility;
     public bool enable = false;
 
     private void Awake()
@@ -38,9 +38,9 @@ public class SendToGoogle : MonoBehaviour
         _deathLocationsLevel3 = string.Join(", ", LevelManager.deathLocationListLevel3.ConvertAll(v => $"{v.x}, {v.y}"));
         _deathLocationsLevelMain = string.Join(", ", LevelManager.deathLocationListLevelMain.ConvertAll(v => $"{v.x}, {v.y}"));
         _checkpointOrder = "01234";
-        _timesUseEnemyAbility = 2;
+        _timesUseEnemyAbility = string.Join(", ", LevelManager.EnemyControllerUse); ;
 
-        StartCoroutine(Post(_sessionID.ToString(), _deathLocationsLevel0, _deathLocationsLevel1, _deathLocationsLevel2, _deathLocationsLevel3, _deathLocationsLevelMain, _checkpointOrder, _timesUseEnemyAbility.ToString()));
+        StartCoroutine(Post(_sessionID.ToString(), _deathLocationsLevel0, _deathLocationsLevel1, _deathLocationsLevel2, _deathLocationsLevel3, _deathLocationsLevelMain, _checkpointOrder, _timesUseEnemyAbility));
     }
 
 

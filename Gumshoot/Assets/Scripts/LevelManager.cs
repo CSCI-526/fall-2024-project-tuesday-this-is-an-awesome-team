@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public static List<Vector2> deathLocationListLevel2 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel3 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevelMain = new List<Vector2>();
+    [HideInInspector] public static int[] EnemyControllerUse = new int[13 * 3];
 
     [SerializeField] private string NextLevel = "";
 
@@ -55,6 +56,29 @@ public class LevelManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void UpdateEnemyControllerUse(int EnemyType)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(sceneName);
+
+        if (sceneName == "Level 1")
+        {
+            EnemyControllerUse[EnemyType] += 1;
+        }
+        else if (sceneName == "Level 2")
+        {
+            EnemyControllerUse[EnemyType + 3 * (2 + latestCheckpointID)] += 1;
+        }
+        else if (sceneName == "Level 3")
+        {
+            EnemyControllerUse[EnemyType + 3 * 4 ] += 1;
+        }
+        else if (sceneName == "Master")
+        {
+            EnemyControllerUse[EnemyType + 3 * (6 + latestCheckpointID)] += 1;
+        }
     }
 
 
