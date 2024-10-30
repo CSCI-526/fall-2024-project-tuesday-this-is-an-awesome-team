@@ -24,12 +24,6 @@ public class SendToGoogle : MonoBehaviour
         _sessionID = DateTime.Now.Ticks;
     }
 
-    private void OnApplicationQuit()
-    {
-        if(enable)
-            Send();
-    }
-
     public void Send()
     {
         //_deathsPerCheckpoint = string.Join(", ", LevelManager.deathPerCheckpoint);
@@ -39,9 +33,10 @@ public class SendToGoogle : MonoBehaviour
         _deathLocationsLevel3 = string.Join(", ", LevelManager.deathLocationListLevel3.ConvertAll(v => $"{v.x}, {v.y}"));
         _deathLocationsLevelMain = string.Join(", ", LevelManager.deathLocationListLevelMain.ConvertAll(v => $"{v.x}, {v.y}"));
         _checkpointOrder = "01234";
-        _timesUseEnemyAbility = string.Join(", ", LevelManager.EnemyControllerUse); ;
-
-        StartCoroutine(Post(_sessionID.ToString(), _deathLocationsLevel0, _deathLocationsLevel1, _deathLocationsLevel2, _deathLocationsLevel3, _deathLocationsLevelMain, _checkpointOrder, _timesUseEnemyAbility));
+        _timesUseEnemyAbility = string.Join(", ", LevelManager.EnemyControllerUse);
+        string platform = Application.platform == RuntimePlatform.WebGLPlayer ? "WebGL" : "UnityEditor";
+        string sessionWithPlatform = $"{_sessionID}|{platform}";
+        StartCoroutine(Post(sessionWithPlatform, _deathLocationsLevel0, _deathLocationsLevel1, _deathLocationsLevel2, _deathLocationsLevel3, _deathLocationsLevelMain, _checkpointOrder, _timesUseEnemyAbility));
     }
 
 
