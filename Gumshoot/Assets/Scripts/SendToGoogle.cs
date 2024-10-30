@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 
 public class SendToGoogle : MonoBehaviour
 {
+    public static SendToGoogle Instance;
     [SerializeField] private string URL;
     private long _sessionID;
     private string _deathsPerCheckpoint;
@@ -19,8 +20,8 @@ public class SendToGoogle : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         _sessionID = DateTime.Now.Ticks;
-
     }
 
     private void OnApplicationQuit()

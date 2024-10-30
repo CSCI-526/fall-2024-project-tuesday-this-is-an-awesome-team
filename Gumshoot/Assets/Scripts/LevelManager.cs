@@ -44,6 +44,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        SendToGoogle.Instance.Send();
+        ResetDeathLocationsAndUsage();
         if (DataPersistanceManager.Instance)
         {
             Destroy(DataPersistanceManager.Instance.gameObject);
@@ -81,6 +83,19 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public static void ResetDeathLocationsAndUsage()
+    {
+        deathLocationListLevel0.Clear();
+        deathLocationListLevel1.Clear();
+        deathLocationListLevel2.Clear();
+        deathLocationListLevel3.Clear();
+        deathLocationListLevelMain.Clear();
+
+        for (int i = 0; i < EnemyControllerUse.Length; i++)
+        {
+            EnemyControllerUse[i] = 0;
+        }
+    }
 
     /*private void UpdateDeathPerCheckpoint()
     {
