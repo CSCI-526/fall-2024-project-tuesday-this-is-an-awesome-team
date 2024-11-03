@@ -26,75 +26,89 @@ public class TutorialTextManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level 0")
         {
-            if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
+            if (gameObject.name == "TutorialTriggerJump")
             {
-                tutorialTextComponent.gameObject.SetActive(false);
+                if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
+                {
+                    tutorialTextComponent.gameObject.SetActive(false);
+                }
             }
 
-            // Show throw instruction after player grab
-            if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
+            if (gameObject.name == "TutorialTriggerGrabThrow")
             {
-                tutorialTextComponent.gameObject.SetActive(false);
-                if (nextTutorialTextComponent != null)
+                if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
-                    nextTutorialTextComponent.gameObject.SetActive(true);
+                    tutorialTextComponent.gameObject.SetActive(false);
+                    if (nextTutorialTextComponent != null)
+                    {
+                        nextTutorialTextComponent.gameObject.SetActive(true);
+                    }
                 }
             }
         }
 
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-
-            if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
+            if (gameObject.name == "TutorialTriggerFly")
             {
-                tutorialTextComponent.gameObject.SetActive(false);
-            }
-
-            if (FindObjectOfType<FlyingEnemyController>() != null)
-            {
-                if (nextTutorialTextComponent != null)
+                if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
-                    nextTutorialTextComponent.gameObject.SetActive(true);
+
+                    {
+                        tutorialTextComponent.gameObject.SetActive(false);
+                    }
+                }
+
+                if (FindObjectOfType<FlyingEnemyController>() != null)
+                {
+                    if (nextTutorialTextComponent != null)
+                    {
+                        nextTutorialTextComponent.gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (nextTutorialTextComponent != null)
+                    {
+                        nextTutorialTextComponent.gameObject.SetActive(false);
+                    }
                 }
             }
-            else
+
+            if (gameObject.name == "TutorialTriggerMap" || gameObject.name == "TutorialTriggerMap2")
             {
-                if (nextTutorialTextComponent != null)
+                if (Input.GetKeyDown(KeyCode.M) && !hasToggledMap)
                 {
-                    nextTutorialTextComponent.gameObject.SetActive(false);
+                    tutorialTextComponent.gameObject.SetActive(false);
+                    hasToggledMap = true;
                 }
-            }
-
-            if (hasToggledMap)
-            {
-                tutorialTextComponent.gameObject.SetActive(false);
-            }
-
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                tutorialTextComponent.gameObject.SetActive(false);
-                hasToggledMap = true;
             }
 
         }
 
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            if (FindObjectOfType<ShootingEnemyController>() != null && gameObject.name == "TutorialTriggerSpace")
+            if (gameObject.name == "TutorialTriggerSpace")
             {
-                tutorialTextComponent.gameObject.SetActive(true);
-            }
-            else if (FindObjectOfType<ShootingEnemyController>() == null && gameObject.name == "TutorialTriggerSpace")
-            {
-                tutorialTextComponent.gameObject.SetActive(false);
+                if (FindObjectOfType<ShootingEnemyController>() != null)
+                {
+                    tutorialTextComponent.gameObject.SetActive(true);
+                }
+                else if (FindObjectOfType<ShootingEnemyController>() == null)
+                {
+                    tutorialTextComponent.gameObject.SetActive(false);
+                }
             }
         }
 
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            if (FindObjectOfType<JumpingEnemyController>() != null)
+            if (gameObject.name == "TutorialTriggerJumping")
             {
-                tutorialTextComponent.gameObject.SetActive(false);
+                if (FindObjectOfType<JumpingEnemyController>() != null)
+                {
+                    tutorialTextComponent.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -103,7 +117,7 @@ public class TutorialTextManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !hasActivated)
+        if (other.CompareTag("Player") && !hasActivated && !hasToggledMap)
         {
             tutorialTextComponent.gameObject.SetActive(true);
             hasActivated = true;
