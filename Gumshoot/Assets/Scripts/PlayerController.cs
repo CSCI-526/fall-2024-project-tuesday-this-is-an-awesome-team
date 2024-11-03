@@ -78,7 +78,9 @@ public class PlayerController : MonoBehaviour
             gumInstance = Instantiate(gumPrefab, transform);
             gumInstance.GetComponent<GumMovement>().Initialize(this, direction);
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1) && !gumExtended)
+
+        // jumping
+        else if (Input.GetKeyDown(KeyCode.E) && !gumExtended)
         {
             Vector3 direction = GetMouseForward();
             // If extending towards the latched surface, then launch off the surface
@@ -86,8 +88,14 @@ public class PlayerController : MonoBehaviour
             {
                 Jump(direction);
             }
-            else if (PulledObject != null)
+        }
+
+        // throwing object
+        else if (Input.GetKeyDown(KeyCode.Mouse1) && !gumExtended)
+        {
+            if (PulledObject != null)
             {
+               Vector3 direction = GetMouseForward();
                 // Disconnect the pulled object from the player
                 //PulledObject.GetComponent<FixedJoint2D>().connectedBody = null;
                 //PulledObject.GetComponent<FixedJoint2D>().enabled = false;
