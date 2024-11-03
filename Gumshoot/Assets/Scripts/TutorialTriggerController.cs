@@ -14,7 +14,10 @@ public class TutorialTriggerController : MonoBehaviour
     void Start()
     {
         tutorialTextComponent.gameObject.SetActive(false);
-        nextTutorialTextComponent.gameObject.SetActive(false);
+        if (nextTutorialTextComponent != null)
+        {
+            nextTutorialTextComponent.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +34,10 @@ public class TutorialTriggerController : MonoBehaviour
             if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
             {
                 tutorialTextComponent.gameObject.SetActive(false);
-                nextTutorialTextComponent.gameObject.SetActive(true);
+                if (nextTutorialTextComponent != null)
+                {
+                    nextTutorialTextComponent.gameObject.SetActive(true);
+                }
             }
         }
 
@@ -51,6 +57,26 @@ public class TutorialTriggerController : MonoBehaviour
                 nextTutorialTextComponent.gameObject.SetActive(false);
             }
 
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            if (FindObjectOfType<ShootingEnemyController>() != null)
+            {
+                tutorialTextComponent.gameObject.SetActive(true);
+            }
+            else
+            {
+                tutorialTextComponent.gameObject.SetActive(false);
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            if (FindObjectOfType<JumpingEnemyController>() != null)
+            {
+                tutorialTextComponent.gameObject.SetActive(false);
+            }
         }
 
     }
