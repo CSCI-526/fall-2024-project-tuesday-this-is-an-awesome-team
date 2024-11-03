@@ -4,11 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class TutorialTriggerController : MonoBehaviour
+public class TutorialTextManager : MonoBehaviour
 {
     public TextMeshProUGUI tutorialTextComponent;
     public TextMeshProUGUI nextTutorialTextComponent;
     private bool hasActivated = false;
+    private bool hasToggledMap = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class TutorialTriggerController : MonoBehaviour
         tutorialTextComponent.gameObject.SetActive(false);
         if (nextTutorialTextComponent != null)
         {
-            nextTutorialTextComponent.gameObject.SetActive(true);
+            nextTutorialTextComponent.gameObject.SetActive(false);
         }
     }
 
@@ -43,6 +44,7 @@ public class TutorialTriggerController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
+
             if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
             {
                 tutorialTextComponent.gameObject.SetActive(false);
@@ -50,22 +52,39 @@ public class TutorialTriggerController : MonoBehaviour
 
             if (FindObjectOfType<FlyingEnemyController>() != null)
             {
-                nextTutorialTextComponent.gameObject.SetActive(true);
+                if (nextTutorialTextComponent != null)
+                {
+                    nextTutorialTextComponent.gameObject.SetActive(true);
+                }
             }
             else
             {
-                nextTutorialTextComponent.gameObject.SetActive(false);
+                if (nextTutorialTextComponent != null)
+                {
+                    nextTutorialTextComponent.gameObject.SetActive(false);
+                }
+            }
+
+            if (hasToggledMap)
+            {
+                tutorialTextComponent.gameObject.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                tutorialTextComponent.gameObject.SetActive(false);
+                hasToggledMap = true;
             }
 
         }
 
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            if (FindObjectOfType<ShootingEnemyController>() != null)
+            if (FindObjectOfType<ShootingEnemyController>() != null && gameObject.name == "TutorialTriggerSpace")
             {
                 tutorialTextComponent.gameObject.SetActive(true);
             }
-            else
+            else if (FindObjectOfType<ShootingEnemyController>() == null && gameObject.name == "TutorialTriggerSpace")
             {
                 tutorialTextComponent.gameObject.SetActive(false);
             }
