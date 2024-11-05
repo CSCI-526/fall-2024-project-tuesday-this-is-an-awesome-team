@@ -25,6 +25,11 @@ public class Health : MonoBehaviour
             }
             Destroy(gameObject);
         }
+
+        if (health <= 0 && GetComponent<IEnemy>() != null)
+        {
+            transform.Find("Circle").gameObject.SetActive(false);
+        }
     }
 
     public void Heal(int heal)
