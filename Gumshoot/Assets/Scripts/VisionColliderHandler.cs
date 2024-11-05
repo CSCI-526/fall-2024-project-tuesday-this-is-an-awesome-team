@@ -13,8 +13,7 @@ public class VisionColliderHandler : MonoBehaviour
     public LayerMask playerLayer;
 
     [Header("Line Renderer Settings")]
-    public int segments = 50;
-    public Color lineColor = Color.red;
+    public GameObject halo;
 
     public bool playerIsVisible = false;
 
@@ -28,32 +27,7 @@ public class VisionColliderHandler : MonoBehaviour
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.positionCount = segments + 1;
-        lineRenderer.startWidth = 0.05f;
-        lineRenderer.endWidth = 0.05f;
-        lineRenderer.useWorldSpace = false;
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = lineColor;
-        lineRenderer.endColor = lineColor;
-
-        CreateVisionCircle();
-    }
-
-    void CreateVisionCircle()
-    {
-        float angle = 0f;
-        float radius = visionCollider.radius;
-
-        for (int i = 0; i <= segments; i++)
-        {
-            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
-            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * radius;
-
-            lineRenderer.SetPosition(i, new Vector3(x, y, 0f));
-
-            angle += (360f / segments);
-        }
+        halo.transform.localScale = visionCollider.radius * 2 * Vector3.one;
     }
 
     public bool HasOverlap()
