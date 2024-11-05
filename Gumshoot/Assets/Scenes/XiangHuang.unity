@@ -8695,7 +8695,7 @@ GameObject:
   - component: {fileID: 510724100}
   - component: {fileID: 510724099}
   m_Layer: 7
-  m_Name: Square (27)
+  m_Name: level5-breakwall
   m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8710,11 +8710,13 @@ Transform:
   m_GameObject: {fileID: 510724097}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 123.1, y: 1.42, z: 0}
-  m_LocalScale: {x: 12.748206, y: 0.09782214, z: 1}
+  m_LocalPosition: {x: 1574.2689, y: 27.580704, z: 0}
+  m_LocalScale: {x: 63.74103, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1080288642}
+  m_Children:
+  - {fileID: 742499789}
+  - {fileID: 586408347}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &510724099
 BoxCollider2D:
@@ -10042,7 +10044,7 @@ GameObject:
   - component: {fileID: 586408348}
   m_Layer: 7
   m_Name: inneroutline (38)
-  m_TagString: Surface
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10056,11 +10058,11 @@ Transform:
   m_GameObject: {fileID: 586408346}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 66.6, y: -1.97, z: 0}
-  m_LocalScale: {x: 1, y: 1.0041293, z: 1}
+  m_LocalPosition: {x: -4.431996, y: -34.654736, z: 0}
+  m_LocalScale: {x: 0.0784424, y: 10.264847, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1080288642}
+  m_Father: {fileID: 510724098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &586408348
 BoxCollider2D:
@@ -12737,7 +12739,7 @@ GameObject:
   - component: {fileID: 742499790}
   m_Layer: 7
   m_Name: Square (26)
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12751,11 +12753,11 @@ Transform:
   m_GameObject: {fileID: 742499788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 123.1, y: -1.45, z: 0}
-  m_LocalScale: {x: 12.748206, y: 0.09782214, z: 1}
+  m_LocalPosition: {x: 0, y: -29.338963, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1080288642}
+  m_Father: {fileID: 510724098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &742499790
 BoxCollider2D:
@@ -19533,8 +19535,6 @@ Transform:
   - {fileID: 1438071851}
   - {fileID: 132091180}
   - {fileID: 1594298474}
-  - {fileID: 742499789}
-  - {fileID: 510724098}
   - {fileID: 1951600013}
   - {fileID: 1607240685}
   - {fileID: 271538328}
@@ -19548,7 +19548,6 @@ Transform:
   - {fileID: 448133082}
   - {fileID: 1639902739}
   - {fileID: 1183279846}
-  - {fileID: 586408347}
   - {fileID: 182268999}
   - {fileID: 628187721}
   - {fileID: 1108527593}
@@ -36467,6 +36466,7 @@ SceneRoots:
   - {fileID: 1660533338}
   - {fileID: 461119099}
   - {fileID: 1318441918}
+  - {fileID: 510724098}
   - {fileID: 1080288642}
   - {fileID: 613018462}
   - {fileID: 1203278612}
