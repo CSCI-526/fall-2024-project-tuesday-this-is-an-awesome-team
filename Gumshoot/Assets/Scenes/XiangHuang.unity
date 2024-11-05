@@ -3709,6 +3709,7 @@ GameObject:
   - component: {fileID: 173844498}
   - component: {fileID: 173844497}
   - component: {fileID: 173844499}
+  - component: {fileID: 173844500}
   m_Layer: 7
   m_Name: inneroutline (21)
   m_TagString: Surface
@@ -3842,6 +3843,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 10
   moveSpeed: 2
+--- !u!114 &173844500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173844495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &182268998
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,7 +7028,7 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 461119095}
+      - m_Target: {fileID: 461119096}
         m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
         m_MethodName: StartFan
         m_Mode: 1
@@ -11274,6 +11292,7 @@ GameObject:
   - component: {fileID: 663001106}
   - component: {fileID: 663001108}
   - component: {fileID: 663001107}
+  - component: {fileID: 663001109}
   m_Layer: 7
   m_Name: Square (15)
   m_TagString: Surface
@@ -11393,6 +11412,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &663001109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663001105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &664303593
 GameObject:
   m_ObjectHideFlags: 0
@@ -12333,6 +12369,7 @@ GameObject:
   - component: {fileID: 717384509}
   - component: {fileID: 717384508}
   - component: {fileID: 717384510}
+  - component: {fileID: 717384511}
   m_Layer: 7
   m_Name: Square (43)
   m_TagString: Surface
@@ -12466,6 +12503,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 15
   moveSpeed: 2
+--- !u!114 &717384511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717384506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &731764434
 GameObject:
   m_ObjectHideFlags: 0
@@ -15240,6 +15294,7 @@ GameObject:
   - component: {fileID: 856382819}
   - component: {fileID: 856382818}
   - component: {fileID: 856382820}
+  - component: {fileID: 856382821}
   m_Layer: 7
   m_Name: inneroutline (22)
   m_TagString: Surface
@@ -15373,6 +15428,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 10
   moveSpeed: 2
+--- !u!114 &856382821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856382816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &856920230
 GameObject:
   m_ObjectHideFlags: 0
@@ -17813,6 +17885,7 @@ GameObject:
   - component: {fileID: 999306934}
   - component: {fileID: 999306936}
   - component: {fileID: 999306935}
+  - component: {fileID: 999306937}
   m_Layer: 7
   m_Name: Square (30)
   m_TagString: Surface
@@ -17932,6 +18005,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &999306937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999306933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1011867996
 GameObject:
   m_ObjectHideFlags: 0
@@ -24418,7 +24508,7 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1495160497}
+      - m_Target: {fileID: 1495160499}
         m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
         m_MethodName: StartFan
         m_Mode: 1
@@ -25142,6 +25232,7 @@ GameObject:
   - component: {fileID: 1495160501}
   - component: {fileID: 1495160500}
   - component: {fileID: 1495160499}
+  - component: {fileID: 1495160502}
   m_Layer: 7
   m_Name: rot
   m_TagString: Surface
@@ -25274,6 +25365,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1495160502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495160497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1497391147
 GameObject:
   m_ObjectHideFlags: 0
@@ -26603,6 +26711,7 @@ GameObject:
   - component: {fileID: 1548811666}
   - component: {fileID: 1548811668}
   - component: {fileID: 1548811667}
+  - component: {fileID: 1548811669}
   m_Layer: 7
   m_Name: inneroutline (18)
   m_TagString: Surface
@@ -26722,6 +26831,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1548811669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548811665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &1550554975
 GameObject:
   m_ObjectHideFlags: 0
@@ -34360,6 +34486,7 @@ GameObject:
   - component: {fileID: 2037907957}
   - component: {fileID: 2037907959}
   - component: {fileID: 2037907958}
+  - component: {fileID: 2037907960}
   m_Layer: 7
   m_Name: inneroutline (19)
   m_TagString: Surface
@@ -34479,6 +34606,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2037907960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037907956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  destroysWalls: 0
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &2044935988
 GameObject:
   m_ObjectHideFlags: 0
