@@ -84,10 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = GetMouseForward();
             // If extending towards the latched surface, then launch off the surface
-            if (SurfaceContactInstance && Vector3.Angle(-direction, transform.position - SurfaceContactInstance.transform.position) < 75f)
-            {
-                Jump(direction);
-            }
+            Jump(direction);
         }
 
         // throwing object
@@ -130,12 +127,12 @@ public class PlayerController : MonoBehaviour
             if (GetComponent<FlyingEnemyController>() == null)
             {
                 rb.gravityScale = 1.6f;
-                rb.AddForce(-direction * jumpForce);
+                rb.AddForce(direction * jumpForce);
             }
             if (PulledObject != null)
             {
                 PulledObject.rb.gravityScale = 1.6f;
-                PulledObject.rb.AddForce(-direction * jumpForce);
+                PulledObject.rb.AddForce(direction * jumpForce);
             }
 
             if (SurfaceContactInstance)
