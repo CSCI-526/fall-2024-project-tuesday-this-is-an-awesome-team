@@ -45,10 +45,10 @@ public class GumMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        /*if (owner.PulledObject)
+        if (owner.PulledObject)
         {
             owner.PulledObject.GetComponent<Collider2D>().enabled = false;
-        }*/
+        }
     }
 
     // Update is called once per frame
@@ -104,10 +104,10 @@ public class GumMovement : MonoBehaviour
                 {
                     dist -= Time.deltaTime * owner.retractSpeed;
                     owner.rb.velocity = (owner.retractSpeed * direction);
-                    if (owner.PulledObject != null)
+                    /*if (owner.PulledObject != null)
                     {
                         owner.PulledObject.Move(owner.extractSpeed * direction);
-                    }
+                    }*/
                 }
                 // If the player has reached the gum string, stop all gum movement
                 else
@@ -120,10 +120,10 @@ public class GumMovement : MonoBehaviour
 
         if (isComplete)
         {
-            /*if (owner.PulledObject)
+            if (owner.PulledObject)
             {
-                owner.PulledObject.GetComponent<Collider2D>().enabled = true;
-            }*/
+                owner.PulledObject.col.enabled = true;
+            }
 
             // Detach the pulled object from the gum and attach it to the player instead
             if (state == GumState.PullingObject)

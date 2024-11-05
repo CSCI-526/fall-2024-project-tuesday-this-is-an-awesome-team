@@ -186,9 +186,9 @@ MonoBehaviour:
   PulledObject: {fileID: 0}
   SurfaceContactInstance: {fileID: 0}
   PullContactInstance: {fileID: 0}
-  jumpForce: 250
+  jumpForce: 200
   throwForce: 750
-  maxDist: 6.5
+  maxDist: 7.2
   extractSpeed: 24
   retractSpeed: 24
   stuckToSurface: 0
@@ -206,11 +206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6343764166583026667}
+  playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
   firePoint: {fileID: 4946048000663345995}
   muzzle: {fileID: 7636305601396548182}
   fireRate: 60
-  cooldownDuration: 30
-  playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
+  countdownText: {fileID: 0}
 --- !u!1 &8810403615861943467
 GameObject:
   m_ObjectHideFlags: 0
