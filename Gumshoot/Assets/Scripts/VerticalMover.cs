@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VerticalMover : MonoBehaviour
 {
-    public float moveDistance = 15f; 
+    public float moveDistance = 5f; 
     public float moveSpeed = 2f;     
 
     private float startPosY;
