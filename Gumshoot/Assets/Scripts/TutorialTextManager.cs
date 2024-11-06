@@ -7,38 +7,33 @@ using UnityEngine.SceneManagement;
 
 public class TutorialTextManager : MonoBehaviour
 {
+    public GameObject tutorialGroup;
     public Image tutorialImage;
     public TextMeshProUGUI tutorialTextComponent;
 
+    public GameObject nextTutorialGroup;
     public Image nextTutorialImage;
     public TextMeshProUGUI nextTutorialTextComponent;
 
     private bool hasActivated = false;
     private bool hasToggledMap = false;
+
     private bool hasThrowed = false;
+
+    private bool tutorialShown = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if (tutorialImage != null)
+        if (tutorialGroup != null)
         {
-            tutorialImage.gameObject.SetActive(false);
+            tutorialGroup.SetActive(false);
         }
 
-        if (tutorialTextComponent != null)
+        if (nextTutorialGroup != null)
         {
-            tutorialTextComponent.gameObject.SetActive(false);
-        }
-
-        if (nextTutorialImage != null)
-        {
-            nextTutorialImage.gameObject.SetActive(false);
-        }
-
-        if (nextTutorialTextComponent != null)
-        {
-            nextTutorialTextComponent.gameObject.SetActive(false);
+            nextTutorialGroup.SetActive(false);
         }
     }
 
@@ -51,8 +46,7 @@ public class TutorialTextManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    tutorialImage.gameObject.SetActive(false);
-                    tutorialTextComponent.gameObject.SetActive(false);
+                    tutorialGroup.gameObject.SetActive(false);
                 }
             }
 
@@ -60,8 +54,7 @@ public class TutorialTextManager : MonoBehaviour
             {
                 if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
                 {
-                    tutorialImage.gameObject.SetActive(false);
-                    tutorialTextComponent.gameObject.SetActive(false);
+                    tutorialGroup.gameObject.SetActive(false);
                 }
             }
 
@@ -69,51 +62,74 @@ public class TutorialTextManager : MonoBehaviour
             {
                 if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
-                    tutorialImage.gameObject.SetActive(false);
-                    tutorialTextComponent.gameObject.SetActive(false);
+                    tutorialGroup.gameObject.SetActive(false);
 
                     if (!hasThrowed)
                     {
-                        nextTutorialImage.gameObject.SetActive(true);
-                        nextTutorialTextComponent.gameObject.SetActive(true);
+                        nextTutorialGroup.gameObject.SetActive(true);
                     }
                 }
 
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
-                    nextTutorialImage.gameObject.SetActive(false);
-                    nextTutorialTextComponent.gameObject.SetActive(false);
+                    nextTutorialGroup.gameObject.SetActive(false);
 
                     hasThrowed = true;
                 }
             }
+
+            if (gameObject.name == "TutorialTriggerButton")
+            {
+                Button button = FindObjectOfType<Button>();
+                if (button.IsPressed)
+                {
+                    tutorialGroup.SetActive(false);
+                }
+            }
+
+
+
         }
 
+        // Flying
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            if (gameObject.name == "TutorialTriggerFly")
+            if (gameObject.name == "TutorialTriggerControl" || gameObject.name == "TutorialTriggerControl2")
             {
                 if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
-
-                    {
-                        tutorialTextComponent.gameObject.SetActive(false);
-                    }
+                    tutorialGroup.gameObject.SetActive(false);
                 }
 
-                if (FindObjectOfType<FlyingEnemyController>() != null)
+                FlyingEnemyMovement flyingEnemy = FindObjectOfType<FlyingEnemyMovement>();
+                if (flyingEnemy != null && flyingEnemy.GetComponent<SpriteRenderer>().color == Color.yellow)
                 {
-                    if (nextTutorialTextComponent != null)
-                    {
-                        nextTutorialTextComponent.gameObject.SetActive(true);
-                    }
+                    SetPositionWithOffset(nextTutorialGroup, flyingEnemy.transform, Vector3.right * 1.0f);
+
+                    nextTutorialGroup.gameObject.SetActive(true);
                 }
                 else
                 {
-                    if (nextTutorialTextComponent != null)
-                    {
-                        nextTutorialTextComponent.gameObject.SetActive(false);
-                    }
+                    nextTutorialGroup.gameObject.SetActive(false);
+                }
+
+            }
+
+            if (gameObject.name == "TutorialTriggerFly")
+            {
+                FlyingEnemyController flyingPlayer = FindObjectOfType<FlyingEnemyController>();
+                if (flyingPlayer && !tutorialShown)
+                {
+
+                    SetPositionWithOffset(tutorialGroup, flyingPlayer.transform, Vector3.up * 1.0f);
+
+                    tutorialGroup.gameObject.SetActive(true);
+                    tutorialShown = true;
+                }
+
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                {
+                    tutorialGroup.gameObject.SetActive(false);
                 }
             }
 
@@ -121,36 +137,54 @@ public class TutorialTextManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.M) && !hasToggledMap)
                 {
-                    tutorialTextComponent.gameObject.SetActive(false);
+                    tutorialGroup.gameObject.SetActive(false);
                     hasToggledMap = true;
                 }
             }
 
         }
 
+        // Shooting
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
             if (gameObject.name == "TutorialTriggerSpace")
             {
-                if (FindObjectOfType<ShootingEnemyController>() != null)
+                ShootingEnemyController shootingPlayer = FindObjectOfType<ShootingEnemyController>();
+                if (shootingPlayer)
                 {
-                    tutorialTextComponent.gameObject.SetActive(true);
+                    SetPositionWithOffset(tutorialGroup, shootingPlayer.transform, Vector3.right * 1.0f);
+
+                    tutorialGroup.gameObject.SetActive(true);
                 }
-                else if (FindObjectOfType<ShootingEnemyController>() == null)
+
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    tutorialTextComponent.gameObject.SetActive(false);
+                    tutorialGroup.gameObject.SetActive(false);
                 }
             }
         }
 
+        // Jumping
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
             if (gameObject.name == "TutorialTriggerJumping")
             {
-                if (FindObjectOfType<JumpingEnemyController>() != null)
+                JumpingEnemyController jumpingPlayer = FindObjectOfType<JumpingEnemyController>();
+                if (jumpingPlayer)
                 {
-                    tutorialTextComponent.gameObject.SetActive(false);
+                    SetPositionWithOffset(tutorialGroup, jumpingPlayer.transform, Vector3.right * 1.0f);
+                    tutorialGroup.gameObject.SetActive(true);
                 }
+                else
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                }
+
             }
         }
 
@@ -161,9 +195,17 @@ public class TutorialTextManager : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasActivated && !hasToggledMap)
         {
-            tutorialImage.gameObject.SetActive(true);
-            tutorialTextComponent.gameObject.SetActive(true);
+            tutorialGroup.gameObject.SetActive(true);
             hasActivated = true;
+        }
+    }
+
+    private void SetPositionWithOffset(GameObject target, Transform source, Vector3 offset)
+    {
+        if (target != null && source != null)
+        {
+            Vector3 newPosition = source.position + offset;
+            target.transform.position = newPosition;
         }
     }
 

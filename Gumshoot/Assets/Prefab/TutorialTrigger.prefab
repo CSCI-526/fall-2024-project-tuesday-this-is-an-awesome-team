@@ -393,8 +393,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f6e9568552b4ac78781216da6e7dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialImage: {fileID: 0}
+  TutorialGroup: {fileID: 325129174827761179}
+  tutorialImage: {fileID: 1115656035537611190}
   tutorialTextComponent: {fileID: 1741373311451899009}
+  nextTutorialGroup: {fileID: 6212224743807911578}
+  nextTutorialImage: {fileID: 453278226728416810}
   nextTutorialTextComponent: {fileID: 4867820340900856860}
 --- !u!61 &8486728486433701244
 BoxCollider2D:
