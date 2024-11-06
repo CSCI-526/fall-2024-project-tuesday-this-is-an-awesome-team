@@ -1,20 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
 public class TutorialTextManager : MonoBehaviour
 {
+    public Image tutorialImage;
     public TextMeshProUGUI tutorialTextComponent;
+
+    public Image nextTutorialImage;
     public TextMeshProUGUI nextTutorialTextComponent;
+
     private bool hasActivated = false;
     private bool hasToggledMap = false;
+    private bool hasThrowed = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        tutorialTextComponent.gameObject.SetActive(false);
+        if (tutorialImage != null)
+        {
+            tutorialImage.gameObject.SetActive(false);
+        }
+
+        if (tutorialTextComponent != null)
+        {
+            tutorialTextComponent.gameObject.SetActive(false);
+        }
+
+        if (nextTutorialImage != null)
+        {
+            nextTutorialImage.gameObject.SetActive(false);
+        }
+
         if (nextTutorialTextComponent != null)
         {
             nextTutorialTextComponent.gameObject.SetActive(false);
@@ -26,10 +47,20 @@ public class TutorialTextManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level 0")
         {
+            if (gameObject.name == "TutorialTriggerStick")
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    tutorialImage.gameObject.SetActive(false);
+                    tutorialTextComponent.gameObject.SetActive(false);
+                }
+            }
+
             if (gameObject.name == "TutorialTriggerJump")
             {
                 if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
                 {
+                    tutorialImage.gameObject.SetActive(false);
                     tutorialTextComponent.gameObject.SetActive(false);
                 }
             }
@@ -38,11 +69,22 @@ public class TutorialTextManager : MonoBehaviour
             {
                 if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
+                    tutorialImage.gameObject.SetActive(false);
                     tutorialTextComponent.gameObject.SetActive(false);
-                    if (nextTutorialTextComponent != null)
+
+                    if (!hasThrowed)
                     {
+                        nextTutorialImage.gameObject.SetActive(true);
                         nextTutorialTextComponent.gameObject.SetActive(true);
                     }
+                }
+
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    nextTutorialImage.gameObject.SetActive(false);
+                    nextTutorialTextComponent.gameObject.SetActive(false);
+
+                    hasThrowed = true;
                 }
             }
         }
@@ -119,6 +161,7 @@ public class TutorialTextManager : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasActivated && !hasToggledMap)
         {
+            tutorialImage.gameObject.SetActive(true);
             tutorialTextComponent.gameObject.SetActive(true);
             hasActivated = true;
         }
