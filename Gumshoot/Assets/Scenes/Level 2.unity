@@ -1368,7 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Projectiles can be grabbed too
+      value: Bullets can be grabbed too
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -1489,6 +1489,10 @@ PrefabInstance:
     - target: {fileID: 9119879384743737877, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127968388597025753, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -7557,7 +7561,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 19.97
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7582,7 +7586,7 @@ Transform:
   m_GameObject: {fileID: 1705138142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2199993, y: 1.9200001, z: -10}
+  m_LocalPosition: {x: 3.806837, y: 7.3879423, z: -37.253323}
   m_LocalScale: {x: 0.9824, y: 0.9943, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9176,7 +9180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Projectiles can be grabbed too
+      value: Bullets can be grabbed too
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize

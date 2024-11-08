@@ -20,6 +20,13 @@ public class TutorialTextManager : MonoBehaviour
 
     private bool hasThrowed = false;
 
+
+    // Flying take control only be triggered once
+    private bool tutorialShown2 = false;
+
+    // Flying WASD control only be triggered once
+    // Shooting SPACE only be triggered once
+    // Jumping E increased only be triggered once
     private bool tutorialShown = false;
 
 
@@ -94,23 +101,45 @@ public class TutorialTextManager : MonoBehaviour
         // Flying
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            if (gameObject.name == "TutorialTriggerControl" || gameObject.name == "TutorialTriggerControl2")
+            
+            if (gameObject.name == "TutorialTriggerControl")
             {
-                if (PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
+                FlyingEnemyMovement flyingEnemy = GameObject.Find("FlyingEnemy")?.GetComponent<FlyingEnemyMovement>();
+                if (!tutorialShown2 && PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
                     tutorialGroup.gameObject.SetActive(false);
                 }
 
-                FlyingEnemyMovement flyingEnemy = FindObjectOfType<FlyingEnemyMovement>();
                 if (flyingEnemy != null && flyingEnemy.GetComponent<SpriteRenderer>().color == Color.yellow)
                 {
                     SetPositionWithOffset(nextTutorialGroup, flyingEnemy.transform, Vector3.right * 1.0f);
-
                     nextTutorialGroup.gameObject.SetActive(true);
                 }
                 else
                 {
                     nextTutorialGroup.gameObject.SetActive(false);
+                    //tutorialShown2 = true;
+                }
+
+            }
+
+            if (gameObject.name == "TutorialTriggerControl2")
+            {
+                FlyingEnemyMovement flyingEnemy = GameObject.Find("FlyingEnemy2")?.GetComponent<FlyingEnemyMovement>();
+                if (!tutorialShown2 && PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                }
+
+                if (flyingEnemy != null && flyingEnemy.GetComponent<SpriteRenderer>().color == Color.yellow)
+                {
+                    SetPositionWithOffset(nextTutorialGroup, flyingEnemy.transform, Vector3.right * 1.0f);
+                    nextTutorialGroup.gameObject.SetActive(true);
+                }
+                else
+                {
+                    nextTutorialGroup.gameObject.SetActive(false);
+                    //tutorialShown2 = true;
                 }
 
             }
@@ -120,16 +149,19 @@ public class TutorialTextManager : MonoBehaviour
                 FlyingEnemyController flyingPlayer = FindObjectOfType<FlyingEnemyController>();
                 if (flyingPlayer && !tutorialShown)
                 {
-
                     SetPositionWithOffset(tutorialGroup, flyingPlayer.transform, Vector3.up * 1.0f);
-
                     tutorialGroup.gameObject.SetActive(true);
-                    tutorialShown = true;
+                    
                 }
-
-                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                else
                 {
                     tutorialGroup.gameObject.SetActive(false);
+                }
+
+                if (!tutorialShown && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                    tutorialShown = true;
                 }
             }
 
@@ -147,17 +179,29 @@ public class TutorialTextManager : MonoBehaviour
         // Shooting
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
+            ShootingEnemyController shootingPlayer = FindObjectOfType<ShootingEnemyController>();
             if (gameObject.name == "TutorialTriggerSpace")
             {
-                ShootingEnemyController shootingPlayer = FindObjectOfType<ShootingEnemyController>();
-                if (shootingPlayer)
+                if (shootingPlayer && !tutorialShown)
                 {
                     SetPositionWithOffset(tutorialGroup, shootingPlayer.transform, Vector3.right * 1.0f);
-
                     tutorialGroup.gameObject.SetActive(true);
                 }
+                else
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                }
 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && !tutorialShown)
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                    tutorialShown = true;
+                }
+            }
+
+            if (gameObject.name == "TutorialTriggerBullet" || gameObject.name == "TutorialTriggerBullet2")
+            {
+                if (PlayerController.Instance.PulledObject != null)
                 {
                     tutorialGroup.gameObject.SetActive(false);
                 }
@@ -167,10 +211,18 @@ public class TutorialTextManager : MonoBehaviour
         // Jumping
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
+            if (gameObject.name == "TutorialTriggerJump")
+            {
+                if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                }
+            }
+
+            JumpingEnemyController jumpingPlayer = FindObjectOfType<JumpingEnemyController>();
             if (gameObject.name == "TutorialTriggerJumping")
             {
-                JumpingEnemyController jumpingPlayer = FindObjectOfType<JumpingEnemyController>();
-                if (jumpingPlayer)
+                if (jumpingPlayer && !tutorialShown)
                 {
                     SetPositionWithOffset(tutorialGroup, jumpingPlayer.transform, Vector3.right * 1.0f);
                     tutorialGroup.gameObject.SetActive(true);
@@ -180,11 +232,11 @@ public class TutorialTextManager : MonoBehaviour
                     tutorialGroup.gameObject.SetActive(false);
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (jumpingPlayer && Input.GetKeyDown(KeyCode.E) && !tutorialShown)
                 {
                     tutorialGroup.gameObject.SetActive(false);
+                    tutorialShown = true;
                 }
-
             }
         }
 
