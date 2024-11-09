@@ -79,9 +79,12 @@ public class TutorialTextManager : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
-                    nextTutorialGroup.gameObject.SetActive(false);
+                    if (!tutorialGroup.activeSelf && nextTutorialGroup.activeSelf)
+                    {
+                        nextTutorialGroup.gameObject.SetActive(false);
 
-                    hasThrowed = true;
+                        hasThrowed = true;
+                    }
                 }
             }
 
