@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
-using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,13 +12,16 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
 
+    // 用于存储每个level的数据
+    [HideInInspector] public static Dictionary<string, LevelData> levelsData = new Dictionary<string, LevelData>();
+
     //[HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    [HideInInspector] public static List<Vector2> deathLocationListLevel0 = new List<Vector2>();
+    /*[HideInInspector] public static List<Vector2> deathLocationListLevel0 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel1 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel2 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevel3 = new List<Vector2>();
     [HideInInspector] public static List<Vector2> deathLocationListLevelMain = new List<Vector2>();
-    [HideInInspector] public static int[] EnemyControllerUse = new int[13 * 3];
+    [HideInInspector] public static int[] EnemyControllerUse = new int[13 * 3];*/
 
     [SerializeField] private string NextLevel = "";
 
@@ -44,8 +45,13 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        if (levelsData == null || levelsData.Count == 0)
+        {
+            Debug.LogError("levelsData is empty or null!");
+        }
         SendToGoogle.Instance.Send();
-        ResetDeathLocationsAndUsage();
+        //ResetDeathLocationsAndUsage();
+        ResetData();
         if (DataPersistanceManager.Instance)
         {
             Destroy(DataPersistanceManager.Instance.gameObject);
@@ -61,6 +67,23 @@ public class LevelManager : MonoBehaviour
     }
 
     public void UpdateEnemyControllerUse(int EnemyType)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!levelsData.ContainsKey(sceneName))
+            levelsData[sceneName] = new LevelData();
+
+        levelsData[sceneName].UpdateEnemyControllerUsage(latestCheckpointID, EnemyType);
+    }
+
+    public static void ResetData()
+    {
+        foreach (var levelData in levelsData.Values)
+        {
+            levelData.ResetData();
+        }
+    }
+
+    /*public void UpdateEnemyControllerUse(int EnemyType)
     {
         string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log(sceneName);
@@ -95,7 +118,7 @@ public class LevelManager : MonoBehaviour
         {
             EnemyControllerUse[i] = 0;
         }
-    }
+    }*/
 
     /*private void UpdateDeathPerCheckpoint()
     {
@@ -121,6 +144,24 @@ public class LevelManager : MonoBehaviour
     }*/
 
     public void AddDeathLocation(Vector2 deathPosition)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!levelsData.ContainsKey(sceneName))
+            levelsData[sceneName] = new LevelData();
+
+        levelsData[sceneName].AddDeathLocation(deathPosition);
+        Debug.Log($"Death location added to {sceneName}: {deathPosition}");
+        // 验证添加后的结果
+        var locations = string.Join(", ", levelsData[sceneName].deathLocations.ConvertAll(v => $"{v.x}, {v.y}"));
+        Debug.Log($"Updated death locations for {sceneName}: {locations}");
+        if (levelsData == null || levelsData.Count == 0)
+        {
+            Debug.LogError("levelsDataaaaaaaaaaaa is empty or null!");
+        }
+    }
+
+
+    /*public void AddDeathLocation(Vector2 deathPosition)
     {
         string sceneName = SceneManager.GetActiveScene().name;
 
@@ -149,7 +190,7 @@ public class LevelManager : MonoBehaviour
             deathLocationListLevelMain.Add(deathPosition);
             Debug.Log("Death location added to Master: " + deathPosition);
         }
-    }
+    }*/
 
     public void UpdateLatestCheckpoint(int checkpointID, Vector3 position)
     {
@@ -188,5 +229,67 @@ public class LevelManager : MonoBehaviour
             DataPersistanceManager.Instance.hasNewPos = true;
             Restart();
         }
+    }
+}
+
+
+
+[System.Serializable]
+public class LevelData
+{
+    public List<Vector2> deathLocations = new List<Vector2>();
+    public Dictionary<int, CheckpointData> checkpointData = new Dictionary<int, CheckpointData>();
+
+    public void AddDeathLocation(Vector2 deathPosition)
+    {
+        deathLocations.Add(deathPosition);
+    }
+
+    public void UpdateEnemyControllerUsage(int checkpointID, int enemyType)
+    {
+        if (!checkpointData.ContainsKey(checkpointID))
+            checkpointData[checkpointID] = new CheckpointData();
+
+        checkpointData[checkpointID].IncreaseEnemyControllerUsage(enemyType);
+    }
+
+    public void ResetData()
+    {
+        deathLocations.Clear();
+        foreach (var checkpoint in checkpointData.Values)
+        {
+            checkpoint.ResetUsage();
+        }
+    }
+}
+
+[System.Serializable]
+public class CheckpointData
+{
+    private Dictionary<int, int> enemyControllerUsage = new Dictionary<int, int>();
+
+    public void IncreaseEnemyControllerUsage(int enemyType)
+    {
+        if (!enemyControllerUsage.ContainsKey(enemyType))
+            enemyControllerUsage[enemyType] = 0;
+
+        enemyControllerUsage[enemyType]++;
+    }
+
+    public void ResetUsage()
+    {
+        enemyControllerUsage.Clear();
+    }
+
+    public List<string> GetEnemyControllerUsage()
+    {
+        List<string> usageList = new List<string>();
+
+        foreach (var usage in enemyControllerUsage)
+        {
+            usageList.Add($"Type {usage.Key}: {usage.Value} times");
+        }
+
+        return usageList;
     }
 }
