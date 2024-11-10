@@ -12,22 +12,44 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
 
-    // 用于存储每个level的数据
     [HideInInspector] public static Dictionary<string, LevelData> levelsData = new Dictionary<string, LevelData>();
-
-    //[HideInInspector] public static int[] deathPerCheckpoint = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    /*[HideInInspector] public static List<Vector2> deathLocationListLevel0 = new List<Vector2>();
-    [HideInInspector] public static List<Vector2> deathLocationListLevel1 = new List<Vector2>();
-    [HideInInspector] public static List<Vector2> deathLocationListLevel2 = new List<Vector2>();
-    [HideInInspector] public static List<Vector2> deathLocationListLevel3 = new List<Vector2>();
-    [HideInInspector] public static List<Vector2> deathLocationListLevelMain = new List<Vector2>();
-    [HideInInspector] public static int[] EnemyControllerUse = new int[13 * 3];*/
-
     [SerializeField] private string NextLevel = "";
+    private float currentStartTime;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        StartTimer(); 
+    }
+
+    public void StartTimer()
+    {
+        currentStartTime = Time.time; 
+    }
+
+    public void EndTimer(int checkpointID)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!levelsData.ContainsKey(sceneName))
+            levelsData[sceneName] = new LevelData();
+        if (currentStartTime > 0)
+        {
+            float timeSpent = Time.time - currentStartTime;
+            levelsData[sceneName].RecordCheckpointTime(checkpointID, timeSpent);
+            currentStartTime = 0;
+        }
+    }
+
+
+    public void TriggerEndDoor()
+    {
+        EndTimer(latestCheckpointID + 1);
+        TriggerCheckpoint(latestCheckpointID + 1);
+        Debug.Log("End door reached, level completed.");
     }
 
     public void LoadNextLevel()
@@ -45,12 +67,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        if (levelsData == null || levelsData.Count == 0)
-        {
-            Debug.LogError("levelsData is empty or null!");
-        }
         SendToGoogle.Instance.Send();
-        //ResetDeathLocationsAndUsage();
         ResetData();
         if (DataPersistanceManager.Instance)
         {
@@ -83,66 +100,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    /*public void UpdateEnemyControllerUse(int EnemyType)
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-        Debug.Log(sceneName);
-
-        if (sceneName == "Level 1")
-        {
-            EnemyControllerUse[EnemyType] += 1;
-        }
-        else if (sceneName == "Level 2")
-        {
-            EnemyControllerUse[EnemyType + 3 * (2 + latestCheckpointID)] += 1;
-        }
-        else if (sceneName == "Level 3")
-        {
-            EnemyControllerUse[EnemyType + 3 * 4 ] += 1;
-        }
-        else if (sceneName == "Master")
-        {
-            EnemyControllerUse[EnemyType + 3 * (6 + latestCheckpointID)] += 1;
-        }
-    }
-
-    public static void ResetDeathLocationsAndUsage()
-    {
-        deathLocationListLevel0.Clear();
-        deathLocationListLevel1.Clear();
-        deathLocationListLevel2.Clear();
-        deathLocationListLevel3.Clear();
-        deathLocationListLevelMain.Clear();
-
-        for (int i = 0; i < EnemyControllerUse.Length; i++)
-        {
-            EnemyControllerUse[i] = 0;
-        }
-    }*/
-
-    /*private void UpdateDeathPerCheckpoint()
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-        Debug.Log(sceneName);
-
-        if (sceneName == "Level 0")
-        {
-            deathPerCheckpoint[0] += 1;
-        }
-        else if (sceneName == "Level 1")
-        {
-            deathPerCheckpoint[1] += 1;
-        }
-        else if (sceneName == "Level 2")
-        {
-            deathPerCheckpoint[2] += 1;
-        }
-        else if (sceneName == "Master")
-        {
-            deathPerCheckpoint[latestCheckpointID + 4] += 1;
-        }
-    }*/
-
     public void AddDeathLocation(Vector2 deathPosition)
     {
         string sceneName = SceneManager.GetActiveScene().name;
@@ -151,46 +108,7 @@ public class LevelManager : MonoBehaviour
 
         levelsData[sceneName].AddDeathLocation(deathPosition);
         Debug.Log($"Death location added to {sceneName}: {deathPosition}");
-        // 验证添加后的结果
-        var locations = string.Join(", ", levelsData[sceneName].deathLocations.ConvertAll(v => $"{v.x}, {v.y}"));
-        Debug.Log($"Updated death locations for {sceneName}: {locations}");
-        if (levelsData == null || levelsData.Count == 0)
-        {
-            Debug.LogError("levelsDataaaaaaaaaaaa is empty or null!");
-        }
     }
-
-
-    /*public void AddDeathLocation(Vector2 deathPosition)
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-
-        if (sceneName == "Level 0")
-        {
-            deathLocationListLevel0.Add(deathPosition);
-            Debug.Log("Death location added to Level 0: " + deathPosition);
-        }
-        else if (sceneName == "Level 1")
-        {
-            deathLocationListLevel1.Add(deathPosition);
-            Debug.Log("Death location added to Level 1: " + deathPosition);
-        }
-        else if (sceneName == "Level 2")
-        {
-            deathLocationListLevel2.Add(deathPosition);
-            Debug.Log("Death location added to Level 2: " + deathPosition);
-        }
-        else if (sceneName == "Level 3")
-        {
-            deathLocationListLevel3.Add(deathPosition);
-            Debug.Log("Death location added to Level 3: " + deathPosition);
-        }
-        else if (sceneName == "Master")
-        {
-            deathLocationListLevelMain.Add(deathPosition);
-            Debug.Log("Death location added to Master: " + deathPosition);
-        }
-    }*/
 
     public void UpdateLatestCheckpoint(int checkpointID, Vector3 position)
     {
@@ -198,21 +116,48 @@ public class LevelManager : MonoBehaviour
         {
             latestCheckpointID = checkpointID;
             latestCheckpointPosition = position;
+            TriggerCheckpoint(checkpointID);
+            EndTimer(latestCheckpointID);
+            latestCheckpointID = checkpointID;
+            StartTimer();
             Debug.Log("Latest Checkpoint updated to ID: " + latestCheckpointID);
         }
     }
 
+    public void RecordCheckpointTime(int checkpointID, float timeSpent)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!levelsData.ContainsKey(sceneName))
+        {
+            levelsData[sceneName] = new LevelData();
+        }
+
+        levelsData[sceneName].RecordCheckpointTime(checkpointID, timeSpent);
+        Debug.Log($"Time recorded for checkpoint {checkpointID} in {sceneName}: {timeSpent} seconds");
+    }
+
+    public void TriggerCheckpoint(int checkpointID)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!levelsData.ContainsKey(sceneName))
+        {
+            levelsData[sceneName] = new LevelData();
+        }
+
+        levelsData[sceneName].TriggerCheckpoint(checkpointID);
+        Debug.Log($"Checkpoint {checkpointID} triggered in {sceneName}");
+    }
+
+
     public IEnumerator Die()
     {
         UIManager.Instance.loseText.SetActive(true);
-        //UpdateDeathPerCheckpoint();
         yield return new WaitForSeconds(1f);
         Respawn();
     }
 
     public void Respawn()
     {
-        //UpdateDeathPerCheckpoint();
         //yield return new WaitForSeconds(2f);
         if (latestCheckpointID == -1)
         {
@@ -242,23 +187,47 @@ public class LevelData
 
     public void AddDeathLocation(Vector2 deathPosition)
     {
+        if (deathLocations == null)
+        {
+            deathLocations = new List<Vector2>();
+        }
         deathLocations.Add(deathPosition);
     }
 
     public void UpdateEnemyControllerUsage(int checkpointID, int enemyType)
     {
         if (!checkpointData.ContainsKey(checkpointID))
+        {
             checkpointData[checkpointID] = new CheckpointData();
-
+        }
         checkpointData[checkpointID].IncreaseEnemyControllerUsage(enemyType);
+    }
+
+    public void RecordCheckpointTime(int checkpointID, float timeSpent)
+    {
+        if (!checkpointData.ContainsKey(checkpointID))
+        {
+            checkpointData[checkpointID] = new CheckpointData();
+        }
+        checkpointData[checkpointID].AddTimeSpent(timeSpent);
+    }
+
+    public void TriggerCheckpoint(int checkpointID)
+    {
+        if (!checkpointData.ContainsKey(checkpointID))
+        {
+            checkpointData[checkpointID] = new CheckpointData();
+        }
+
+        checkpointData[checkpointID].SetTriggered();
     }
 
     public void ResetData()
     {
-        deathLocations.Clear();
+        deathLocations?.Clear();
         foreach (var checkpoint in checkpointData.Values)
         {
-            checkpoint.ResetUsage();
+            checkpoint.ResetData();
         }
     }
 }
@@ -267,18 +236,48 @@ public class LevelData
 public class CheckpointData
 {
     private Dictionary<int, int> enemyControllerUsage = new Dictionary<int, int>();
+    public List<float> timeSpentList = new List<float>();
+    public bool isTriggered = false;
+
+    public void AddTimeSpent(float time)
+    {
+        timeSpentList.Add(time);
+    }
+
+    public void SetTriggered()
+    {
+        isTriggered = true;
+    }
+    
+    public bool HasTriggerData()
+    {
+        return isTriggered;
+    }
+
+    public bool HasTimeSpentData()
+    {
+        return timeSpentList.Count > 0;
+    }
+
+    public bool HasEnemyUsageData()
+    {
+        return enemyControllerUsage.Count > 0;
+    }
 
     public void IncreaseEnemyControllerUsage(int enemyType)
     {
         if (!enemyControllerUsage.ContainsKey(enemyType))
+        {
             enemyControllerUsage[enemyType] = 0;
-
+        }
         enemyControllerUsage[enemyType]++;
     }
 
-    public void ResetUsage()
+    public void ResetData()
     {
         enemyControllerUsage.Clear();
+        timeSpentList.Clear();
+        isTriggered = false;
     }
 
     public List<string> GetEnemyControllerUsage()

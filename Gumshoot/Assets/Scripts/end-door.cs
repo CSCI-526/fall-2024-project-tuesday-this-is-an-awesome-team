@@ -15,6 +15,7 @@ public class EndDoor : MonoBehaviour
     public void Win(GameObject player)
     {
         UIManager.Instance.winText.SetActive(true);
+        LevelManager.Instance.TriggerEndDoor();
         Destroy(player);
     }
 }

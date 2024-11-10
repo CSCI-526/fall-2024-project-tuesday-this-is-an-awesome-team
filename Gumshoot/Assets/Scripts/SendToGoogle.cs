@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class SendToGoogle : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SendToGoogle : MonoBehaviour
     private long _sessionID;
     private string _allDeathLocations;
     private string _timesUseEnemyAbility;
+    private string _allTimeSpent;
+    private string _allTriggerCounts;
     public bool enable = false;
 
     private void Awake()
@@ -21,51 +24,33 @@ public class SendToGoogle : MonoBehaviour
 
     public void Send()
     {
-        // 获取所有关卡的死亡位置和敌人控制器使用数据
         _allDeathLocations = GetAllDeathLocations();
         _timesUseEnemyAbility = GetAllEnemyControllerUsage();
+        _allTimeSpent = GetAllTimeSpent();
+        _allTriggerCounts = GetAllTriggerStatuses();
 
         string platform = Application.platform == RuntimePlatform.WebGLPlayer ? "WebGL" : "UnityEditor";
         string sessionWithPlatform = $"{_sessionID}|{platform}";
 
-        StartCoroutine(Post(sessionWithPlatform, _allDeathLocations, _timesUseEnemyAbility));
+        StartCoroutine(Post(sessionWithPlatform, _allDeathLocations, _timesUseEnemyAbility, _allTimeSpent, _allTriggerCounts));
     }
 
     private string GetAllDeathLocations()
     {
-        // 检查 LevelManager.Instance 是否为 null
-        if (LevelManager.Instance == null)
-        {
-            Debug.LogError("LevelManager.Instance is null!");
-            return string.Empty;
-        }
-
-        // 检查 levelsData 是否为空或未初始化
-        if (LevelManager.levelsData == null || LevelManager.levelsData.Count == 0)
-        {
-            Debug.LogError("LevelManager.Instance.levelsData is empty or null!");
-            return string.Empty;
-        }
-
         List<string> deathLocations = new List<string>();
-
-        Debug.Log("Starting to gather death locations for each level...");
 
         foreach (var levelData in LevelManager.levelsData)
         {
             string levelName = levelData.Key;
-            Debug.Log($"Processing level: {levelName}");
-
-            // 转换死亡位置为字符串
-            string locations = string.Join(", ", levelData.Value.deathLocations.ConvertAll(v => $"{v.x}, {v.y}"));
-            Debug.Log($"Death locations for {levelName}: {locations}");
-
-            deathLocations.Add($"{levelName}: {locations}");
+            if (levelData.Value.deathLocations != null && levelData.Value.deathLocations.Count > 0)
+            {
+                string locations = string.Join(", ", levelData.Value.deathLocations.ConvertAll(v => $"{v.x}, {v.y}"));
+                Debug.Log($"Death locations for {levelName}: {locations}");
+                deathLocations.Add($"{levelName}: {locations}");
+            }
         }
-
         string result = string.Join(" | ", deathLocations);
         Debug.Log("Final result for all death locations: " + result);
-
         return result;
     }
 
@@ -79,20 +64,70 @@ public class SendToGoogle : MonoBehaviour
             foreach (var checkpoint in levelData.Value.checkpointData)
             {
                 int checkpointID = checkpoint.Key;
-                string usage = string.Join(", ", checkpoint.Value.GetEnemyControllerUsage());
-                usageData.Add($"{levelName} Checkpoint {checkpointID}: {usage}");
+                if (checkpoint.Value.HasEnemyUsageData())
+                {
+                    string usage = string.Join(", ", checkpoint.Value.GetEnemyControllerUsage());
+                    usageData.Add($"{levelName} Checkpoint {checkpointID}: {usage}");
+                }
             }
         }
 
         return string.Join(" | ", usageData);
     }
 
-    private IEnumerator Post(string sessionID, string allDeathLocations, string timesUseEnemyAbility)
+    private string GetAllTimeSpent()
+    {
+        List<string> timeSpentData = new List<string>();
+
+        foreach (var levelData in LevelManager.levelsData)
+        {
+            string levelName = levelData.Key;
+
+            foreach (var checkpoint in levelData.Value.checkpointData)
+            {
+                int checkpointID = checkpoint.Key;
+                if (checkpoint.Value.HasTimeSpentData())
+                {
+                    string times = string.Join(", ", checkpoint.Value.timeSpentList);
+                    timeSpentData.Add($"{levelName} Checkpoint {checkpointID}: Time Spent = [{times}]");
+                }
+            }
+        }
+        string result = string.Join(" | ", timeSpentData);
+        Debug.Log("Final result for all time spents: " + result);
+        return result;
+    }
+
+    private string GetAllTriggerStatuses()
+    {
+        List<string> triggerStatusData = new List<string>();
+
+        foreach (var levelData in LevelManager.levelsData)
+        {
+            string levelName = levelData.Key;
+
+            foreach (var checkpoint in levelData.Value.checkpointData)
+            {
+                int checkpointID = checkpoint.Key;
+                if (checkpoint.Value.HasTriggerData())
+                {
+                    triggerStatusData.Add($"{levelName} Checkpoint {checkpointID}");
+                }
+            }
+        }
+
+        return string.Join(" | ", triggerStatusData);
+    }
+
+
+    private IEnumerator Post(string sessionID, string allDeathLocations, string timesUseEnemyAbility, string allTimeSpent, string allTriggerCounts)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.835694260", sessionID);
+        form.AddField("entry.356227542", allTriggerCounts);
         form.AddField("entry.1741040447", allDeathLocations);
+        form.AddField("entry.1026778936", allTimeSpent);
         form.AddField("entry.2067514501", timesUseEnemyAbility);
 
         // Send responses and verify result
