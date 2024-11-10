@@ -14005,6 +14005,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
+--- !u!1 &1521158782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4073809005234358410, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
+  m_PrefabInstance: {fileID: 8081946887160460650}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1521158788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521158782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064e243541e674249a8b9b926f911d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
 --- !u!4 &1551252177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 607779819790988393, guid: 6d36dccc7e22c4de0b1d413f98d1c35d, type: 3}
@@ -18626,6 +18644,7 @@ GameObject:
   - component: {fileID: 2004790537}
   - component: {fileID: 2004790539}
   - component: {fileID: 2004790538}
+  - component: {fileID: 2004790540}
   m_Layer: 7
   m_Name: rotate (1)
   m_TagString: Surface
@@ -18745,6 +18764,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2004790540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004790536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064e243541e674249a8b9b926f911d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
 --- !u!1 &2023986814
 GameObject:
   m_ObjectHideFlags: 0
@@ -20055,7 +20087,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3797514656926390529, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4073809005234358410, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521158788}
   m_SourcePrefab: {fileID: 100100000, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
 --- !u!1 &8081946887160460651 stripped
 GameObject:
