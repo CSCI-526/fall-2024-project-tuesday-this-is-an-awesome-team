@@ -603,8 +603,8 @@ GameObject:
   - component: {fileID: 4276432119190274665}
   - component: {fileID: 6652915796781643626}
   - component: {fileID: 6910713602928583671}
-  - component: {fileID: -1968654752170384713}
   - component: {fileID: -6368815775640477320}
+  - component: {fileID: 2041864812851002295}
   m_Layer: 0
   m_Name: TNT
   m_TagString: Pullable
@@ -759,23 +759,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1968654752170384713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7451966236787770428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5989c69fb65d8e945b1ac769f80f7f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  canExplode: 1
-  destroysWalls: 0
-  canHurtInstigator: 0
-  instigator: {fileID: 0}
 --- !u!114 &-6368815775640477320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,6 +773,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   col: {fileID: 0}
+--- !u!114 &2041864812851002295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7451966236787770428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e6bcf4928ccc54fa788cb87f9a6cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canExplode: 1
+  canHurtInstigator: 0
+  instigator: {fileID: 0}
 --- !u!1 &8314982665078632917
 GameObject:
   m_ObjectHideFlags: 0

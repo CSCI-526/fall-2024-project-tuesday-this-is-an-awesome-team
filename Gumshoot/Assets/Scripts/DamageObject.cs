@@ -19,11 +19,23 @@ public class DamageObject : MonoBehaviour
 
         if (collision.collider.CompareTag("Player"))
         {
-            Health hpObj = collision.collider.GetComponent<Health>();
-            if (hpObj)
+            Health hpOfOther = collision.collider.GetComponent<Health>(); // the health point of the incoming collider
+
+            // if the current object is an enemy
+            if (CompareTag("Enemy"))
+            {
+                Health hpOfThis = GetComponent<Health>(); // the health point of the current object
+                // if the enemy already died
+                if (hpOfThis.health <= 0)
+                {
+                    return;
+                }
+            }
+            
+            if (hpOfOther)
             {
                 Debug.Log("Damaging: " + collision.gameObject.name);
-                hpObj.Damage(damage, gameObject);
+                hpOfOther.Damage(damage, gameObject);
             }
 
             if (canExplode)
@@ -33,10 +45,10 @@ public class DamageObject : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Enemy"))
         {
-            Health hpObj = collision.collider.GetComponent<Health>();
-            if (hpObj)
+            Health hpOfOther = collision.collider.GetComponent<Health>();
+            if (hpOfOther)
             {
-                hpObj.Damage(damage, gameObject);
+                hpOfOther.Damage(damage, gameObject);
             }
 
             if (canExplode)
