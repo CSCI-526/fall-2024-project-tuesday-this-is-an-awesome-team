@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Button : MonoBehaviour
 {
     public UnityEvent OnPress;
+    public UnityEvent OnRelease; // 添加一个事件用于释放按钮时触发
 
     public GameObject buttonOn;
     public GameObject buttonOff;
@@ -26,13 +27,20 @@ public class Button : MonoBehaviour
         }
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (isPressed && other.CompareTag("Block"))
+        {
+            Release();
+        }
+    }
+
     public void Press()
     {
         isPressed = true;
 
         if (buttonOff != null) buttonOff.SetActive(false);
         if (buttonOn != null) buttonOn.SetActive(true);
-        //GetComponent<SpriteRenderer>().color = Color.green;
 
         OnPress?.Invoke();
         SaveObject save = GetComponent<SaveObject>();
@@ -42,8 +50,24 @@ public class Button : MonoBehaviour
         }
     }
 
+    public void Release()
+    {
+        isPressed = false;
+
+        if (buttonOff != null) buttonOff.SetActive(true);
+        if (buttonOn != null) buttonOn.SetActive(false);
+
+        OnRelease?.Invoke(); 
+        SaveObject save = GetComponent<SaveObject>();
+        if (save)
+        {
+            save.State = false;
+        }
+    }
+
     public bool IsPressed
     {
         get { return isPressed; }
     }
 }
+

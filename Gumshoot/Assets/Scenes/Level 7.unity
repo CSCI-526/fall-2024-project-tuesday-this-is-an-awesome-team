@@ -3010,6 +3010,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
   buttonOn: {fileID: 0}
   buttonOff: {fileID: 0}
 --- !u!61 &263642110
@@ -7494,6 +7497,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5072479483928155537, guid: d51e0ff64d46b1f46b77c4f5dc43caa8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072479483928155537, guid: d51e0ff64d46b1f46b77c4f5dc43caa8, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494696821}
@@ -7501,13 +7508,14 @@ PrefabInstance:
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1358539266}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5072479483928155537, guid: d51e0ff64d46b1f46b77c4f5dc43caa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3665861787776103379, guid: d51e0ff64d46b1f46b77c4f5dc43caa8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 730747601}
+      addedObject: {fileID: 730747606}
   m_SourcePrefab: {fileID: 100100000, guid: d51e0ff64d46b1f46b77c4f5dc43caa8, type: 3}
 --- !u!4 &730747599 stripped
 Transform:
@@ -7519,7 +7527,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3665861787776103379, guid: d51e0ff64d46b1f46b77c4f5dc43caa8, type: 3}
   m_PrefabInstance: {fileID: 730747598}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &730747601
+--- !u!114 &730747606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7528,26 +7536,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 730747600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b4acbc085b5dd4bb95f012927f9f07, type: 3}
+  m_Script: {fileID: 11500000, guid: a0d6b41190b5b714289e895cd3b21d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3
-  State: 0
-  onActivate:
+  OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500840789}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Press
-        m_Mode: 0
+      - m_Target: {fileID: 1494696821}
+        m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
+        m_MethodName: StartFan
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1358539266}
+        m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
+        m_MethodName: StartFan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1494696821}
+        m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
+        m_MethodName: StopFan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1358539266}
+        m_TargetAssemblyTypeName: Rotate, Assembly-CSharp
+        m_MethodName: StopFan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonOn: {fileID: 0}
+  buttonOff: {fileID: 0}
 --- !u!1 &732019460
 GameObject:
   m_ObjectHideFlags: 3
@@ -9629,6 +9676,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
   buttonOn: {fileID: 0}
   buttonOff: {fileID: 0}
 --- !u!61 &1006379595
@@ -14480,6 +14530,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
   buttonOn: {fileID: 0}
   buttonOff: {fileID: 0}
 --- !u!114 &1500840790
