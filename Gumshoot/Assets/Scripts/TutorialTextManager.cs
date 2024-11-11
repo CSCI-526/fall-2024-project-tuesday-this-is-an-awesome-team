@@ -47,7 +47,7 @@ public class TutorialTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Level -1")
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
             if (gameObject.name == "TutorialTriggerStick")
             {
@@ -58,7 +58,7 @@ public class TutorialTextManager : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Level 0")
+        if (SceneManager.GetActiveScene().name == "Level 2")
         {
             if (gameObject.name == "TutorialTriggerStick")
             {
@@ -113,7 +113,7 @@ public class TutorialTextManager : MonoBehaviour
         }
 
         // Flying
-        if (SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "Level 3")
         {
             
             if (gameObject.name == "TutorialTriggerControl")
@@ -191,7 +191,7 @@ public class TutorialTextManager : MonoBehaviour
         }
 
         // Shooting
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 4")
         {
             ShootingEnemyController shootingPlayer = FindObjectOfType<ShootingEnemyController>();
             if (gameObject.name == "TutorialTriggerSpace")
@@ -223,7 +223,7 @@ public class TutorialTextManager : MonoBehaviour
         }
 
         // Jumping
-        if (SceneManager.GetActiveScene().name == "Level 3")
+        if (SceneManager.GetActiveScene().name == "Level 5")
         {
             if (gameObject.name == "TutorialTriggerJump")
             {
