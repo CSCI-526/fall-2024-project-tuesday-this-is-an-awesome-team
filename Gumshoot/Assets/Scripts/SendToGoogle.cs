@@ -127,8 +127,8 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.835694260", sessionID);
         form.AddField("entry.356227542", allTriggerCounts);
         form.AddField("entry.1741040447", allDeathLocations);
-        form.AddField("entry.1026778936", allTimeSpent);
-        form.AddField("entry.2067514501", timesUseEnemyAbility);
+        form.AddField("entry.1026778936", timesUseEnemyAbility);
+        form.AddField("entry.2067514501", allTimeSpent);
 
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
