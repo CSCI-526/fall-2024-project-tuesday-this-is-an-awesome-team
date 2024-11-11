@@ -1150,14 +1150,14 @@ PrefabInstance:
     - target: {fileID: 1115656035537611190, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 798086ad94e974f4993bf3e9bac33d4e, type: 3}
+      objectReference: {fileID: 21300000, guid: 68795e397f390480e8f74409c87a0b8a, type: 3}
     - target: {fileID: 1710595738714593753, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Stick
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3183444139606483818, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_LocalRotation.w

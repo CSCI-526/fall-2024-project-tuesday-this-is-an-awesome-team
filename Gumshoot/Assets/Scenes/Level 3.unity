@@ -349,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 453278226728416810, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 798086ad94e974f4993bf3e9bac33d4e, type: 3}
+      objectReference: {fileID: 21300000, guid: 68795e397f390480e8f74409c87a0b8a, type: 3}
     - target: {fileID: 453278226728416810, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -357,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 1115656035537611190, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 798086ad94e974f4993bf3e9bac33d4e, type: 3}
+      objectReference: {fileID: 21300000, guid: 68795e397f390480e8f74409c87a0b8a, type: 3}
     - target: {fileID: 1273215646481941841, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Grab to hurt enemies
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4867820340900856860, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Grab and Control!
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4867820340900856860, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -3015,7 +3015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Toggle Map view
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3183444139606483818, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3841,7 +3841,7 @@ PrefabInstance:
     - target: {fileID: 453278226728416810, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 798086ad94e974f4993bf3e9bac33d4e, type: 3}
+      objectReference: {fileID: 21300000, guid: 68795e397f390480e8f74409c87a0b8a, type: 3}
     - target: {fileID: 453278226728416810, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -3849,7 +3849,7 @@ PrefabInstance:
     - target: {fileID: 1115656035537611190, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 798086ad94e974f4993bf3e9bac33d4e, type: 3}
+      objectReference: {fileID: 21300000, guid: 68795e397f390480e8f74409c87a0b8a, type: 3}
     - target: {fileID: 1273215646481941841, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3872,7 +3872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Grab to hurt enemies
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -4000,7 +4000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4867820340900856860, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Grab and Control!
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4867820340900856860, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -4427,10 +4427,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
 --- !u!1001 &1321467782
 PrefabInstance:
@@ -4615,7 +4612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Controling
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -5680,10 +5677,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
 --- !u!1 &1883161473
 GameObject:
@@ -5912,7 +5906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Toggle Map view
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3183444139606483818, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_AnchoredPosition.x
