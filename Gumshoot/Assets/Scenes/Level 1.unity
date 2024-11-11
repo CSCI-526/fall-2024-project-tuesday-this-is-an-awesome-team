@@ -1896,11 +1896,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 696322044835340535, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.666838
+      value: -2.92
       objectReference: {fileID: 0}
     - target: {fileID: 696322044835340535, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.167942
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 696322044835340535, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1938,6 +1938,10 @@ PrefabInstance:
       propertyPath: followCamera
       value: 
       objectReference: {fileID: 2113227859}
+    - target: {fileID: 1441082336318124797, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8014442444600827736, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.67
