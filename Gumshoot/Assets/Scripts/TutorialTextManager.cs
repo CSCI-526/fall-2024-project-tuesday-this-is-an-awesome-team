@@ -47,6 +47,17 @@ public class TutorialTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Level -1")
+        {
+            if (gameObject.name == "TutorialTriggerStick")
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                }
+            }
+        }
+
         if (SceneManager.GetActiveScene().name == "Level 0")
         {
             if (gameObject.name == "TutorialTriggerStick")
