@@ -154,6 +154,7 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.loseText.SetActive(true);
         yield return new WaitForSeconds(1f);
         Respawn();
+        StartTimer();
     }
 
     public void Respawn()
