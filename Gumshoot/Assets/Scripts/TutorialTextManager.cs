@@ -20,6 +20,8 @@ public class TutorialTextManager : MonoBehaviour
 
     private bool hasThrowed = false;
 
+    public RectTransform arrowIcon;
+
 
     // Flying take control only be triggered once
     private bool tutorialShown2 = false;
@@ -70,6 +72,15 @@ public class TutorialTextManager : MonoBehaviour
 
             if (gameObject.name == "TutorialTriggerJump")
             {
+                if (tutorialGroup != null & tutorialGroup.activeSelf)
+                {
+                    Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mouseWorldPosition.z = 0f;
+                    Vector2 direction = (Vector2)(mouseWorldPosition - arrowIcon.position);
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    arrowIcon.rotation = Quaternion.Euler(0, 0, angle + 45f);
+                }
+
                 if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
                 {
                     tutorialGroup.gameObject.SetActive(false);
@@ -227,6 +238,15 @@ public class TutorialTextManager : MonoBehaviour
         {
             if (gameObject.name == "TutorialTriggerJump")
             {
+                if (tutorialGroup != null & tutorialGroup.activeSelf)
+                {
+                    Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mouseWorldPosition.z = 0f;
+                    Vector2 direction = (Vector2)(mouseWorldPosition - arrowIcon.position);
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    arrowIcon.rotation = Quaternion.Euler(0, 0, angle + 45f);
+                }
+
                 if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
                 {
                     tutorialGroup.gameObject.SetActive(false);
