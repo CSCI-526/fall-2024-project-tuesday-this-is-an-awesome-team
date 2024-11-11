@@ -5,69 +5,45 @@ using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
-    public UnityEvent OnPress;
-    public UnityEvent OnRelease; // 添加一个事件用于释放按钮时触发
+    public UnityEvent OnPress;
 
-    public GameObject buttonOn;
-    public GameObject buttonOff;
+    public GameObject buttonOn;
+    public GameObject buttonOff;
 
-    private bool isPressed = false;
+    private bool isPressed = false;
 
-    void Start()
-    {
-        if (buttonOff != null) buttonOff.SetActive(true);
-        if (buttonOn != null) buttonOn.SetActive(false);
-    }
+    void Start()
+    {
+        if (buttonOff != null) buttonOff.SetActive(true);
+        if (buttonOn != null) buttonOn.SetActive(false);
+    }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!isPressed && other.CompareTag("Block"))
-        {
-            Press();
-        }
-    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!isPressed && other.CompareTag("Block"))
+        {
+            Press();
+        }
+    }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (isPressed && other.CompareTag("Block"))
-        {
-            Release();
-        }
-    }
+    public void Press()
+    {
+        isPressed = true;
 
-    public void Press()
-    {
-        isPressed = true;
+        if (buttonOff != null) buttonOff.SetActive(false);
+        if (buttonOn != null) buttonOn.SetActive(true);
+        //GetComponent<SpriteRenderer>().color = Color.green;
 
-        if (buttonOff != null) buttonOff.SetActive(false);
-        if (buttonOn != null) buttonOn.SetActive(true);
+        OnPress?.Invoke();
+        SaveObject save = GetComponent<SaveObject>();
+        if (save)
+        {
+            save.State = true;
+        }
+    }
 
-        OnPress?.Invoke();
-        SaveObject save = GetComponent<SaveObject>();
-        if (save)
-        {
-            save.State = true;
-        }
-    }
-
-    public void Release()
-    {
-        isPressed = false;
-
-        if (buttonOff != null) buttonOff.SetActive(true);
-        if (buttonOn != null) buttonOn.SetActive(false);
-
-        OnRelease?.Invoke(); 
-        SaveObject save = GetComponent<SaveObject>();
-        if (save)
-        {
-            save.State = false;
-        }
-    }
-
-    public bool IsPressed
-    {
-        get { return isPressed; }
-    }
+    public bool IsPressed
+    {
+        get { return isPressed; }
+    }
 }
-
