@@ -688,9 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: 'Jump
-
-        Aim with mouse'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -2439,7 +2437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_text
-      value: Power Increased
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1741373311451899009, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_fontSize
@@ -2483,7 +2481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3183444139606483818, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.8
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3183444139606483818, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2678,10 +2676,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
 --- !u!1 &814994333
 GameObject:
@@ -2928,7 +2923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jump
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3190,10 +3185,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
 --- !u!1 &921351678
 GameObject:
@@ -5007,10 +4999,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
 --- !u!1 &1429765048
 GameObject:
@@ -6550,10 +6539,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6918598543123165492, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a304ddf19a91f489d58890bbe18123, type: 3}
 --- !u!1001 &1955107786
 PrefabInstance:
