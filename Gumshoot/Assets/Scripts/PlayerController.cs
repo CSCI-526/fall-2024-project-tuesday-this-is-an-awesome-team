@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool gumExtended = false;
     [HideInInspector] public Pullable PulledObject = null;
+    [HideInInspector] public GameObject StuckSurface = null;
     [HideInInspector] public GameObject SurfaceContactInstance = null;
     [HideInInspector] public GameObject PullContactInstance = null;
 
@@ -128,15 +129,16 @@ public class PlayerController : MonoBehaviour
         }
 
         stuckToSurface = false;
+        StuckSurface = null;
         if (GetComponent<FlyingEnemyController>() == null)
         {
             rb.gravityScale = 1.6f;
             rb.AddForce(direction * jumpForce);
-        }
-        if (PulledObject != null)
-        {
-            PulledObject.rb.gravityScale = 1.6f;
-            PulledObject.rb.AddForce(direction * jumpForce);
+            if (PulledObject != null)
+            {
+                PulledObject.rb.gravityScale = 1.6f;
+                PulledObject.rb.AddForce(direction * jumpForce);
+            }
         }
 
         if (SurfaceContactInstance)
@@ -148,6 +150,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
+        StuckSurface = null;
         if (PulledObject != null)
         {
             // Disconnect the pulled object from the player

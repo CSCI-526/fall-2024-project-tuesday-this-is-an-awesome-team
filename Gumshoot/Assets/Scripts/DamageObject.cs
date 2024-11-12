@@ -55,6 +55,11 @@ public class DamageObject : MonoBehaviour
         {
             if (collision.collider.CompareTag("Destructible"))
             {
+                if (PlayerController.Instance.StuckSurface == collision.gameObject)
+                {
+                    PlayerController.Instance.Jump(Vector3.zero);
+                }
+
                 collision.gameObject.SetActive(false);
                 SaveObject save = collision.collider.GetComponent<SaveObject>();
                 if (save)

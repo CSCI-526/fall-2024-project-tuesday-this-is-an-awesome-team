@@ -274,6 +274,8 @@ public class GumMovement : MonoBehaviour
                 }
                 owner.rb.velocity = Vector2.zero;
 
+                owner.StuckSurface = collision.gameObject;
+
                 // Recalculate distance
                 dist = Vector3.Distance(owner.transform.position, transform.position);
             }
