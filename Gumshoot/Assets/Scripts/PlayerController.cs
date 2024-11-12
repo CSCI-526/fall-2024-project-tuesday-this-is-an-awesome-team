@@ -121,6 +121,12 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(Vector3 direction)
     {
+        // If not stuck to a surface and not grounded, do not jump
+        if (!stuckToSurface && rb.velocity.y != 0)
+        {
+            return;
+        }
+
         stuckToSurface = false;
         if (GetComponent<FlyingEnemyController>() == null)
         {
