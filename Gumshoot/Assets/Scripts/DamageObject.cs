@@ -9,6 +9,7 @@ public class DamageObject : MonoBehaviour
     public bool destroysWalls = false;
     public bool canHurtInstigator = false;
     public GameObject instigator = null;
+    private bool isEnemyDead = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,17 +22,11 @@ public class DamageObject : MonoBehaviour
         {
             Health hpOfOther = collision.collider.GetComponent<Health>(); // the health point of the incoming collider
 
-            // if the current object is an enemy
-            if (CompareTag("Enemy"))
+            if (isEnemyDead) 
             {
-                Health hpOfThis = GetComponent<Health>(); // the health point of the current object
-                // if the enemy already died
-                if (hpOfThis.health <= 0)
-                {
-                    return;
-                }
+                return;
             }
-            
+
             if (hpOfOther)
             {
                 Debug.Log("Damaging: " + collision.gameObject.name);
@@ -84,6 +79,20 @@ public class DamageObject : MonoBehaviour
         if (this.instigator == instigator)
         {
             canHurtInstigator = true;
+        }
+    }
+
+    void Update()
+    {
+        // if the current object is an enemy
+        if (CompareTag("Enemy"))
+        {
+            Health hpOfThis = GetComponent<Health>(); // the health point of the current enemy
+            if (hpOfThis.health <= 0) // if the enemy already died
+            {
+                isEnemyDead = true;
+                gameObject.layer = LayerMask.NameToLayer("DeadEnemy"); // the DeadEnemy layer doesn't have collision with Player layer
+            }
         }
     }
 }
