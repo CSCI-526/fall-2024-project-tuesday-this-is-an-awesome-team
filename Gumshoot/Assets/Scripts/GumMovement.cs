@@ -57,8 +57,8 @@ public class GumMovement : MonoBehaviour
         switch (state)
         {
             case GumState.Extending:
-                direction = (transform.position - owner.transform.position).normalized;
-                dist = (transform.position - owner.transform.position).magnitude;
+                //direction = (transform.position - owner.transform.position).normalized;
+                //dist = (transform.position - owner.transform.position).magnitude;
                 // Extend the gum string
                 if (dist < owner.maxDist)
                 {
@@ -83,10 +83,10 @@ public class GumMovement : MonoBehaviour
                 owner.PulledObject.Move(owner.extractSpeed * -direction + (Vector3)owner.rb.velocity);
                 goto case GumState.Retracting;
             case GumState.Retracting:
-                direction = (transform.position - owner.transform.position).normalized;
-                dist = (transform.position - owner.transform.position).magnitude;
+                //direction = (transform.position - owner.transform.position).normalized;
+                //dist = (transform.position - owner.transform.position).magnitude;
                 // Moves the gum string toward the player
-                if (dist > 0.8f)
+                if (dist > 1.0f)
                 {
                     dist -= Time.deltaTime * owner.retractSpeed;
                     //transform.localPosition -= (owner.retractSpeed * Time.deltaTime * direction);
@@ -221,7 +221,8 @@ public class GumMovement : MonoBehaviour
         }
         else
         {
-            StringGroupInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, -direction);
+            Vector3 tempDirection = (transform.position - owner.transform.position).normalized;
+            StringGroupInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, -tempDirection);
         }
 
         // If the length of the string has exceeded the combined length of the string sprites, spawn another string sprite

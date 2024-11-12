@@ -53,9 +53,9 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = (SurfaceContactInstance.transform.position - transform.position).normalized;
             float dist = (SurfaceContactInstance.transform.position - transform.position).magnitude;
-            if (dist > 1f)
+            if (dist > 1.0f)
             {
-                //rb.velocity = (retractSpeed * direction);
+                //rb.velocity = (retractSpeed * dist * 0.5f * direction);
                 transform.position += (retractSpeed * direction * Time.deltaTime);
             }
         }
