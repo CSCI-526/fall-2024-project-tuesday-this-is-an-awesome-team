@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour
             float dist = (SurfaceContactInstance.transform.position - transform.position).magnitude;
             if (dist > 1f)
             {
-                rb.velocity = (retractSpeed * direction);
+                //rb.velocity = (retractSpeed * direction);
+                transform.position += (retractSpeed * direction * Time.deltaTime);
             }
         }
         // Keep the item following the player if the item gets stuck
