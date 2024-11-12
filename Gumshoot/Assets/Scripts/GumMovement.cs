@@ -219,6 +219,10 @@ public class GumMovement : MonoBehaviour
             StringGroupInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, -direction);
             StringGroupInstance.transform.position = owner.SurfaceContactInstance.transform.position;
         }
+        else
+        {
+            StringGroupInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, -direction);
+        }
 
         // If the length of the string has exceeded the combined length of the string sprites, spawn another string sprite
         if (state == GumState.Extending)
