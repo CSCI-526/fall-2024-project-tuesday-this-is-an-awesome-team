@@ -230,7 +230,28 @@ public class TutorialTextManager : MonoBehaviour
                 {
                     tutorialGroup.gameObject.SetActive(false);
                 }
+                else
+                {
+                    GameObject projectile = GameObject.Find("Projectile1");
+                    if (projectile != null && arrowIcon != null)
+                    {
+                        if (gameObject.name == "TutorialTriggerBullet")
+                        {
+                            SetPositionWithOffset(arrowIcon.gameObject, projectile.transform, new Vector3(0.75f, -0.75f, 0));
+                        }
+                        else
+                        {
+                            SetPositionWithOffset(arrowIcon.gameObject, projectile.transform, new Vector3(-0.75f, -0.75f, 0));
+                        }
+                        arrowIcon.gameObject.SetActive(true);
+                    }
+                    else if (arrowIcon != null)
+                    {
+                        arrowIcon.gameObject.SetActive(false);
+                    }
+                }
             }
+            
         }
 
         // Jumping
