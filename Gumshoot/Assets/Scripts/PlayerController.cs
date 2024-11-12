@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = (transform.position - PulledObject.transform.position).normalized;
             float dist = (PulledObject.transform.position - transform.position).magnitude;
-            if (dist > 1.8f)
+            if (dist > 1.6f)
             {
                 PulledObject.transform.position += (retractSpeed * direction * Time.deltaTime);
             }
@@ -142,8 +142,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(direction * jumpForce);
             if (PulledObject != null)
             {
-                PulledObject.rb.gravityScale = 1.6f;
-                PulledObject.rb.AddForce(direction * jumpForce);
+                //PulledObject.rb.gravityScale = 1.6f;
+                //PulledObject.rb.AddForce(direction * jumpForce);
             }
         }
 
