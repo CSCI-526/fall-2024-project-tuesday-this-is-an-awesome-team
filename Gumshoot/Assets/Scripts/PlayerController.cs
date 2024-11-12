@@ -121,25 +121,22 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(Vector3 direction)
     {
-        if (stuckToSurface)
+        stuckToSurface = false;
+        if (GetComponent<FlyingEnemyController>() == null)
         {
-            stuckToSurface = false;
-            if (GetComponent<FlyingEnemyController>() == null)
-            {
-                rb.gravityScale = 1.6f;
-                rb.AddForce(direction * jumpForce);
-            }
-            if (PulledObject != null)
-            {
-                PulledObject.rb.gravityScale = 1.6f;
-                PulledObject.rb.AddForce(direction * jumpForce);
-            }
+            rb.gravityScale = 1.6f;
+            rb.AddForce(direction * jumpForce);
+        }
+        if (PulledObject != null)
+        {
+            PulledObject.rb.gravityScale = 1.6f;
+            PulledObject.rb.AddForce(direction * jumpForce);
+        }
 
-            if (SurfaceContactInstance)
-            {
-                Destroy(SurfaceContactInstance);
-                SurfaceContactInstance = null;
-            }
+        if (SurfaceContactInstance)
+        {
+            Destroy(SurfaceContactInstance);
+            SurfaceContactInstance = null;
         }
     }
 
