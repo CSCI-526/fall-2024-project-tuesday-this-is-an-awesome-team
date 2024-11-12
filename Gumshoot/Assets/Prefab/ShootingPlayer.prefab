@@ -143,7 +143,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1.6
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 648bc0f3396d7ab428d712e8ae4c7d68, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   contactPrefab: {fileID: 9054875046446016090, guid: 6bfd04db07688174a9949bc91d100c04, type: 3}
   gumExtended: 0
   PulledObject: {fileID: 0}
+  StuckSurface: {fileID: 0}
   SurfaceContactInstance: {fileID: 0}
   PullContactInstance: {fileID: 0}
   jumpForce: 200
