@@ -76,9 +76,9 @@ public class TutorialTextManager : MonoBehaviour
                 {
                     Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mouseWorldPosition.z = 0f;
-                    Vector2 direction = (Vector2)(mouseWorldPosition - arrowIcon.position);
-                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                    arrowIcon.rotation = Quaternion.Euler(0, 0, angle + 45f);
+                    //Vector2 direction = (Vector2)(mouseWorldPosition - arrowIcon.position);
+                    //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    //arrowIcon.rotation = Quaternion.Euler(0, 0, angle + 45f);
                 }
 
                 if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
@@ -263,9 +263,9 @@ public class TutorialTextManager : MonoBehaviour
                 {
                     Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mouseWorldPosition.z = 0f;
-                    Vector2 direction = (Vector2)(mouseWorldPosition - arrowIcon.position);
-                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                    arrowIcon.rotation = Quaternion.Euler(0, 0, angle + 45f);
+                    //Vector2 direction = (Vector2)(mouseWorldPosition - arrowIcon.position);
+                    //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    //arrowIcon.rotation = Quaternion.Euler(0, 0, angle + 45f);
                 }
 
                 if (PlayerController.Instance != null && Input.GetKeyDown(KeyCode.E))
