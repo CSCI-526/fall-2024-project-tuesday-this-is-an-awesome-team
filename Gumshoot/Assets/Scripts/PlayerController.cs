@@ -123,6 +123,11 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(Vector3 direction)
     {
+        if (gumExtended)
+        {
+            return;
+        }
+
         // If not stuck to a surface and not grounded, do not jump
         if (!stuckToSurface && rb.velocity.y != 0)
         {
