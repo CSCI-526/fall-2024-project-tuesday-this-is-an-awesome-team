@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class JumpingEnemyController : EnemyController
 {
     public GameObject playerPrefab;
+    public GameObject timerPrefab;
     private bool isCooldown = false;
     public Text countdownText;
 
     private PlayerController playerController;
+    private GameObject timerInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,28 @@ public class JumpingEnemyController : EnemyController
         playerController = GetComponent<PlayerController>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        StartTimer();
         StartCoroutine(CooldownCoroutine());
+    }
+
+    void StartTimer()
+    {
+        timerInstance = Instantiate(timerPrefab, transform.position, Quaternion.identity);
+        timerInstance.transform.SetParent(null);
+
+        CountdownTimer countdownTimer = timerInstance.GetComponent<CountdownTimer>();
+        if (countdownTimer != null)
+        {
+            countdownTimer.Init(transform, cooldownDuration);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (timerInstance != null)
+        {
+            Destroy(timerInstance);
+        }
     }
 
     IEnumerator CooldownCoroutine()

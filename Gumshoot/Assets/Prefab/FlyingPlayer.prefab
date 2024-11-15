@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3595e3b90208748c89f0b95264b82c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerPrefab: {fileID: 2777518213092489710, guid: 2ec5df262290e4706ac0ac589243c27f, type: 3}
   moveSpeed: 5
   playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
   countdownText: {fileID: 0}

@@ -15,6 +15,9 @@ public class ShootingEnemyController : EnemyController
     private bool isCooldown = false;
     public Text countdownText;
 
+    public GameObject timerPrefab;
+    private GameObject timerInstance;
+
     private void Start()
     {
         countdownText = UIManager.Instance.countdownText;
@@ -23,7 +26,28 @@ public class ShootingEnemyController : EnemyController
         shootingControl.init(projectilePrefab, firePoint, fireRate, false);
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        StartTimer();
         StartCoroutine(CooldownCoroutine());
+    }
+
+    void StartTimer()
+    {
+        timerInstance = Instantiate(timerPrefab, transform.position, Quaternion.identity);
+        timerInstance.transform.SetParent(null);
+
+        CountdownTimer countdownTimer = timerInstance.GetComponent<CountdownTimer>();
+        if (countdownTimer != null)
+        {
+            countdownTimer.Init(transform, cooldownDuration);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (timerInstance != null)
+        {
+            Destroy(timerInstance);
+        }
     }
 
     IEnumerator CooldownCoroutine()

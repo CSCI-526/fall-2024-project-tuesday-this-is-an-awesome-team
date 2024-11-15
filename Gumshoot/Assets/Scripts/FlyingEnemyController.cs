@@ -9,12 +9,13 @@ public class FlyingEnemyController : EnemyController
     public float moveSpeed = 5f;
 
     public GameObject playerPrefab;
+    public GameObject timerPrefab;
     private bool isCooldown = false;
     public Text countdownText;
 
     private PlayerController playerController;
     private Rigidbody2D rb;
-
+    private GameObject timerInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,28 @@ public class FlyingEnemyController : EnemyController
         rb = GetComponent<Rigidbody2D>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        StartTimer();
         StartCoroutine(CooldownCoroutine());
+    }
+
+    void StartTimer()
+    {
+        timerInstance = Instantiate(timerPrefab, transform.position, Quaternion.identity);
+        timerInstance.transform.SetParent(null);
+
+        CountdownTimer countdownTimer = timerInstance.GetComponent<CountdownTimer>();
+        if (countdownTimer != null)
+        {
+            countdownTimer.Init(transform, cooldownDuration);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (timerInstance != null)
+        {
+            Destroy(timerInstance);
+        }
     }
 
     // Update is called once per frame

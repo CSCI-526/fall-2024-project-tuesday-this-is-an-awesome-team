@@ -204,4 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2795065087558806387, guid: bae40fb8a0b044c4699ba0bb19c6bedb, type: 3}
+  timerPrefab: {fileID: 2777518213092489710, guid: 2ec5df262290e4706ac0ac589243c27f, type: 3}
   countdownText: {fileID: 0}

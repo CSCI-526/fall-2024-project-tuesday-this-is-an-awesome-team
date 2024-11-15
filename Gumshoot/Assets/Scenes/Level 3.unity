@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8486728486433701244, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: m_Size.y
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8665360257280529814, guid: dc788402ada30417dbbf2c20eedb0322, type: 3}
       propertyPath: tutorialGroup
@@ -1694,6 +1694,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 670028464}
+    - target: {fileID: 5792724315557204494, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6388771190692338475, guid: cc90bd4fc6293bb47a0c1c424d6a1de5, type: 3}
       propertyPath: m_text
       value: Pause
