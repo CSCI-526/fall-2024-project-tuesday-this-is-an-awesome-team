@@ -9,7 +9,6 @@ public class JumpingEnemyController : EnemyController
     public GameObject playerPrefab;
     public GameObject timerPrefab;
     private bool isCooldown = false;
-    public Text countdownText;
 
     private PlayerController playerController;
     private GameObject timerInstance;
@@ -17,7 +16,6 @@ public class JumpingEnemyController : EnemyController
     // Start is called before the first frame update
     void Start()
     {
-        countdownText = UIManager.Instance.countdownText;
         playerController = GetComponent<PlayerController>();
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
@@ -51,12 +49,9 @@ public class JumpingEnemyController : EnemyController
 
         while (remainingTime > 0)
         {
-            countdownText.text = remainingTime.ToString("F1") + "s";
             yield return new WaitForSeconds(1f);
             remainingTime -= 1f;
         }
-
-        countdownText.text = "";
 
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);

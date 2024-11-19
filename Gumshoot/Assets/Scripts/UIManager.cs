@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public GameObject winText;
     public GameObject loseText;
-    public Text countdownText;
 
     public GameObject pauseMenu;
 

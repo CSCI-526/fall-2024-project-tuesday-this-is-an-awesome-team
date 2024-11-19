@@ -11,7 +11,6 @@ public class FlyingEnemyController : EnemyController
     public GameObject playerPrefab;
     public GameObject timerPrefab;
     private bool isCooldown = false;
-    public Text countdownText;
 
     private PlayerController playerController;
     private Rigidbody2D rb;
@@ -20,7 +19,6 @@ public class FlyingEnemyController : EnemyController
     // Start is called before the first frame update
     void Start()
     {
-        countdownText = UIManager.Instance.countdownText;
         playerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -76,12 +74,9 @@ public class FlyingEnemyController : EnemyController
 
         while (remainingTime > 0)
         {
-            countdownText.text = remainingTime.ToString("F1") + "s";
             yield return new WaitForSeconds(1f);
             remainingTime -= 1f;
         }
-
-        countdownText.text = "";
 
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);

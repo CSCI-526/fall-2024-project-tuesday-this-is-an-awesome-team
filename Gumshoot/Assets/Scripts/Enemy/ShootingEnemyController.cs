@@ -13,14 +13,12 @@ public class ShootingEnemyController : EnemyController
     private ShootingControl shootingControl;
     private PlayerController playerController;
     private bool isCooldown = false;
-    public Text countdownText;
 
     public GameObject timerPrefab;
     private GameObject timerInstance;
 
     private void Start()
     {
-        countdownText = UIManager.Instance.countdownText;
         playerController = GetComponent<PlayerController>();
         shootingControl = gameObject.AddComponent<ShootingControl>();
         shootingControl.init(projectilePrefab, firePoint, fireRate, false);
@@ -56,11 +54,9 @@ public class ShootingEnemyController : EnemyController
 
         while (remainingTime > 0)
         {
-            countdownText.text = remainingTime.ToString("F1") + "s";
             yield return new WaitForSeconds(1f);
             remainingTime -= 1f;
         }
-        countdownText.text = "";
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;

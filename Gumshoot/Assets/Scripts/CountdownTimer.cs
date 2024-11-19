@@ -50,23 +50,15 @@ public class CountdownTimer : MonoBehaviour
     {
         while (remainingDuration > 0)
         {
-            if (remainingDuration <= 6f)
+            if (remainingDuration / duration <= 0.25f)
             {
-                //if (!uiText.gameObject.activeSelf)
-                //{
-                //    uiText.gameObject.SetActive(true);
-                //}
-
-                if (remainingDuration > 3f)
-                {
-                    uiText.color = new Color(1.0f, 0.5f, 0.0f, 1.0f); // orange
-                    uiFill.color = new Color(1.0f, 0.5f, 0.0f, 1.0f);
-                }
-                else
-                {
-                    uiText.color = new Color(1.0f, 0.3f, 0.3f, 1.0f); // soft red
-                    uiFill.color = new Color(1.0f, 0.3f, 0.3f, 1.0f);
-                }
+                uiText.color = Color.red;
+                uiFill.color = Color.red;
+            }
+            else if (remainingDuration / duration <= 0.5f)
+            {
+                uiText.color = Color.yellow;
+                uiFill.color = Color.yellow;
             }
 
             uiText.text = Mathf.CeilToInt(remainingDuration).ToString();
