@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool stuckToSurface = false;
     [HideInInspector] public Rigidbody2D rb;
-    private GameObject gumInstance = null;
+    [HideInInspector] public GameObject gumInstance = null;
 
     private void Awake()
     {
@@ -175,7 +175,6 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(SurfaceContactInstance);
         }
-
         if (gumInstance)
         {
             Destroy(gumInstance);

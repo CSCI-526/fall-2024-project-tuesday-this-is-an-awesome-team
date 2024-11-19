@@ -5,26 +5,26 @@ using UnityEngine;
 using UnityEngine.Pool;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+public enum GumState
+{
+    Extending,
+    Retracting,
+    PullingPlayer,
+    PullingObject,
+    PullingEnemy
+}
+
 public class GumMovement : MonoBehaviour
 {
-    enum GumState
-    {
-        Extending,
-        Retracting,
-        PullingPlayer,
-        PullingObject,
-        PullingEnemy
-    }
-
     // Initialization
-    private PlayerController owner;
+    public PlayerController owner;
     public GameObject StringGroupPrefab;
     public GameObject StringPrefab;
     public float stringSpriteLength = 0.08f;
     public float playerRadius = 0.325f;
     private Vector3 direction;
 
-    private GumState state = GumState.Extending;
+    public GumState state = GumState.Extending;
     private float dist = 0.0f; // Distance from starting point
     private GameObject StringGroupInstance;
     private bool isComplete = false;

@@ -80,7 +80,7 @@ public class FlyingEnemyController : EnemyController
 
         isCooldown = true;
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
-        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
+        RevertPlayer(newPlayer);
         Destroy(gameObject);
     }
 }

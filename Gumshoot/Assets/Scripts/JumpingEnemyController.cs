@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.UI;
 
 public class JumpingEnemyController : EnemyController
@@ -54,8 +55,10 @@ public class JumpingEnemyController : EnemyController
         }
 
         isCooldown = true;
+
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
-        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
+        RevertPlayer(newPlayer);
+
         Destroy(gameObject);
     }
 }
