@@ -73,6 +73,13 @@ public class DamageObject : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if (collision.collider.CompareTag("Surface"))
+        {
+            if (GetComponent<Projectile>() != null)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public IEnumerator Launch(GameObject instigator, float cooldown)
