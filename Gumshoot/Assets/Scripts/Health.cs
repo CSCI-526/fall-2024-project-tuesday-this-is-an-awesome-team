@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
             if (CompareTag("Player"))
             {
                 Debug.Log("Killed by " + instigator.name);
+                PlayerController.Instance.Die();
                 LevelManager.Instance.AddDeathLocation(new Vector2(transform.position.x, transform.position.y));
                 LevelManager.Instance.StartCoroutine(LevelManager.Instance.Die());
             }

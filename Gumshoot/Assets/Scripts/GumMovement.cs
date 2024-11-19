@@ -145,6 +145,14 @@ public class GumMovement : MonoBehaviour
                 IEnemy enemyMovement = owner.PulledObject.GetComponent<IEnemy>();
                 //GameObject newFlyingPlayer = Instantiate(owner.PulledObject.GetComponent<FlyingEnemyMovement>().controllerPrefab, owner.PulledObject.transform.position, Quaternion.identity);
                 GameObject newPlayer = Instantiate(enemyMovement.ControllerPrefab, owner.PulledObject.transform.position, Quaternion.identity);
+                if (owner.stuckToSurface)
+                {
+                    PlayerController newPlayerController = newPlayer.GetComponent<PlayerController>();
+                    newPlayerController.stuckToSurface = owner.stuckToSurface;
+                    newPlayerController.StuckSurface = owner.StuckSurface;
+                    newPlayerController.SurfaceContactInstance = owner.SurfaceContactInstance;
+                    newPlayerController.rb.gravityScale = owner.rb.gravityScale;
+                }
                 
                 if (newPlayer.GetComponent<FlyingEnemyController>() != null)
                 {

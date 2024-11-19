@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    public void Die()
     {
         StuckSurface = null;
         if (PulledObject != null)
