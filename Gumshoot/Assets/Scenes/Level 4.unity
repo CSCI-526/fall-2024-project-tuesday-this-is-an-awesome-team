@@ -929,7 +929,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512646910886731678, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: firePointDistance
-      value: 2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4239182048248042017, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Radius
@@ -3659,7 +3659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512646910886731678, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: firePointDistance
-      value: 2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3364360277360129417, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7961,7 +7961,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512646910886731678, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: firePointDistance
-      value: 2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4239182048248042017, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Radius
@@ -10173,7 +10173,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512646910886731678, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: firePointDistance
-      value: 2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4239182048248042017, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Radius
