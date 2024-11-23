@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public GameObject gumInstance = null;
 
+    public Transform aimArrow;
+
     private void Awake()
     {
         Instance = this;
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RotateTowardsMouse();
+        
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -187,4 +191,15 @@ public class PlayerController : MonoBehaviour
         mousePos.z = 0;
         return (mousePos - transform.position).normalized;
     }
+
+    private void RotateTowardsMouse()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+        Vector3 directionToMouse = (mousePos - transform.position).normalized;
+        float angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
+        aimArrow.position = transform.position + directionToMouse * 1f;
+        aimArrow.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+
 }
