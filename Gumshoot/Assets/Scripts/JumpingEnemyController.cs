@@ -17,6 +17,7 @@ public class JumpingEnemyController : EnemyController
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerController.aimArrow.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
         StartTimer();

@@ -131,15 +131,27 @@ public class TutorialTextManager : MonoBehaviour
             if (gameObject.name == "TutorialTriggerControl")
             {
                 FlyingEnemyMovement flyingEnemy = GameObject.Find("FlyingEnemy")?.GetComponent<FlyingEnemyMovement>();
+
+                if (flyingEnemy != null && flyingEnemy.GetComponent<SpriteRenderer>().color == Color.red && arrowIcon != null && arrowIcon.gameObject.activeSelf)
+                {
+                    SetPositionWithOffset(arrowIcon.gameObject, flyingEnemy.transform, new Vector3(0, 1.25f, 0));
+                }
+                else
+                {
+                    arrowIcon.gameObject.SetActive(false);
+                }
+
                 if (!tutorialShown2 && PlayerController.Instance != null && PlayerController.Instance.gumExtended && PlayerController.Instance.PulledObject != null)
                 {
                     tutorialGroup.gameObject.SetActive(false);
+                    arrowIcon.gameObject.SetActive(true);
                 }
 
                 if (flyingEnemy != null && flyingEnemy.GetComponent<SpriteRenderer>().color == Color.yellow)
                 {
                     SetPositionWithOffset(nextTutorialGroup, flyingEnemy.transform, Vector3.right * 1.0f);
                     nextTutorialGroup.gameObject.SetActive(true);
+                    arrowIcon.gameObject.SetActive(false);
                 }
                 else
                 {
