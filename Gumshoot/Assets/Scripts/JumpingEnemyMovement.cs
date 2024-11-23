@@ -25,7 +25,6 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
 
-    private bool canJump = true;
     //public float jumpCooldown = 2f;
     //private float cooldownTimer = 0f;
 
@@ -61,7 +60,5 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
         float horizontalDirection = Mathf.Sign(directionToPlayer.x);
         Vector2 jumpForceVector = new Vector2(horizontalDirection * horizontalForce, verticalForce);
         rb.AddForce(jumpForceVector, ForceMode2D.Impulse);
-
-        canJump = false;
     }
 }

@@ -9,7 +9,6 @@ public class JumpingEnemyController : EnemyController
 {
     public GameObject playerPrefab;
     public GameObject timerPrefab;
-    private bool isCooldown = false;
 
     private PlayerController playerController;
     private GameObject timerInstance;
@@ -53,8 +52,6 @@ public class JumpingEnemyController : EnemyController
             yield return new WaitForSeconds(1f);
             remainingTime -= 1f;
         }
-
-        isCooldown = true;
 
         GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         RevertPlayer(newPlayer);

@@ -31,6 +31,7 @@ public class TutorialTextManager : MonoBehaviour
     // Jumping E increased only be triggered once
     private bool tutorialShown = false;
 
+    private float flashTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -192,6 +193,10 @@ public class TutorialTextManager : MonoBehaviour
 
             if (gameObject.name == "TutorialTriggerMap" || gameObject.name == "TutorialTriggerMap2")
             {
+                if (tutorialGroup.gameObject.activeSelf)
+                {
+                    FlashTutorialImage();
+                }
                 if (Input.GetKeyDown(KeyCode.M) && !hasToggledMap)
                 {
                     tutorialGroup.gameObject.SetActive(false);
@@ -204,6 +209,19 @@ public class TutorialTextManager : MonoBehaviour
         // Shooting
         if (SceneManager.GetActiveScene().name == "Level 4")
         {
+            if (gameObject.name == "TutorialTriggerMap" || gameObject.name == "TutorialTriggerMap2")
+            {
+                if (tutorialGroup.gameObject.activeSelf)
+                {
+                    FlashTutorialImage();
+                }
+                if (Input.GetKeyDown(KeyCode.M) && !hasToggledMap)
+                {
+                    tutorialGroup.gameObject.SetActive(false);
+                    hasToggledMap = true;
+                }
+            }
+
             ShootingEnemyController shootingPlayer = FindObjectOfType<ShootingEnemyController>();
             if (gameObject.name == "TutorialTriggerSpace")
             {
@@ -316,4 +334,21 @@ public class TutorialTextManager : MonoBehaviour
         }
     }
 
+    private void FlashTutorialImage()
+    {
+        flashTimer += Time.deltaTime;
+
+        if (flashTimer >= 0.5f)
+        {
+            flashTimer = 0f;
+
+            Color currentColor = tutorialImage.color;
+            tutorialImage.color = new Color(
+                currentColor.r,
+                currentColor.g,
+                currentColor.b,
+                currentColor.a == 1f ? 0.5f : 1f
+            );
+        }
+    }
 }
