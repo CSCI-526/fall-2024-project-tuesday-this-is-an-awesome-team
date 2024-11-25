@@ -62,7 +62,7 @@ public class HelpContentManager : MonoBehaviour
                         new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
                         new HelpRule { icon = Instance.keyboardEIcon, text = "fall" },
                         new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move" }
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move(free suspension movement)" }
                     }
                 }
             },
@@ -76,7 +76,7 @@ public class HelpContentManager : MonoBehaviour
                         new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
                         new HelpRule { icon = Instance.keyboardEIcon, text = "fall" },
                         new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot" }
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot(damage enemies and blue walls)" }
                     }
                 }
             },
@@ -90,7 +90,7 @@ public class HelpContentManager : MonoBehaviour
                         new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
                         new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
                         new HelpRule { icon = Instance.checkPointIcon, text = "Save level progress" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump" }
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump(jump higher and farther)" }
                     }
                 }
             },
@@ -104,9 +104,9 @@ public class HelpContentManager : MonoBehaviour
                         new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
                         new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
                         new HelpRule { icon = Instance.checkPointIcon, text = "Save level progress" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump" },
-                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move" },
-                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump(jump higher and farther)" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move(free suspension movement)" },
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot(damage enemies and blue walls)" },
                     }
                 }
             },
@@ -120,9 +120,9 @@ public class HelpContentManager : MonoBehaviour
                         new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
                         new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
                         new HelpRule { icon = Instance.checkPointIcon, text = "Save level progress" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump" },
-                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move" },
-                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump(jump higher and farther)" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move(free suspension movement)" },
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot(damage enemies and blue walls)" },
                     }
                 }
             }
