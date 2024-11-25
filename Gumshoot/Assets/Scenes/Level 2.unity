@@ -3197,9 +3197,13 @@ PrefabInstance:
       propertyPath: followCamera
       value: 
       objectReference: {fileID: 987803991}
+    - target: {fileID: 1441082336318124797, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 14.15
+      objectReference: {fileID: 0}
     - target: {fileID: 8014442444600827736, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.67
+      value: 14.63
       objectReference: {fileID: 0}
     - target: {fileID: 8014442444600827736, guid: c93198690cc208441a04a24b74fb58f5, type: 3}
       propertyPath: m_LocalPosition.y
