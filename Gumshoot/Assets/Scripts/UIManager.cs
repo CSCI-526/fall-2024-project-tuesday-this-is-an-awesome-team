@@ -32,12 +32,20 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!isPaused)
+            if (helpPanel.activeSelf)
+            {
+                helpPanel.SetActive(false);
+            }
+            else if (!isPaused)
+            {
                 PauseGame();
+            }
             else
+            {
                 ResumeGame();
+            }    
         }
     }
 
