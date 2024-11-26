@@ -36,7 +36,7 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick" }
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" }
                     }
                 }
             },
@@ -46,9 +46,9 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick/grab" },
-                        new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall" }
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" },
+                        new HelpRule { icon = Instance.mouseRightIcon, text = "Throw" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "Jump" }
                     }
                 }
             },
@@ -58,11 +58,11 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick/grab" },
-                        new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall" },
-                        new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move(free suspension movement)" }
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" },
+                        new HelpRule { icon = Instance.mouseRightIcon, text = "Throw" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "Jump" },
+                        new HelpRule { icon = Instance.keyboardMIcon, text = "Zoom in/out" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "Flying Ability - Move" }
                     }
                 }
             },
@@ -72,11 +72,13 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick/grab" },
-                        new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall" },
-                        new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot(damage enemies and blue walls)" }
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" },
+                        new HelpRule { icon = Instance.mouseRightIcon, text = "Throw" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "Jump" },
+                        new HelpRule { icon = Instance.keyboardMIcon, text = "Zoom in/out" },
+                        new HelpRule { icon = Instance.checkPointIcon, text = "Checkpoint" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "Flying Ability - Move" },
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "Shooting Ability - Shoot (destroys blue walls and hurts enemies)" },
                     }
                 }
             },
@@ -86,11 +88,13 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick/grab" },
-                        new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
-                        new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.checkPointIcon, text = "Save level progress" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump(jump higher and farther)" }
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" },
+                        new HelpRule { icon = Instance.mouseRightIcon, text = "Throw" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "Jump / Jumping Ability - Jump" },
+                        new HelpRule { icon = Instance.keyboardMIcon, text = "Zoom in/out" },
+                        new HelpRule { icon = Instance.checkPointIcon, text = "Checkpoint" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "Flying Ability - Move" },
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "Shooting Ability - Shoot (destroys blue walls and hurts enemies)" },
                     }
                 }
             },
@@ -100,13 +104,13 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick/grab" },
-                        new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
-                        new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.checkPointIcon, text = "Save level progress" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump(jump higher and farther)" },
-                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move(free suspension movement)" },
-                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot(damage enemies and blue walls)" },
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" },
+                        new HelpRule { icon = Instance.mouseRightIcon, text = "Throw" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "Jump / Jumping Ability - Jump" },
+                        new HelpRule { icon = Instance.keyboardMIcon, text = "Zoom in/out" },
+                        new HelpRule { icon = Instance.checkPointIcon, text = "Checkpoint" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "Flying Ability - Move" },
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "Shooting Ability - Shoot (destroys blue walls and hurts enemies)" },
                     }
                 }
             },
@@ -116,13 +120,13 @@ public class HelpContentManager : MonoBehaviour
                 {
                     rules = new List<HelpRule>
                     {
-                        new HelpRule { icon = Instance.mouseLeftIcon, text = "stick/grab" },
-                        new HelpRule { icon = Instance.mouseRightIcon, text = "throw" },
-                        new HelpRule { icon = Instance.keyboardMIcon, text = "switch map view" },
-                        new HelpRule { icon = Instance.checkPointIcon, text = "Save level progress" },
-                        new HelpRule { icon = Instance.keyboardEIcon, text = "fall/jumping enemy-jump(jump higher and farther)" },
-                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "flying enemy-move(free suspension movement)" },
-                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "shooting enemy-shoot(damage enemies and blue walls)" },
+                        new HelpRule { icon = Instance.mouseLeftIcon, text = "Stick" },
+                        new HelpRule { icon = Instance.mouseRightIcon, text = "Throw" },
+                        new HelpRule { icon = Instance.keyboardEIcon, text = "Jump / Jumping Ability - Jump" },
+                        new HelpRule { icon = Instance.keyboardMIcon, text = "Zoom in/out" },
+                        new HelpRule { icon = Instance.checkPointIcon, text = "Checkpoint" },
+                        new HelpRule { icon = Instance.keyboardArrowKeysIcon, text = "Flying Ability - Move" },
+                        new HelpRule { icon = Instance.keyboardSpaceIcon, text = "Shooting Ability - Shoot (destroys blue walls and hurts enemies)" },
                     }
                 }
             }
