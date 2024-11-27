@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.U2D;
 /*This class deals with the automatic shooting ability of the shooting enemy. 
@@ -22,8 +23,7 @@ public class ShootingEnemyShoot : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<Health>().health <= 0)
-            return;
+        if (GetComponent<Health>().health <= 0 || PlayerController.Instance == null) { return; }
 
         Vector3 direction = (PlayerController.Instance.gameObject.transform.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
