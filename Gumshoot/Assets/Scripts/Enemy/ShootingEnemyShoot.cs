@@ -11,6 +11,7 @@ public class ShootingEnemyShoot : MonoBehaviour
     public float firePointDistance = 0.9f;
     private ShootingControl shootingControl;
     private VisionColliderHandler visionColliderHandler;
+    public Transform muzzle;
 
     void Start()
     {
@@ -23,6 +24,12 @@ public class ShootingEnemyShoot : MonoBehaviour
     {
         if (GetComponent<Health>().health <= 0)
             return;
+
+        Vector3 direction = (PlayerController.Instance.gameObject.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        muzzle.position = transform.position + direction * 0.5f;
+        muzzle.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
         if (visionColliderHandler != null && visionColliderHandler.playerIsVisible)
             TryShooting();
     }

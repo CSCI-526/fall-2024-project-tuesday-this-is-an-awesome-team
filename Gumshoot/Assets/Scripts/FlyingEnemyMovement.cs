@@ -6,6 +6,7 @@ public interface IEnemy
 {
     GameObject ControllerPrefab { get; }
     float ControlTime { get; }
+    void OnDeath();
 }
 
 public class FlyingEnemyMovement : MonoBehaviour, IEnemy
@@ -24,6 +25,7 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
 
     [SerializeField] private GameObject controllerPrefab;
     [SerializeField] private float controlTime;
+    [SerializeField] private Sprite deadSprite;
 
     public GameObject ControllerPrefab => controllerPrefab;
     public float ControlTime => controlTime;
@@ -41,6 +43,8 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
 
+    private bool isDead = false;
+
     void Start()
     {
         patrolStartPos = transform.position;
@@ -56,11 +60,7 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (health.health <= 0) {
-            rb.velocity = Vector2.zero;
-            sprite.color = Color.yellow;
-            return;
-        }
+        if (isDead) { return; }
         isChasing = visionHandler.playerIsVisible;
         if (isChasing)
         {
@@ -138,5 +138,14 @@ public class FlyingEnemyMovement : MonoBehaviour, IEnemy
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    public void OnDeath()
+    {
+        isDead = true;
+        transform.Find("Face").gameObject.SetActive(false);
+        rb.velocity = Vector2.zero;
+        sprite.color = Color.white;
+        sprite.sprite = deadSprite;
     }
 }

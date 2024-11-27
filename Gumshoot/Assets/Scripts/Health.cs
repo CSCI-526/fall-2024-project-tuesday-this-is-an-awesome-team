@@ -30,6 +30,7 @@ public class Health : MonoBehaviour
         if (health <= 0 && GetComponent<IEnemy>() != null)
         {
             transform.Find("Circle").gameObject.SetActive(false);
+            GetComponent<IEnemy>().OnDeath();
         }
     }
 

@@ -17,6 +17,7 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
 
     [SerializeField] private GameObject controllerPrefab;
     [SerializeField] private float controlTime;
+    [SerializeField] private Sprite deadSprite;
 
     public GameObject ControllerPrefab => controllerPrefab;
     public float ControlTime => controlTime;
@@ -24,6 +25,8 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
     private Health health;
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
+
+    private bool isDead = false;
 
     //public float jumpCooldown = 2f;
     //private float cooldownTimer = 0f;
@@ -39,17 +42,20 @@ public class JumpingEnemyMovement : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (health.health <= 0)
-        {
-            rb.velocity = Vector2.zero;
-            sprite.color = Color.yellow;
-            return;
-        }
-
+        if (isDead) { return; }
         if (visionHandler.playerIsVisible && rb.velocity.y == 0)
         {
             JumpTowardsPlayer();
         }
+    }
+
+    public void OnDeath()
+    {
+        isDead = true;
+        transform.Find("Face").gameObject.SetActive(false);
+        rb.velocity = Vector2.zero;
+        sprite.color = Color.white;
+        sprite.sprite = deadSprite;
     }
 
     void JumpTowardsPlayer()
