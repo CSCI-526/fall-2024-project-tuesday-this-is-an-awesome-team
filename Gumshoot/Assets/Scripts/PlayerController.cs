@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject PullContactInstance = null;
 
     public float jumpForce = 100f;
-    public float throwForce = 100f;
+    public float throwForce = 15f;
     public float maxDist;
     public float extractSpeed;
     public float retractSpeed;
@@ -118,7 +118,8 @@ public class PlayerController : MonoBehaviour
 
                 // Launch the object in the mouse direction
                 PulledObject.transform.position = transform.position + direction;
-                PulledObject.rb.AddForce(direction * throwForce);
+                //PulledObject.rb.AddForce(direction * throwForce);
+                PulledObject.rb.velocity = direction * throwForce;
 
                 PulledObject = null;
             }
