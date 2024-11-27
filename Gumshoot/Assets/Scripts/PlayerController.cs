@@ -55,18 +55,18 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (PulledObject != null && !PulledObject.CompareTag("Enemy"))
-        {
-            Vector3 direction = aimArrow.right;
-            Vector2 startVelocity = direction.normalized * throwForce;
-            //float gravityScale = PulledObject.rb.gravityScale;
-            float gravityScale = 1.6f;
-            trajectoryVisualizer.ShowTrajectory(aimArrow.position, startVelocity, gravityScale);
-        }
-        else
-        {
-            trajectoryVisualizer.HideTrajectory();
-        }
+        //if (PulledObject != null && !PulledObject.CompareTag("Enemy"))
+        //{
+        //    Vector3 direction = aimArrow.right;
+        //    Vector2 startVelocity = direction.normalized * throwForce;
+        //    //float gravityScale = PulledObject.rb.gravityScale;
+        //    float gravityScale = 1.6f;
+        //    trajectoryVisualizer.ShowTrajectory(aimArrow.position, startVelocity, gravityScale);
+        //}
+        //else
+        //{
+        //    trajectoryVisualizer.HideTrajectory();
+        //}
 
         // Keep the player stuck to the surface if the surface is moving
         if (stuckToSurface && SurfaceContactInstance)
@@ -110,11 +110,53 @@ public class PlayerController : MonoBehaviour
         }
 
         // throwing object
-        else if (Input.GetKeyDown(KeyCode.Mouse1) && !gumExtended)
+        //else if (Input.GetKeyDown(KeyCode.Mouse1) && !gumExtended)
+        //{
+        //    if (PulledObject != null)
+        //    {
+        //       Vector3 direction = GetMouseForward();
+        //        // Disconnect the pulled object from the player
+        //        //PulledObject.GetComponent<FixedJoint2D>().connectedBody = null;
+        //        //PulledObject.GetComponent<FixedJoint2D>().enabled = false;
+        //        PulledObject.transform.parent = null;
+        //        PulledObject.rb.gravityScale = 1.6f;
+        //        PulledObject.col.enabled = true;
+        //        DamageObject damageObj = PulledObject.GetComponent<DamageObject>();
+        //        if (damageObj)
+        //        {
+        //            StartCoroutine(damageObj.Launch(gameObject, 0.4f));
+        //        }
+        //        if (PullContactInstance)
+        //        {
+        //            Destroy(PullContactInstance);
+        //            PullContactInstance = null;
+        //        }
+
+        //        // Launch the object in the mouse direction
+        //        PulledObject.transform.position = transform.position + direction;
+        //        //PulledObject.rb.AddForce(direction * throwForce);
+        //        PulledObject.rb.velocity = direction * throwForce;
+
+        //        PulledObject = null;
+        //    }
+        //}
+
+        // throwing object
+        else if (Input.GetKey(KeyCode.Mouse1) && !gumExtended)
         {
             if (PulledObject != null)
             {
-               Vector3 direction = GetMouseForward();
+                Vector3 direction = aimArrow.right;
+                Vector2 startVelocity = direction.normalized * throwForce;
+                float gravityScale = 1.6f;
+                trajectoryVisualizer.ShowTrajectory(aimArrow.position, startVelocity, gravityScale);
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1) && !gumExtended)
+        {
+            if (PulledObject != null)
+            {
+                Vector3 direction = GetMouseForward();
                 // Disconnect the pulled object from the player
                 //PulledObject.GetComponent<FixedJoint2D>().connectedBody = null;
                 //PulledObject.GetComponent<FixedJoint2D>().enabled = false;
@@ -138,8 +180,15 @@ public class PlayerController : MonoBehaviour
                 PulledObject.rb.velocity = direction * throwForce;
 
                 PulledObject = null;
+
+                trajectoryVisualizer.HideTrajectory();
             }
         }
+        else
+        {
+            trajectoryVisualizer.HideTrajectory();
+        }
+
     }
 
     public void Jump(Vector3 direction)
