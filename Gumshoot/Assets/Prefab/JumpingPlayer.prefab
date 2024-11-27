@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7155836255030664807}
   - component: {fileID: 287097100315109230}
   - component: {fileID: 2518503189552226278}
+  - component: {fileID: 5139496418615424451}
   - component: {fileID: 4506406082065551184}
   - component: {fileID: 8821995103272733654}
   m_Layer: 8
@@ -166,6 +167,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   destroyOnDeath: 1
+--- !u!114 &5139496418615424451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7096354043435132444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363f25b494b8e412392ac338fe4de3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointPrefab: {fileID: 9054875046446016090, guid: 6bfd04db07688174a9949bc91d100c04, type: 3}
+  numberOfPoints: 30
+  timeStep: 0
 --- !u!114 &4506406082065551184
 MonoBehaviour:
   m_ObjectHideFlags: 0

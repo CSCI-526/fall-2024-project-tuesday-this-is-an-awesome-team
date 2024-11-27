@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject gumInstance = null;
 
     public Transform aimArrow;
+    private TrajectoryVisualizer trajectoryVisualizer;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        trajectoryVisualizer = GetComponent<TrajectoryVisualizer>();
+
         if (DataPersistanceManager.Instance && DataPersistanceManager.Instance.hasNewPos)
         {
             transform.position = DataPersistanceManager.Instance.newPos;
@@ -50,6 +53,19 @@ public class PlayerController : MonoBehaviour
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             return;
+        }
+
+        if (PulledObject != null && !PulledObject.CompareTag("Enemy"))
+        {
+            Vector3 direction = aimArrow.right;
+            Vector2 startVelocity = direction.normalized * throwForce;
+            //float gravityScale = PulledObject.rb.gravityScale;
+            float gravityScale = 1.6f;
+            trajectoryVisualizer.ShowTrajectory(aimArrow.position, startVelocity, gravityScale);
+        }
+        else
+        {
+            trajectoryVisualizer.HideTrajectory();
         }
 
         // Keep the player stuck to the surface if the surface is moving
