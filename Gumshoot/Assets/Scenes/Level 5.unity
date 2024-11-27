@@ -5669,6 +5669,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: door
       objectReference: {fileID: 0}
+    - target: {fileID: 6882140652317031245, guid: b80ea2a363b591146bc6c077773932f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.444648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882140652317031245, guid: b80ea2a363b591146bc6c077773932f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7264479
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882140652317031245, guid: b80ea2a363b591146bc6c077773932f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10.116226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882140652317031245, guid: b80ea2a363b591146bc6c077773932f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882140652317031245, guid: b80ea2a363b591146bc6c077773932f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
