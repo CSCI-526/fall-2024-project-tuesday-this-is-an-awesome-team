@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject SurfaceContactInstance = null;
     [HideInInspector] public GameObject PullContactInstance = null;
 
-    public float jumpForce = 100f;
+    public float jumpForce = 5f;
     public float throwForce = 15f;
     public float maxDist;
     public float extractSpeed;
@@ -102,11 +102,31 @@ public class PlayerController : MonoBehaviour
         }
 
         // jumping
-        else if (Input.GetKeyDown(KeyCode.E) && !gumExtended)
+        //if (Input.GetKeyDown(KeyCode.E) && !gumExtended)
+        //{
+        //    Vector3 direction = GetMouseForward();
+        //    // If extending towards the latched surface, then launch off the surface
+        //    Jump(direction);
+        //}
+
+        // jumping
+        if (Input.GetKey(KeyCode.E) && !gumExtended)
+        {
+            Debug.Log($"Current GameObject name: {gameObject.name}");
+            if (gameObject.name == "JumpingPlayer(Clone)")
+            {
+                Vector3 direction = aimArrow.right;
+                Vector2 startVelocity = direction.normalized * jumpForce;
+                float gravityScale = 1.6f;
+                trajectoryVisualizer.ShowTrajectory(aimArrow.position, startVelocity, gravityScale);
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.E) && !gumExtended)
         {
             Vector3 direction = GetMouseForward();
             // If extending towards the latched surface, then launch off the surface
             Jump(direction);
+            trajectoryVisualizer.HideTrajectory();
         }
 
         // throwing object
@@ -209,12 +229,14 @@ public class PlayerController : MonoBehaviour
         if (GetComponent<FlyingEnemyController>() == null)
         {
             rb.gravityScale = 1.6f;
-            rb.AddForce(direction * jumpForce);
-            if (PulledObject != null)
-            {
-                //PulledObject.rb.gravityScale = 1.6f;
-                //PulledObject.rb.AddForce(direction * jumpForce);
-            }
+            rb.velocity = direction * jumpForce;
+
+            //rb.AddForce(direction * jumpForce);
+            //if (PulledObject != null)
+            //{
+            //    //PulledObject.rb.gravityScale = 1.6f;
+            //    //PulledObject.rb.AddForce(direction * jumpForce);
+            //}
         }
 
         if (SurfaceContactInstance)

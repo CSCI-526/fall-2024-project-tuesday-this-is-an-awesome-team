@@ -201,7 +201,7 @@ MonoBehaviour:
   StuckSurface: {fileID: 0}
   SurfaceContactInstance: {fileID: 0}
   PullContactInstance: {fileID: 0}
-  jumpForce: 900
+  jumpForce: 20
   throwForce: 15
   maxDist: 7.2
   extractSpeed: 24
