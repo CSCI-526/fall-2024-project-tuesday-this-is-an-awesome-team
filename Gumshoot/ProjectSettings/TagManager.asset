@@ -12,6 +12,7 @@ TagManager:
   - VisionCollider
   - FirePoint
   - Destructible
+  - Blink
   layers:
   - Default
   - TransparentFX
