@@ -290,4 +290,11 @@ public class PlayerController : MonoBehaviour
         aimArrow.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
+    void OnDestroy()
+    {
+        if (trajectoryVisualizer)
+        {
+            trajectoryVisualizer.HideTrajectory();
+        }
+    }
 }
