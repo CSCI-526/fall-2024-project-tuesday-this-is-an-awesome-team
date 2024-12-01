@@ -42,7 +42,10 @@ public class TrajectoryVisualizer : MonoBehaviour
     {
         foreach (GameObject point in points)
         {
-            point.SetActive(false);
+            if (point != null) 
+            {
+                point.SetActive(false);
+            }
         }
     }
 
