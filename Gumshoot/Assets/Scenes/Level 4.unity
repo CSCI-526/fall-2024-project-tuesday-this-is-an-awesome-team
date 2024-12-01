@@ -1107,7 +1107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7852879155507105236, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Name
-      value: ShootingEnemy (1)
+      value: ShootingEnemyTutorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11634,7 +11634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7852879155507105236, guid: 66de84f16af6a9849b96fac116f4482e, type: 3}
       propertyPath: m_Name
-      value: ShootingEnemy (2)
+      value: ShootingEnemyTutorial2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
