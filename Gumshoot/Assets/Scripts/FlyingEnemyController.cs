@@ -54,7 +54,8 @@ public class FlyingEnemyController : EnemyController
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
-            if (horizontalInput != 0 || verticalInput != 0)
+
+            if (playerController.stuckToSurface && (horizontalInput != 0 || verticalInput != 0))
             {
                 playerController.Jump(Vector3.zero);
             }
