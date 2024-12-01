@@ -262,7 +262,7 @@ public class TutorialTextManager : MonoBehaviour
                 }
                 else
                 {
-                    GameObject projectile = GameObject.Find("Projectile1");
+                    GameObject projectile = GameObject.Find("Projectile2");
                     if (projectile != null && arrowIcon != null)
                     {
                         if (gameObject.name == "TutorialTriggerBullet")

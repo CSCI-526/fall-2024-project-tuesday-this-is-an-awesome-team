@@ -31,6 +31,10 @@ public class ShootingControl : MonoBehaviour
         {
             if (CanShoot()) {
                 GameObject m_projectile = Object.Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                if (instigator.name.Contains("ShootingEnemyTutorial"))
+                {
+                    m_projectile.name = "Projectile2"; // Special projectile name for "ShootingEnemyTutorial"
+                }
                 Projectile projectile = m_projectile.GetComponent<Projectile>();
                 if (projectile != null)
                 {
