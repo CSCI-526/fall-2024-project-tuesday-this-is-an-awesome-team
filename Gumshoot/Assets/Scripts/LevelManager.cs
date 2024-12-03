@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
 
     [HideInInspector] public int latestCheckpointID = -1;
     private Vector3 latestCheckpointPosition;
+    private List<int> checkpointList = new List<int>();
 
     [HideInInspector] public static Dictionary<string, LevelData> levelsData = new Dictionary<string, LevelData>();
     [SerializeField] private string NextLevel = "";
@@ -23,12 +24,15 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        StartTimer(); 
+        StartTimer();
+        checkpointList.Clear();
+        checkpointList.Add(-1);
     }
 
     public void StartTimer()
     {
-        currentStartTime = Time.time; 
+        currentStartTime = Time.time;
+
     }
 
     public void EndTimer(int checkpointID)
@@ -36,19 +40,16 @@ public class LevelManager : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         if (!levelsData.ContainsKey(sceneName))
             levelsData[sceneName] = new LevelData();
-        if (currentStartTime > 0)
-        {
-            float timeSpent = Time.time - currentStartTime;
-            levelsData[sceneName].RecordCheckpointTime(checkpointID, timeSpent);
-            currentStartTime = 0;
-        }
+        float timeSpent = Time.time - currentStartTime;
+        levelsData[sceneName].RecordCheckpointTime(checkpointID, timeSpent);
+        currentStartTime = Time.time;
     }
 
 
     public void TriggerEndDoor()
     {
-        EndTimer(latestCheckpointID + 1);
-        TriggerCheckpoint(latestCheckpointID + 1);
+        EndTimer(10);
+        TriggerCheckpoint(10);
         Debug.Log("End door reached, level completed.");
     }
 
@@ -62,6 +63,8 @@ public class LevelManager : MonoBehaviour
                 DataPersistanceManager.Instance = null;
             }
             SceneManager.LoadScene(NextLevel);
+            checkpointList.Clear();
+            checkpointList.Add(-1);
         }
     }
 
@@ -69,6 +72,8 @@ public class LevelManager : MonoBehaviour
     {
         SendToGoogle.Instance.Send();
         ResetData();
+        checkpointList.Clear();
+        checkpointList.Add(-1);
         if (DataPersistanceManager.Instance)
         {
             Destroy(DataPersistanceManager.Instance.gameObject);
@@ -81,6 +86,8 @@ public class LevelManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        checkpointList.Clear();    
+        checkpointList.Add(-1);    
     }
 
     public void UpdateEnemyControllerUse(int EnemyType)
@@ -112,13 +119,15 @@ public class LevelManager : MonoBehaviour
 
     public void UpdateLatestCheckpoint(int checkpointID, Vector3 position)
     {
-        if (checkpointID > latestCheckpointID)
+        Debug.Log("Current Checkpoint List: " + string.Join(", ", checkpointList));
+        if (!checkpointList.Contains(checkpointID))
         {
+            Debug.Log("aaaaaa");
+            checkpointList.Add(checkpointID);
             latestCheckpointID = checkpointID;
             latestCheckpointPosition = position;
             TriggerCheckpoint(checkpointID);
             EndTimer(latestCheckpointID);
-            latestCheckpointID = checkpointID;
             StartTimer();
             Debug.Log("Latest Checkpoint updated to ID: " + latestCheckpointID);
         }
@@ -219,7 +228,6 @@ public class LevelData
         {
             checkpointData[checkpointID] = new CheckpointData();
         }
-
         checkpointData[checkpointID].SetTriggered();
     }
 
