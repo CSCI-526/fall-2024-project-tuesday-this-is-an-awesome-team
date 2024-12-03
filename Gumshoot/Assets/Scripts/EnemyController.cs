@@ -17,10 +17,7 @@ public class EnemyController : MonoBehaviour
         PlayerController oldPlayerController = GetComponent<PlayerController>();
         PlayerController newPlayerController = newPlayer.GetComponent<PlayerController>();
 
-        if (oldPlayerController.stuckToSurface)
-        {
-            newPlayerController.rb.gravityScale = oldPlayerController.rb.gravityScale;
-        }
+        
         
         newPlayerController.stuckToSurface = oldPlayerController.stuckToSurface;
         newPlayerController.StuckSurface = oldPlayerController.StuckSurface;
@@ -45,6 +42,10 @@ public class EnemyController : MonoBehaviour
             {
                 newPlayerController.gumInstance.transform.parent = newPlayer.transform;
             }
+        }
+        else if (oldPlayerController.stuckToSurface)
+        {
+            newPlayerController.rb.gravityScale = oldPlayerController.rb.gravityScale;
         }
 
         GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
