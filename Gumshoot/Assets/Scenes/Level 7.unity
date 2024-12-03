@@ -15418,7 +15418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e243541e674249a8b9b926f911d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 25
 --- !u!212 &1494696823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19903,11 +19903,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6686161508216162970, guid: 0a914737a9da2422086538ba9239d615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.49
+      value: -35.53
       objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: 0a914737a9da2422086538ba9239d615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -175.15
+      value: -180.32
       objectReference: {fileID: 0}
     - target: {fileID: 6686161508216162970, guid: 0a914737a9da2422086538ba9239d615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20963,7 +20963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e243541e674249a8b9b926f911d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 30
 --- !u!114 &2004790541
 MonoBehaviour:
   m_ObjectHideFlags: 0
